@@ -1,0 +1,5 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "nginx is an HTTP and reverse proxy server."
+msgstr "nginx是HTTP和反向代理服务器。"

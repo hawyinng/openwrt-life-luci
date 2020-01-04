@@ -1,0 +1,33 @@
+
+config general
+	option startup_delay '0'
+
+config transparent_proxy
+	list main_server 'nil'
+	option udp_relay_server 'nil'
+	option local_port '1234'
+
+config socks5_proxy
+	list server 'nil'
+	option local_port '1080'
+
+config port_forward
+	list server 'nil'
+	option local_port '5354'
+	option destination '208.67.222.222:53'
+
+config servers
+	option alias 'sample'
+	option fast_open '1'
+	option no_delay '0'
+	option server '127.0.0.1'
+	option server_port '443'
+	option timeout '86400'
+	option password 'barfoo!'
+	option encrypt_method 'aes-256-gcm'
+
+config access_control
+	option wan_bp_list '/etc/chnroute.txt'
+	option lan_target 'SS_SPEC_WAN_AC'
+	option self_proxy '0'
+

@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-20\n"
+"PO-Revision-Date: 9999-12-31\n"
+"Last-Translator: GuoGuo <gch981213@gmail.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "A lightweight single-threaded HTTP(S) server"
+msgstr "轻量级单线程 HTTP(S) 服务器"
+
+msgid "Full Web Server Settings"
+msgstr "完整Web服务器设置"
+
+msgid "For settings primarily geared to serving more than the web UI"
+msgstr "主要用于Web UI以外的网络服务"
+
+msgid "Settings which are either rarely needed or which affect serving the WebUI"
+msgstr "很少用到或Web UI相关的设置"
+
+msgid "HTTP listeners (address:port)"
+msgstr "监听的HTTP地址"
+
+msgid "HTTPS listener (address:port)"
+msgstr "监听的HTTPS地址"
+
+msgid "Redirect all HTTP to HTTPS"
+msgstr "将所有HTTP请求重定向到HTTPS"
+
+msgid "Ignore private IPs on public interface"
+msgstr "禁止外网访问"
+
+msgid "Prevent access from private (RFC1918) IPs on an interface if it has an public IP address"
+msgstr "拒绝来自外网的HTTP请求"
+
+msgid "HTTPS Certificate (DER Encoded)"
+msgstr "HTTPS证书"
+
+msgid "HTTPS Private Key (DER Encoded)"
+msgstr "HTTPS私钥"
+
+msgid "Remove old certificate and key"
+msgstr "删除旧证书和密钥"
+
+msgid "uHTTPd will generate a new self-signed certificate using the configuration shown below."
+msgstr "uHTTPd 将使用下面显示的配置生成新的自签名证书。"
+
+msgid "Remove configuration for certificate and key"
+msgstr "删除证书和密钥的配置"
+
+msgid "This permanently deletes the cert, key, and configuration to use same."
+msgstr "这将永久删除证书、密钥及使用它的配置。"
+
+msgid "Index page(s)"
+msgstr "索引文件"
+
+msgid "E.g specify with index.html and index.php when using PHP"
+msgstr "指定HTTP服务所使用的索引文件，例如 index.html 和 index.php"
+
+msgid "CGI filetype handler"
+msgstr "CGI文件类型处理程序"
+
+msgid "Interpreter to associate with file endings ('suffix=handler', e.g. '.php=/usr/bin/php-cgi')"
+msgstr "文件结尾关联的解释器（“后缀=处理程序”，例如“.php=/usr/bin/php-cgi”）"
+
+msgid "Do not follow symlinks outside document root"
+msgstr "禁止跟随软链接到网页根目录之外"
+
+msgid "Do not generate directory listings."
+msgstr "禁止列目录"
+
+msgid "Aliases"
+msgstr "别名"
+
+msgid "(/old/path=/new/path) or (just /old/path which becomes /cgi-prefix/old/path)"
+msgstr "（/old/path=/new/path）或（只写 /old/path，将变成 /cgi-prefix/old/path）"
+
+msgid "Realm for Basic Auth"
+msgstr "基本认证区域"
+
+msgid "Config file (e.g. for credentials for Basic Auth)"
+msgstr "配置文件"
+
+msgid "Will not use HTTP authentication if not present"
+msgstr "如果不存在，则不使用HTTP身份验证"
+
+msgid "404 Error"
+msgstr "404错误页面"
+
+msgid "Virtual URL or CGI script to display on status '404 Not Found'. Must begin with '/'"
+msgstr "发生“404”错误时要显示的虚拟URL或CGI脚本。必须以'/'开头"
+
+msgid "Document root"
+msgstr "网页根目录"
+
+msgid "Base directory for files to be served"
+msgstr "提供HTTP服务的文件根目录"
+
+msgid "Path prefix for CGI scripts"
+msgstr "CGI脚本的路径前缀"
+
+msgid "CGI is disabled if not present."
+msgstr "如果不存在，CGI将被禁用。"
+
+msgid "Virtual path prefix for Lua scripts"
+msgstr "Lua脚本的虚拟路径前缀"
+
+msgid "Full real path to handler for Lua scripts"
+msgstr "Lua脚本的完整真实路径"
+
+msgid "Embedded Lua interpreter is disabled if not present."
+msgstr "如果不存在，Lua解释器将被禁用"
+
+msgid "Virtual path prefix for ubus via JSON-RPC integration"
+msgstr "ubus通过JSON-RPC集成的虚拟路径前缀"
+
+msgid "ubus integration is disabled if not present"
+msgstr "如果不存在，则禁用ubus集成"
+
+msgid "Override path for ubus socket"
+msgstr "覆盖 ubus socket 路径"
+
+msgid "Enable JSON-RPC Cross-Origin Resource Support"
+msgstr "启用JSON-RPC跨资源支持"
+
+msgid "Disable JSON-RPC authorization via ubus session API"
+msgstr "通过ubus会话API禁用JSON-RPC授权"
+
+msgid "Maximum wait time for Lua, CGI, or ubus execution"
+msgstr "Lua/CGI脚本等待超时（秒）"
+
+msgid "Maximum wait time for network activity"
+msgstr "网络活动超时（秒）"
+
+msgid "Connection reuse"
+msgstr "连接重新使用（秒）"
+
+msgid "TCP Keepalive"
+msgstr "TCP保持活动（秒）"
+
+msgid "Maximum number of connections"
+msgstr "最大连接数"
+
+msgid "Maximum number of script requests"
+msgstr "最大请求数"
+
+msgid "uHTTPd Self-signed Certificate Parameters"
+msgstr "uHTTPd自签名证书参数"
+
+msgid "Valid for # of Days"
+msgstr "有效天数"
+
+msgid "Length of key in bits"
+msgstr "密钥长度（单位bits）"
+
+msgid "Server Hostname"
+msgstr "服务器主机名"
+
+msgid "State"
+msgstr "州/省"
+
+msgid "Location"
+msgstr "位置"

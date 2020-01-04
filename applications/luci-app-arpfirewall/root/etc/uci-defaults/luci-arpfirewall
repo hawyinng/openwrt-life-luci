@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# needed for "Save and Apply" to restart arpfirewall
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@arpfirewall[-1]
+	add ucitrack arpfirewall
+	set ucitrack.@arpfirewall[-1].init=arpfirewall
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0

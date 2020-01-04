@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@nginx[-1]
+	add ucitrack nginx
+	set ucitrack.@nginx[-1].init=nginx
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0

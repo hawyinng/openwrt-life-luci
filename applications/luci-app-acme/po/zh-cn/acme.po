@@ -1,0 +1,78 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "ACME certs"
+msgstr "ACME证书"
+
+msgid "ACME certificates"
+msgstr "ACME证书"
+
+msgid "This configures ACME (Letsencrypt) automatic certificate installation."
+msgstr "这将配置ACME（Letsencrypt）自动证书安装。"
+
+msgid "ACME global config"
+msgstr "ACME全局配置"
+
+msgid "State directory"
+msgstr "状态目录"
+
+msgid "Where certs and other state files are kept."
+msgstr "存放证书和其他状态文件的位置。"
+
+msgid "Account email"
+msgstr "帐户的电子邮件"
+
+msgid "Email address to associate with account key."
+msgstr "与帐户密钥关联的电子邮件地址。"
+
+msgid "Enable debug logging"
+msgstr "启用调试日志记录"
+
+msgid "Certificate config"
+msgstr "证书配置"
+
+msgid "Use staging server"
+msgstr "使用暂存服务器"
+
+msgid ""
+"Get certificate from the Letsencrypt staging server " ..
+"(use for testing; the certificate won't be valid)."
+msgstr ""
+"从Letsencrypt暂存服务器获取证书 "
+"(用于测试;这个证书无效)。"
+
+msgid "Key size"
+msgstr "密钥大小"
+
+msgid "Key size (and type) for the generated certificate."
+msgstr "生成的证书的密钥大小（和类型）。"
+
+msgid "Use for uhttpd"
+msgstr "用于uhttpd"
+
+msgid "Update the uhttpd config with this certificate once issued"
+msgstr "自动配置证书并重启uhttpd"
+
+msgid "Use for nginx"
+msgstr "用于nginx"
+
+msgid "Update the nginx config with this certificate once issued"
+msgstr "自动配置证书并重启Nginx"
+
+msgid "Webroot directory"
+msgstr "WEB服务器根目录"
+
+msgid "Domain names"
+msgstr "域名"
+
+msgid "Domain names to include in the certificate."
+msgstr "要包含在证书中的域名。"
+
+msgid "See https://github.com/Neilpang/acme.sh/tree/master/dnsapi for the list of available APIs."
+msgstr "有关可用API的列表，请参见https://github.com/Neilpang/acme.sh/tree/master/dnsapi"
+
+msgid "DNS API credentials"
+msgstr "DNS API凭证"
+
+msgid "Add multiple entries here in KEY=VAL shell variable format to supply multiple credential variables."
+msgstr "在此处以 KEY=VAL shell 变量格式添加多个条目，以提供多个凭证变量。"

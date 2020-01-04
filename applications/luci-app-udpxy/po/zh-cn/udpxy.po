@@ -1,0 +1,35 @@
+msgid "udpxy is a UDP-to-HTTP multicast traffic relay daemon, here you can configure the settings."
+msgstr "udpxy是UDP到HTTP组播流量中继程序，在这里您可以进行相关设置。"
+
+msgid "Respawn"
+msgstr "重置"
+
+msgid "Verbose"
+msgstr "详细"
+
+msgid "Bind IP/Interface"
+msgstr "绑定 IP/接口"
+
+msgid "Source IP/Interface"
+msgstr "源 IP/接口"
+
+msgid "Max clients"
+msgstr "最大客户端数量"
+
+msgid "Log file"
+msgstr "日志文件"
+
+msgid "Buffer size"
+msgstr "缓冲区大小"
+
+msgid "Buffer messages"
+msgstr "缓冲区消息"
+
+msgid "Buffer time"
+msgstr "缓冲时间"
+
+msgid "Nice increment"
+msgstr "优先级增量"
+
+msgid "Multicast subscription renew"
+msgstr "组播订阅续定"

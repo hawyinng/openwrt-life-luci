@@ -1,0 +1,14 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@edge[-1]
+	add ucitrack edge
+	set ucitrack.@edge[-1].init=edge
+	delete ucitrack.@supernode[-1]
+	add ucitrack supernode
+	set ucitrack.@supernode[-1].init=supernode
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0

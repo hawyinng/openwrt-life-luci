@@ -1,0 +1,38 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Usage - Details"
+msgstr "实时流量监控"
+
+msgid "Reset Database"
+msgstr "重置统计数据库"
+
+msgid "Auto Refresh Interval"
+msgstr "自动刷新间隔"
+
+msgid "Calculate per host totals"
+msgstr "合并计算客户端流量"
+
+msgid "Usage"
+msgstr "流量监控"
+
+msgid "Details"
+msgstr "详细信息"
+
+msgid "User file"
+msgstr "自定义主机名称"
+
+msgid "Usage - Configuration"
+msgstr "流量监控设置"
+
+msgid "Persist database"
+msgstr "写入数据库到硬盘"
+
+msgid "Check this to persist the database file under /etc/config. This ensures usage is persisted even across firmware updates."
+msgstr "选中此选项可将数据库文件保存在/etc/config下。 这可避免重启或者升级后丢失统计数据。"
+
+msgid "Usage - Custom User File"
+msgstr "自定义MAC地址对应的主机名"
+
+msgid "This file is used to match the host name corresponding to the MAC address. Each line must have the following format: 00:aa:bb:cc:ee:ff,username"
+msgstr "此文件用于匹配MAC地址对应的主机名。每行必须使用此格式：00:aa:bb:cc:ee:ff,username"

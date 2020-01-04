@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@memcached[-1]
+	add ucitrack memcached
+	set ucitrack.@memcached[-1].init=memcached
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0
