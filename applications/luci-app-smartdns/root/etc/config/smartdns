@@ -1,0 +1,62 @@
+
+config smartdns
+	option server_name 'smartdns'
+	option tcp_server '1'
+	option ipv6_server '1'
+	option dualstack_ip_selection '0'
+	option prefetch_domain '0'
+	option rr_ttl_min '300'
+	option seconddns_tcp_server '1'
+	option seconddns_no_speed_check '0'
+	option seconddns_no_rule_addr '0'
+	option seconddns_no_rule_nameserver '0'
+	option seconddns_no_rule_ipset '0'
+	option seconddns_no_rule_soa '0'
+	option seconddns_no_dualstack_selection '0'
+	option seconddns_no_cache '0'
+	option coredump '0'
+	option port '5355'
+	option redirect 'dnsmasq-upstream'
+	option seconddns_port '5354'
+	option seconddns_server_group 'public'
+	option seconddns_enabled '1'
+	list old_redirect 'dnsmasq-upstream'
+	list old_port '5355'
+	list old_enabled '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option ip '114.114.114.114'
+	option name '114DNS'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option ip '223.5.5.5'
+	option name 'AliDNS'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option ip '119.29.29.29'
+	option name 'PublicDNS'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option ip '1.1.1.1'
+	option name 'public'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option ip '208.67.222.222'
+	option name 'public'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option ip '8.8.8.8'
+	option name 'public'
+
