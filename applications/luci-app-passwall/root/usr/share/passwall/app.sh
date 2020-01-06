@@ -182,6 +182,7 @@ load_config() {
 	DNS_MODE=$(config_t_get global dns_mode pdnsd)
 	DNS_FORWARD=$(config_t_get global dns_forward 8.8.4.4)
 	use_tcp_node_resolve_dns=$(config_t_get global use_tcp_node_resolve_dns 0)
+	use_udp_node_resolve_dns=0
 	process=1
 	if [ "$(config_t_get global_forwarding process 0)" = "0" ]; then
 		process=$(cat /proc/cpuinfo | grep 'processor' | wc -l)
@@ -705,19 +706,8 @@ start_dns() {
 			cat $RULE_PATH/gfwlist.conf | sort | uniq | sed -e '/127.0.0.1/d' | sed 's/ipset=\/.//g' | sed 's/\/gfwlist//g' > $CONFIG_PATH/gfwlist_chinadns_ng.txt
 			[ -f "$CONFIG_PATH/gfwlist_chinadns_ng.txt" ] && local gfwlist_param="-g $CONFIG_PATH/gfwlist_chinadns_ng.txt"
 			[ -f "$RULE_PATH/chnlist" ] && local chnlist_param="-m $RULE_PATH/chnlist -M"
-			up_chinadns_ng_mode=$(config_t_get global up_chinadns_ng_mode "208.67.222.222")
-			case "$up_chinadns_ng_mode" in
-			208.67.222.222)
-				DNS_FORWARD=$up_chinadns_ng_mode
-				nohup $chinadns_ng_bin -l $DNS_PORT -c $dns1,$dns2 -t 208.67.222.222#443,208.67.222.222#5353 $gfwlist_param $chnlist_param >/dev/null 2>&1 &
-				echolog "运行DNS转发模式：ChinaDNS-NG，国内DNS：$dns1, $dns2，可信DNS：208.67.222.222"
-				;;
-			208.67.220.220)
-				DNS_FORWARD=$up_chinadns_ng_mode
-				nohup $chinadns_ng_bin -l $DNS_PORT -c $dns1,$dns2 -t 208.67.220.220#443,208.67.220.220#5353 $gfwlist_param $chnlist_param >/dev/null 2>&1 &
-				echolog "运行DNS转发模式：ChinaDNS-NG，国内DNS：$dns1, $dns2，可信DNS：208.67.220.220"
-				;;
-			dns2socks)
+			up_chinadns_ng_mode=$(config_t_get global up_chinadns_ng_mode "8.8.4.4,8.8.8.8")
+			if [ "$up_chinadns_ng_mode" == "dns2socks" ]; then
 				if [ -n "$SOCKS5_NODE1" -a "$SOCKS5_NODE1" != "nil" ]; then
 					dns2socks_bin=$(find_bin dns2socks)
 					[ -n "$dns2socks_bin" ] && {
@@ -727,14 +717,23 @@ start_dns() {
 					}
 				else
 					echolog "dns2socks模式需要使用Socks5代理节点，请开启！"
+					force_stop
 				fi
-			;;
-			custom)
+			elif [ "$up_chinadns_ng_mode" == "custom" ]; then
 				up_chinadns_ng_custom=$(config_t_get global up_chinadns_ng_custom '208.67.222.222#443,208.67.222.222#5353')
 				nohup $chinadns_ng_bin -l $DNS_PORT -c $dns1,$dns2 -t $up_chinadns_ng_custom $gfwlist_param $chnlist_param >/dev/null 2>&1 &
 				echolog "运行DNS转发模式：ChinaDNS-NG，国内DNS：$dns1, $dns2，可信DNS：$up_chinadns_ng_custom"
-				;;
-			esac
+			else
+				if [ -z "$UDP_NODE1" -o "$UDP_NODE1" == "nil" ]; then
+					nohup $chinadns_ng_bin -l $DNS_PORT -c $dns1,$dns2 -t 208.67.222.222#443,208.67.222.222#5353 $gfwlist_param $chnlist_param >/dev/null 2>&1 &
+					echolog "运行DNS转发模式：ChinaDNS-NG，国内DNS：$dns1, $dns2，因为你没有使用UDP节点，只能使用OpenDNS 443端口或5353端口作为可信DNS。"
+				else
+					use_udp_node_resolve_dns=1
+					DNS_FORWARD=$(echo $up_chinadns_ng_mode | sed 's/,/ /g')
+					nohup $chinadns_ng_bin -l $DNS_PORT -c $dns1,$dns2 -t $up_chinadns_ng_mode $gfwlist_param $chnlist_param >/dev/null 2>&1 &
+					echolog "运行DNS转发模式：ChinaDNS-NG，国内DNS：$dns1, $dns2，可信DNS：$up_chinadns_ng_mode"
+				fi
+			fi
 		}
 	;;
 	esac
@@ -1074,6 +1073,11 @@ del_vps_port() {
 
 kill_all() {
 	kill -9 $(pidof $@) >/dev/null 2>&1 &
+}
+
+force_stop() {
+	rm -f "$LOCK_FILE"
+	exit 0
 }
 
 boot() {
