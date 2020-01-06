@@ -8,11 +8,13 @@ A Simple Disk Manager for LuCI, support disk partition and format, support raid/
 - e2fsprogs
 - btrfs-progs (Optional)
 - mdadm (Optional)
+    - kmod-md-raid456 (Optional)
+    - kmod-md-linear (Optional)
 
 ### Compile
 ``` bash
 git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
-mkdir -p package/parted && cp -i package/luci-app/diskman/Parted.Makefile package/parted/Makefile
+mkdir -p package/parted && cp -i package/luci-app-diskman/Parted.Makefile package/parted/Makefile
 
 #compile package only
 make package/luci-app-diskman/compile V=99
@@ -29,3 +31,7 @@ make V=99
 ![](https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/doc/disk_info.png)
 - Partitions Info
 ![](https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/doc/partitions_info.png)
+
+### TODO
+- btrfs support
+- mergerfs & snapraid support

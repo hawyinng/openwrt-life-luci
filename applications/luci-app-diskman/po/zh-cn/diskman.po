@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
-msgid "DiskMan"
+msgid "Disk Man"
 msgstr "磁盘管理"
 
 msgid "Manage Disks over LuCI."
@@ -46,6 +46,9 @@ msgstr "挂载选项"
 msgid "Mount"
 msgstr "挂载"
 
+msgid "Umount"
+msgstr "卸载"
+
 msgid "RAID Devices"
 msgstr "RAID设备"
 
@@ -54,6 +57,24 @@ msgstr "RAID模式"
 
 msgid "Members"
 msgstr "成员"
+
+msgid "Level"
+msgstr "等级"
+
+msgid "RAID Creation"
+msgstr "创建RAID"
+
+msgid "Raid Name"
+msgstr "Raid名称"
+
+msgid "Raid Level"
+msgstr "Raid等级"
+
+msgid "Raid Member"
+msgstr "Raid成员"
+
+msgid "Create Raid"
+msgstr "生成RAID"
 
 msgid "Partition Management"
 msgstr "分区管理"
@@ -90,3 +111,36 @@ msgstr "已用"
 
 msgid "New"
 msgstr "新建"
+
+msgid "One or more fields contain invalid values!"
+msgstr "一个或多个字段包含无效值！"
+
+msgid "One or more required fields have no value!"
+msgstr "一个或多个必填字段为空！"
+
+msgid "No Attrbute to display."
+msgstr "没有要显示的属性。"
+
+msgid "S.M.A.R.T Attrbutes"
+msgstr "S.M.A.R.T 属性"
+
+msgid "Attrbute"
+msgstr "属性名称"
+
+msgid "Flag"
+msgstr "标记"
+
+msgid "current"
+msgstr "当前"
+
+msgid "Worst"
+msgstr "最差"
+
+msgid "Threshold"
+msgstr "阈值"
+
+msgid "Updated"
+msgstr "更新"
+
+msgid "Data"
+msgstr "数据"
