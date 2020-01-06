@@ -5,7 +5,7 @@ local uci = require "luci.model.uci".cursor()
 local util = require "luci.util"
 local sys = require "luci.sys"
 local json = require "luci.jsonc"
-local fs = require "nixio.fs"
+local v2ray = require "luci.model.v2ray"
 
 local m, s, o
 
@@ -85,13 +85,13 @@ o:depends("loglevel", "info")
 o:depends("loglevel", "warning")
 o:depends("loglevel", "error")
 
-o = s:option(MultiValue, "inbounds", translate("Inbound proxies"))
+o = s:option(MultiValue, "inbounds", translate("Inbounds enabled"))
 o:depends("config_file", "")
 for _, v in ipairs(inbound_keys) do
 	o:value(v, inbound_table[v])
 end
 
-o = s:option(MultiValue, "outbounds", translate("Outbound proxies"))
+o = s:option(MultiValue, "outbounds", translate("Outbounds enabled"))
 o:depends("config_file", "")
 for _, v in ipairs(outbound_keys) do
 	o:value(v, outbound_table[v])
@@ -108,22 +108,20 @@ o = s:option(TextValue, "_transport", "%s - %s" % { translate("Transport"), tran
 o:depends("transport_enabled", "1")
 o.wrap = "off"
 o.rows = 5
-o.validate = function (self, value, section)
+o.datatype = "string"
+o.filepath = "/etc/v2ray/transport.json"
+o.validate = function(self, value, section)
 	if not value or value == "" then
 		return nil, translate("Transport settings is required.")
 	end
 
-	local json = json.parse(value)
-	if not json then
+	if not json.parse(value) then
 		return nil, translate("Invalid JSON content.")
 	end
+	return value, nil
 end
-o.cfgvalue = function (self, section)
-	return fs.readfile("/etc/v2ray/transport.json")
-end
-o.write = function (self, section, value)
-	value = value:gsub("\r\n?", "\n")
-	fs.writefile("/etc/v2ray/transport.json", value)
-end
+o.cfgvalue = v2ray.textarea_cfgvalue
+o.write = v2ray.textarea_write
+o.remove = v2ray.textarea_remove
 
 return m

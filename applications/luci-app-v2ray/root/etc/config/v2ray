@@ -187,4 +187,5 @@ config transparent_proxy 'main_transparent_proxy'
 	option gfwlist_mirror 'github'
 	option use_tproxy '1'
 	option redirect_udp '1'
+	option lan_ifaces 'lan'
 
