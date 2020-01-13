@@ -8,8 +8,8 @@ function index()
 	end
 
 	entry({"admin", "services", "qbittorrent"}, cbi("qbittorrent"), _("qBittorrent")).dependent = true
-	entry({"admin", "services", "qbittorrent", "status"}, call("action_status") ).leaf = true
-	entry({"admin", "services", "qbittorrent", "startstop"}, call("action_start") ).leaf = true
+	entry({"admin", "services", "qbittorrent", "status"}, call("action_status")).leaf = true
+	entry({"admin", "services", "qbittorrent", "startstop"}, call("action_start")).leaf = true
 end
 
 function action_status()
@@ -18,7 +18,7 @@ function action_status()
 		pid = 0;
 	}
 
-	status.pid = tonumber(luci.sys.exec("pidof qbittorrent-nox")) or 0
+	status.pid = luci.sys.exec("pidof qbittorrent-nox") or 0
 
 	if luci.sys.exec("opkg status qbittorrent") ~= "" then
 		status.installed = true

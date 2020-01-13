@@ -36,6 +36,7 @@ end
 
 o = s:taboption("basic", Value, "profile", translate("Parent Path for Profile Folder"))
 o.default = '/mnt/sda/etc'
+o.placeholder = '/mnt/sda/etc'
 
 o = s:taboption("basic", Value, "configuration", translate("Profile Folder Suffix"), translate("Optional: Multiple configuration files coexist"))
 
@@ -111,7 +112,7 @@ o.default = "false"
 o = s:taboption("downloads", Value, "SavePath", translate("Download save path"))
 o.placeholder = "/mnt/sda/qBittorrent"
 
-o = s:taboption("downloads", Flag, "TempPathEnabled", translate("Temp Path Enabled"))
+o = s:taboption("downloads", Flag, "TempPathEnabled", translate("Enable Temp Path"))
 o.enabled = "true"
 o.disabled = "false"
 o.default = "false"
@@ -171,7 +172,7 @@ o.enabled = "true"
 o.disabled = "false"
 o.default = "true"
 
-o = s:taboption("bittorrent", Flag, "uTP_rate_limited", translate("uTP Rate Limit"))
+o = s:taboption("bittorrent", Flag, "uTP_rate_limited", translate("¦ÌTP Rate Limit"))
 o.enabled = "true"
 o.disabled = "false"
 o.default = "true"
@@ -259,12 +260,6 @@ o = s:taboption("webgui", Value, "Locale", translate("Locale Language"))
 o:value("en", translate("English"))
 o:value("zh", translate("Chinese"))
 o.default = "zh"
-
-o = s:taboption("webgui", Value, "Username", translate("Username"), translate("The login name for WebUI."))
-o.placeholder = "admin"
-
-o = s:taboption("webgui", Value, "Password", translate("Password"), translate("The login password for WebUI."))
-o.password  =  true
 
 o = s:taboption("webgui", Value, "Port", translate("Listen Port"), translate("The listening port for WebUI."))
 o.datatype = "port"

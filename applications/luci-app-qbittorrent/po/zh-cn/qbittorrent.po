@@ -118,7 +118,7 @@ msgstr "未完成的任务添加!qB扩展名"
 msgid "Download save path"
 msgstr "下载保存路径"
 
-msgid "Temp Path Enabled"
+msgid "Enable Temp Path"
 msgstr "启用临时文件目录"
 
 msgid "Temp Path"
@@ -190,8 +190,8 @@ msgstr "启用LSD"
 msgid "Enable Local Peer Discovery to find more peers"
 msgstr "启用本地资源搜索以获取更多资源"
 
-msgid "uTP Rate Limit"
-msgstr "对uTP协议进行速度限制"
+msgid "μTP Rate Limit"
+msgstr "对μTP协议进行速度限制"
 
 msgid "Encryption Mode"
 msgstr "加密模式"
@@ -282,12 +282,6 @@ msgstr "将UPnP用于WebUI"
 
 msgid "Using the UPnP/NAT-PMP port of the router for connecting to WebUI."
 msgstr "使用路由器的UPnP/NAT-PMP端口连接到WebUI。"
-
-msgid "The login name for WebUI."
-msgstr "WebUI的登录名。"
-
-msgid "The login password for WebUI."
-msgstr "WebUI的登录密码。"
 
 msgid "The listening port for WebUI."
 msgstr "WebUI的监听端口。"
