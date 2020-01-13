@@ -73,6 +73,9 @@ msgstr "高级设置"
 msgid "Load Balancing"
 msgstr "负载均衡"
 
+msgid "Enter interface"
+msgstr "进入界面"
+
 msgid "Update rules"
 msgstr "更新规则"
 
@@ -109,6 +112,9 @@ msgstr "检测中..."
 msgid "Clear"
 msgstr "清除"
 
+msgid "Main switch"
+msgstr "总开关"
+
 msgid "TCP Node"
 msgstr "TCP节点"
 
@@ -130,8 +136,8 @@ msgstr "用于游戏模式或DNS解析等。"
 msgid "The selected server will not use Kcptun."
 msgstr "选中的服务器不会使用Kcptun。"
 
-msgid "The client can use the router's Socks5 proxy"
-msgstr "客户端可以使用路由器的Socks5代理"
+msgid "The client can use the router's Socks5 proxy."
+msgstr "客户端可以使用路由器的Socks5代理。"
 
 msgid "DNS Forward Mode"
 msgstr "DNS转发模式"
@@ -142,8 +148,8 @@ msgstr "使用本机5355端口的DNS"
 msgid "No patterns are used"
 msgstr "不使用"
 
-msgid "if you use no patterns are used, DNS of wan will be used by default as upstream of dnsmasq"
-msgstr "如果您没有使用任何模式，则会使用WAN的DNS"
+msgid "if you use no patterns are used, DNS of wan will be used by default as upstream of dnsmasq."
+msgstr "如果您没有使用任何模式，则会使用WAN口的DNS。"
 
 msgid "Use TCP Node Resolve DNS"
 msgstr "使用TCP节点解析DNS"
@@ -151,17 +157,47 @@ msgstr "使用TCP节点解析DNS"
 msgid "If checked, DNS is resolved using the TCP node."
 msgstr "如果勾选，则使用TCP节点解析DNS。"
 
-msgid "Upstream china DNS Server for ChinaDNS-NG"
-msgstr "ChinaDNS-NG国内服务器"
+msgid "China DNS Server"
+msgstr "中国DNS服务器"
 
-msgid "Domestic DNS server in Advanced Settings is used as domestic DNS by default.<br />Example: 127.0.0.1#5355,223.5.5.5#53<br />Only use two at most."
-msgstr "默认使用高级设置里的国内DNS服务器作为国内DNS。<br />例：127.0.0.1#5355,223.5.5.5#53<br />最多使用2个DNS服务器。"
+msgid "Example: 127.0.0.1#5355 ,Represents DNS on using 127.0.0.1 the 5355 port.<br />Only use two at most."
+msgstr "例：127.0.0.1#5355 使用本机5355端口的DNS服务。<br />最多使用2个DNS服务器。"
 
 msgid "Upstream trust DNS Server for ChinaDNS-NG"
-msgstr "ChinaDNS-NG可信服务器"
+msgstr "ChinaDNS-NG可信DNS"
 
 msgid "Example: 127.0.0.1#5354<br />Only use two at most."
 msgstr "例：127.0.0.1#5354<br />最多使用2个DNS服务器。"
+
+msgid "Tips"
+msgstr "小提示"
+
+msgid "You can use load balancing for failover."
+msgstr "可以使用负载均衡实现故障切换功能。"
+
+msgid "dnsbyisp"
+msgstr "运营商DNS(自动分配)"
+
+msgid "Ali"
+msgstr "阿里"
+
+msgid "Baidu"
+msgstr "百度"
+
+msgid "DNS Export Of Multi WAN"
+msgstr "国内DNS指定解析出口"
+
+msgid "Node Export Of Multi WAN"
+msgstr "节点指定出口"
+
+msgid "Only support Multi Wan."
+msgstr "只有多线接入才有效。"
+
+msgid "Not Specify"
+msgstr "不指定"
+
+msgid "DNS Hijack"
+msgstr "DNS劫持"
 
 msgid "custom"
 msgstr "自定义"
@@ -259,11 +295,8 @@ msgstr "加密"
 msgid "Kcptun Switch"
 msgstr "Kcptun开关"
 
-msgid "Ping Latency"
-msgstr "Ping延迟"
-
-msgid "Ping Value"
-msgstr "Ping值"
+msgid "Latency"
+msgstr "延迟"
 
 msgid "Show Add Mode"
 msgstr "显示添加方式"
@@ -274,17 +307,17 @@ msgstr "显示组"
 msgid "Group"
 msgstr "组"
 
-msgid "Use TCPing"
-msgstr "使用TCPing"
-
-msgid "This will use tcping replace ping detection of node"
-msgstr "选中后保存应用后即使用tcping替换ping检测节点"
-
 msgid "Auto Ping"
 msgstr "自动Ping"
 
 msgid "This will automatically ping the node for latency"
 msgstr "选中后保存应用后即自动Ping节点"
+
+msgid "Use TCP Detection delay"
+msgstr "使用TCP检测延迟"
+
+msgid "This will use tcping replace ping detection of node"
+msgstr "选中后保存应用后即使用tcping替换ping检测节点"
 
 msgid "Concise display nodes"
 msgstr "简洁显示节点"
@@ -294,45 +327,6 @@ msgstr "应用"
 
 msgid "Use"
 msgstr "使用"
-
-msgid "DNS Settings"
-msgstr "DNS配置"
-
-msgid "DNS Forward Address"
-msgstr "DNS转发地址"
-
-msgid "Mainland DNS Sever 1"
-msgstr "国内DNS服务器1"
-
-msgid "Mainland DNS Sever 2"
-msgstr "国内DNS服务器2"
-
-msgid "dnsbyisp"
-msgstr "运营商DNS(自动分配)"
-
-msgid "Ali"
-msgstr "阿里"
-
-msgid "Baidu"
-msgstr "百度"
-
-msgid "DNS Export Of Multi WAN"
-msgstr "国内DNS指定解析出口"
-
-msgid "Node Export Of Multi WAN"
-msgstr "节点指定出口"
-
-msgid "Only support Multi Wan."
-msgstr "只有多线接入才有效。"
-
-msgid "Not Specify"
-msgstr "不指定"
-
-msgid "DNS Hijack"
-msgstr "DNS劫持"
-
-msgid "If the GFW mode cannot be used normally, please enable it"
-msgstr "如果GFW模式不能正常使用，请启用"
 
 msgid "Delay Settings"
 msgstr "定时配置"
@@ -418,8 +412,11 @@ msgstr "检测时间"
 msgid "Automatic switching cannot be used when this option is checked"
 msgstr "当勾选此选项时，不能使用自动切换"
 
-msgid "List of alternate TCP forwarding servers"
-msgstr "备用TCP转发服务器的列表"
+msgid "List of backup nodes"
+msgstr "备用节点的列表"
+
+msgid "List of backup nodes, the first of which must be the primary node and the others the standby node."
+msgstr "备用节点的列表，第一个必须是主节点，其他是备用节点。"
 
 msgid "Configure this node with 127.0.0.1: this port"
 msgstr "使用127.0.0.1和此端口配置节点"
@@ -748,11 +745,17 @@ msgstr "目前最多只能设置%s个节点"
 msgid "Status Use Big Icon"
 msgstr "状态信息使用大图标"
 
+msgid "Status Show Check Port"
+msgstr "状态信息显示节点检测"
+
+msgid "Status Show IP111"
+msgstr "状态信息显示IP111"
+
 msgid "Hide Menu"
 msgstr "隐藏菜单"
 
-msgid "After the hidden to the display, type in the address bar enter the admin/vpn/passwall/show, such as: http://192.168.9.1/cgi-bin/luci/admin/vpn/passwall/show"
-msgstr "当你隐藏后想再次显示，在地址栏后面输入admin/vpn/passwall/show，例如:http://192.168.9.1/cgi-bin/luci/admin/vpn/passwall/show"
+msgid "After the hidden to the display, type in the address bar enter the admin/vpn/passwall/show.<br />such as: http://192.168.9.1/cgi-bin/luci/admin/vpn/passwall/show"
+msgstr "当你隐藏后想再次显示，在地址栏后面输入admin/vpn/passwall/show<br />例如:http://192.168.9.1/cgi-bin/luci/admin/vpn/passwall/show"
 
 msgid "Can't determine ARCH, or ARCH not supported."
 msgstr "无法确认ARCH架构，或是不支持。"
