@@ -23,13 +23,10 @@ msgid "Partition Table"
 msgstr "分区表"
 
 msgid "SATA Version"
-msgstr "SATA 版本"
+msgstr "SATA版本"
 
 msgid "Health"
 msgstr "健康"
-
-msgid "PASSED"
-msgstr "通过"
 
 msgid "Rescan Disks"
 msgstr "重新扫描磁盘"
@@ -65,13 +62,13 @@ msgid "RAID Creation"
 msgstr "创建RAID"
 
 msgid "Raid Name"
-msgstr "Raid名称"
+msgstr "RAID名称"
 
 msgid "Raid Level"
-msgstr "Raid等级"
+msgstr "RAID等级"
 
 msgid "Raid Member"
-msgstr "Raid成员"
+msgstr "RAID成员"
 
 msgid "Create Raid"
 msgstr "生成RAID"
@@ -89,7 +86,7 @@ msgid "Sector Size"
 msgstr "扇区大小"
 
 msgid "Rotation Rate"
-msgstr "旋转速度"
+msgstr "转速"
 
 msgid "Eject"
 msgstr "弹出"
@@ -98,7 +95,7 @@ msgid "Partitions Info"
 msgstr "分区信息"
 
 msgid "Default 2048 sector alignment, support +size{b,k,m,g,t} in End Sector"
-msgstr "默认2048字节扇区对齐，在终端扇区中支持+size{b,k,m,g,t}"
+msgstr "默认2048扇区对齐，【结束扇区】支持 +容量{b,k,m,g,t} 格式，例：+500m +10g +1t"
 
 msgid "Start Sector"
 msgstr "起始扇区"

@@ -225,7 +225,7 @@ if not disk_info.p_table:match("Raid") then
     luci.http.redirect(luci.dispatcher.build_url("admin/system/diskman/partition/" .. dev))
   end
 
-  local btn_action = s_partition_table:option(Button, "_action", translate("Actions"))
+  local btn_action = s_partition_table:option(Button, "_action")
   btn_action.forcewrite = true
   btn_action.template = "diskman/cbi/disabled_button"
   btn_action.render = function(self, section, scope)
