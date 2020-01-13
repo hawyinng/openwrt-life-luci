@@ -19,9 +19,6 @@ msgstr "被忽略IP列表"
 msgid "Bypassed IP"
 msgstr "额外被忽略IP"
 
-msgid "All IPv4 Route"
-msgstr "所有IPv4地址"
-
 msgid "CHN Route"
 msgstr "中国IPv4地址"
 

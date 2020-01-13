@@ -49,7 +49,6 @@ s.anonymous = true
 
 o = s:option(Value, "wan_bp_list", translate("Bypassed IP List"))
 o:value("/dev/null", translate("NULL - As Global Proxy"))
-o:value("/etc/allroute.txt", translate("All IPv4 Route"))
 o:value("/etc/chnroute.txt", translate("CHN Route"))
 o.datatype = "or(file, '/dev/null')"
 o.default = "/etc/chnroute.txt"
