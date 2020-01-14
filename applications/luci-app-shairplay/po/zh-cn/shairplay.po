@@ -30,7 +30,7 @@ msgid "HW Address"
 msgstr "硬件地址"
 
 msgid "Respawn"
-msgstr "重生"
+msgstr "刷新"
 
 msgid ""
 "Shairplay is a simple AirPlay server implementation, here you can configure "

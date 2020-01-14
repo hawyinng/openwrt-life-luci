@@ -23,7 +23,7 @@ msgstr "星期"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:39
 msgid "Defines a schedule when to turn on and off wifi."
-msgstr "定义自动打开和关闭 WiFi 的计划表"
+msgstr "定义自动打开和关闭 WiFi 的计划表。"
 
 #: applications/luci-app-wifischedule/luasrc/model/cbi/wifischedule/wifi_schedule.lua:133
 msgid "Determine Modules Automatically"

@@ -60,6 +60,3 @@ msgstr ""
 
 msgid "Workgroup"
 msgstr "工作组"
-
-#~ msgid "Physical Path"
-#~ msgstr "物理路径"

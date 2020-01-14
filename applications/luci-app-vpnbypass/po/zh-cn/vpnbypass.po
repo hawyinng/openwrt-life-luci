@@ -92,9 +92,3 @@ msgstr "对于语法"
 #: applications/luci-app-vpnbypass/luasrc/model/cbi/vpnbypass.lua:11
 msgid "is not installed or not found"
 msgstr "未安装或未找到"
-
-#~ msgid "Start VPNBypass service"
-#~ msgstr "启动 VPNBypass 服务"
-
-#~ msgid "Enable/start service"
-#~ msgstr "启用/启动服务"
