@@ -801,7 +801,6 @@ add_dnsmasq() {
 		restdns=1
 	fi
 
-	echo "conf-dir=$TMP_DNSMASQ_PATH" > /var/dnsmasq.d/dnsmasq-$CONFIG.conf
 	cat <<-EOF > /var/dnsmasq.d/dnsmasq-$CONFIG.conf
 		conf-dir=$TMP_DNSMASQ_PATH
 	EOF
@@ -1059,7 +1058,7 @@ start_haproxy() {
 				    #stats hide-version
 				    stats admin if TRUE
 			EOF
-			nohup $haproxy_bin -f $HAPROXY_FILE 2>&1
+			nohup $haproxy_bin -f $HAPROXY_FILE >/dev/null 2>&1 &
 			[ "$?" == 0 ] && echolog "负载均衡：运行成功！" || echolog "负载均衡：运行失败！"
 		}
 	}

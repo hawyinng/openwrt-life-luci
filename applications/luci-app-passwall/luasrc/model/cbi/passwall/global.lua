@@ -94,7 +94,7 @@ for i = 1, socks5_node_num, 1 do
 end
 
 ---- DNS Forward Mode
-o = s:option(ListValue, "dns_mode", translate("DNS Forward Mode"), translate(
+o = s:option(ListValue, "dns_mode", translate("DNS Mode"), translate(
                  "if you use no patterns are used, DNS of wan will be used by default as upstream of dnsmasq."))
 o.rmempty = false
 o:reset_values()
@@ -146,7 +146,7 @@ o.default = 1
 o:depends("dns_mode", "pdnsd")
 
 ---- DNS Forward
-o = s:option(Value, "dns_forward", translate("DNS Forward Address"))
+o = s:option(Value, "dns_forward", translate("DNS Address"))
 o.default = "8.8.4.4"
 o:value("8.8.4.4", "8.8.4.4 (Google DNS)")
 o:value("8.8.8.8", "8.8.8.8 (Google DNS)")
