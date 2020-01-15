@@ -172,7 +172,7 @@ o.enabled = "true"
 o.disabled = "false"
 o.default = "true"
 
-o = s:taboption("bittorrent", Flag, "uTP_rate_limited", translate("¦ÌTP Rate Limit"))
+o = s:taboption("bittorrent", Flag, "uTP_rate_limited", translate("Î¼TP Rate Limit"))
 o.enabled = "true"
 o.disabled = "false"
 o.default = "true"
