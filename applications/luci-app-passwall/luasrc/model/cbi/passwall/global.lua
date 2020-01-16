@@ -163,7 +163,8 @@ o.rmempty = false
 
 ---- Default Proxy Mode
 o = s:option(ListValue, "proxy_mode",
-             translate("Default") .. translate("Proxy Mode"))
+             translate("Default") .. translate("Proxy Mode"), translate(
+                 "If using GFW mode is not available, try clearing the native cache."))
 o.default = "gfwlist"
 o.rmempty = false
 o:value("disable", translate("No Proxy"))

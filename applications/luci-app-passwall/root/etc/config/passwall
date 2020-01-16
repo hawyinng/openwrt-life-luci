@@ -1,5 +1,6 @@
 
 config global
+	option enabled '0'
 	option tcp_node1 'nil'
 	option udp_node1 'default'
 	option socks5_node1 'nil'

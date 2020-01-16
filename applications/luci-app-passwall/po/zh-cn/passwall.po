@@ -212,10 +212,10 @@ msgid "Need Socks5 server"
 msgstr "需要Socks5节点"
 
 msgid "Multi Process Option"
-msgstr "多进程并发转发"
+msgstr "多进程并发"
 
 msgid "you can start SS/SSR with multiple process"
-msgstr "当使用SS/SSR时可使用多个进程并发转发"
+msgstr "当使用SS/SSR时可使用多进程并发"
 
 msgid "Process"
 msgstr "进程"
@@ -225,6 +225,9 @@ msgstr "单进程"
 
 msgid "Proxy Mode"
 msgstr "代理模式"
+
+msgid "If using GFW mode is not available, try clearing the native cache."
+msgstr "如果使用GFW模式无法使用，请尝试清除本机缓存。"
 
 msgid "No Proxy"
 msgstr "不代理"
