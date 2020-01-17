@@ -114,7 +114,7 @@ o.default = 0
 -- [[ Other Settings ]]--
 s = m:section(TypedSection, "global_other", translate("Other Settings"),
               translatef(
-                  "You can only set up a maximum of %s nodes for the time being",
+                  "You can only set up a maximum of %s nodes for the time being, Used for access control.",
                   "3"))
 s.anonymous = true
 s.addremove = false
