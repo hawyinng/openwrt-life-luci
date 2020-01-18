@@ -1,6 +1,5 @@
 local e = require "nixio.fs"
 local e = require "luci.sys"
--- local t = luci.sys.exec("cat /usr/share/passwall/dnsmasq.d/gfwlist.conf|grep -c ipset")
 
 m = Map("passwall")
 -- [[ Rule Settings ]]--
@@ -114,13 +113,6 @@ o = s:option(Value, "kcptun_client_file", translate("Kcptun Client Path"),
                  "if you want to run from memory, change the path, such as /tmp/kcptun-client, Then save the application and update it manually."))
 o.default = "/usr/bin/kcptun-client"
 o.rmempty = false
-
---[[
-o = s:option(Button,  "_check_kcptun",  translate("Manually update"), translate("Make sure there is enough space to install Kcptun"))
-o.template = "passwall/kcptun"
-o.inputstyle = "apply"
-o.btnclick = "onBtnClick_kcptun(this);"
-o.id = "_kcptun-check_btn"]] --
 
 ---- Brook Path
 o = s:option(Value, "brook_file", translate("Brook Path"), translate(

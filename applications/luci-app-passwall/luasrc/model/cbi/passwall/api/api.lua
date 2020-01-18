@@ -171,9 +171,6 @@ function get_api_json(url)
     local jsonc = require "luci.jsonc"
 
     local output = {}
-    -- exec(wget, { "-O-", url, _unpack(wget_args) },
-    --	function(chunk) output[#output + 1] = chunk end)
-    -- local json_content = util.trim(table.concat(output))
 
     local json_content = luci.sys.exec(wget .. " --no-check-certificate --timeout=10 -t 1 -O- " .. url)
 

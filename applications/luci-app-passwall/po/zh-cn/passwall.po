@@ -277,8 +277,8 @@ msgstr "你选择的节点是："
 msgid "Timeout"
 msgstr "超时"
 
-msgid "The server client can also use this rule to scientifically surf the Internet"
-msgstr "本机运行的软件也使用这个代理模式上网"
+msgid "The server client can also use this rule to scientifically surf the Internet."
+msgstr "本机运行的软件也使用这个代理模式上网。"
 
 msgid "Node Remarks"
 msgstr "节点备注"

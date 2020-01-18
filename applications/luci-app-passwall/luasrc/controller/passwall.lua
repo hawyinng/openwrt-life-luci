@@ -21,8 +21,6 @@ function index()
           _("Basic Settings"), 1).dependent = true
     entry({"admin", "vpn", "passwall", "node_list"}, cbi("passwall/node_list"),
           _("Node List"), 2).dependent = true
-    -- entry({"admin", "vpn", "passwall", "auto_switch"},
-    --      cbi("passwall/auto_switch"), _("Auto Switch"), 3).leaf = true
     entry({"admin", "vpn", "passwall", "other"},
           cbi("passwall/other", {autoapply = true}), _("Other Settings"), 94).leaf =
         true
@@ -98,7 +96,6 @@ function link_add_node()
 end
 
 function get_log()
-    -- luci.sys.exec("[ -f /var/log/passwall.log ] && sed '1!G;h;$!d' /var/log/passwall.log > /var/log/passwall_show.log")
     luci.http.write(luci.sys.exec(
                         "[ -f '/var/log/passwall.log' ] && cat /var/log/passwall.log"))
 end
@@ -106,10 +103,8 @@ end
 function clear_log() luci.sys.call("echo '' > /var/log/passwall.log") end
 
 function status()
-    -- local dns_mode = luci.sys.exec("echo -n `uci -q get " .. appname .. ".@global[0].dns_mode`")
     local e = {}
-    e.dns_mode_status = luci.sys.call("netstat -apn | grep 5355 >/dev/null") ==
-                            0
+    e.dns_mode_status = luci.sys.call("netstat -apn | grep -E '7913|5355' >/dev/null") == 0
     e.haproxy_status = luci.sys.call(
                            "ps -w | grep -v grep | grep -i 'haproxy -f /var/etc/" ..
                                appname .. "/haproxy.cfg' >/dev/null") == 0
@@ -153,11 +148,11 @@ function status()
     for i = 1, socks5_node_num, 1 do
         local listen_port = luci.sys.exec(
                                 string.format(
-                                    "[ -f '/var/etc/passwall/port/Socks5_%s' ] && echo -n `cat /var/etc/passwall/port/Socks5_%s`",
+                                    "[ -f '/var/etc/passwall/port/SOCKS5_%s' ] && echo -n `cat /var/etc/passwall/port/SOCKS5_%s`",
                                     i, i))
         e["socks5_node%s_status" % i] = luci.sys.call(
                                             string.format(
-                                                "ps -w | grep -v grep | grep -i -E '%s/Socks5_%s|brook client -l 0.0.0.0:%s' >/dev/null",
+                                                "ps -w | grep -v grep | grep -i -E '%s/SOCKS5_%s|brook client -l 0.0.0.0:%s' >/dev/null",
                                                 appname, i, listen_port)) == 0
     end
     luci.http.prepare_content("application/json")
