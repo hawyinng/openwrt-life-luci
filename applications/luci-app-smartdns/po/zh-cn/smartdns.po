@@ -172,17 +172,11 @@ msgstr "上游DNS服务器列表，支持UDP，TCP协议，请配置多个上游
 msgid "DNS Server Name"
 msgstr "DNS服务器名称"
 
-msgid "port"
-msgstr "端口"
-
 msgid "DNS Server port"
 msgstr "DNS服务器端口"
 
 msgid "DNS Server ip"
 msgstr "DNS服务器IP"
-
-msgid "type"
-msgstr "类型"
 
 msgid "DNS Server type"
 msgstr "协议类型"
