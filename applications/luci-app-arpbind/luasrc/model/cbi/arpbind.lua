@@ -15,7 +15,7 @@ s.template = "cbi/tblsection"
 s.anonymous = true
 s.addremove = true
 
-a = s:option(Value, "ipaddr", translate("IP Address"))
+a = s:option(Value, "ipaddr", translate("IP Addresses"))
 a.optional = false
 a.datatype = "ipaddr"
 luci.ip.neighbors({ family = 4 }, function(entry)
@@ -24,7 +24,7 @@ luci.ip.neighbors({ family = 4 }, function(entry)
        end
 end)
 
-a = s:option(Value, "macaddr", translate("MAC Address"))
+a = s:option(Value, "macaddr", translate("MAC-Address"))
 a.datatype = "macaddr"
 a.optional = false
 luci.ip.neighbors({family = 4}, function(neighbor)
