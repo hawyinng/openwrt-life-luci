@@ -25,6 +25,7 @@ msgstr "高级重启"
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/advanced_reboot.htm:60
 msgid "Alternative"
 msgstr "备用"
+
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:123
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:124
 msgid "Compressed"
