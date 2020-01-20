@@ -18,22 +18,6 @@ s:tab("advanced", translate("Advanced Settings"))
 o = s:taboption("general", Flag, "enabled", translate("Enable"))
 o.rmempty = false
 
-function o.cfgvalue(self, section)
-	return sys.init.enabled("minidlna") and self.enabled or self.disabled
-end
-
-function o.write(self, section, value)
-	if value == "1" then
-		sys.init.enable("minidlna")
-		sys.call("/etc/init.d/minidlna start >/dev/null")
-	else
-		sys.call("/etc/init.d/minidlna stop >/dev/null")
-		sys.init.disable("minidlna")
-	end
-
-	Flag.write(self, section, value)
-end
-
 o = s:taboption("general", Value, "port", translate("Port:"),
 	translate("Port for HTTP (descriptions, SOAP, media transfer) traffic."))
 o.datatype = "port"
@@ -165,5 +149,9 @@ function o.write(self, section, value)
 	Value.write(self, section, table.concat(rv, "/"))
 end
 
+local apply = luci.http.formvalue("cbi.apply")
+if apply then
+	luci.util.exec("/etc/init.d/minidlna restart >/dev/null 2>&1")
+end
 
 return m
