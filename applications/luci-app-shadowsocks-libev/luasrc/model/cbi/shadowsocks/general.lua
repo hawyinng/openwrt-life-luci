@@ -159,7 +159,7 @@ end
 
 local apply = luci.http.formvalue("cbi.apply")
 if apply then
-	sys.exec("/etc/init.d/shadowsocks restart")
+	luci.util.exec("/etc/init.d/shadowsocks restart >/dev/null 2>&1")
 end
 
 return m
