@@ -182,7 +182,7 @@ KCPTUN_REDIR_PORT=$(config_t_get global_proxy kcptun_port 11183)
 PROXY_MODE=$(config_t_get global proxy_mode gfwlist)
 
 load_config() {
-	[ "$ENABLED" != 1 ] && {
+	[ "$ENABLED" = 0 ] && {
 		return 1
 	}
 	[ "$TCP_NODE1" == "nil" -a "$UDP_NODE1" == "nil" -a "$SOCKS5_NODE1" == "nil" ] && {

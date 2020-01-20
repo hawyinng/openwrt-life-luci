@@ -45,7 +45,7 @@ s.anonymous = true
 s.addremove = false
 
 ---- Main switch
-o = s:option(Flag, "enabled", translate("Main switch"))
+o = s:option(Flag, "enabled", translate("Enabled"))
 o.rmempty = false
 
 ---- TCP Node
@@ -195,11 +195,9 @@ o.rmempty = false
 ---- Tips
 s:append(Template("passwall/global/tips"))
 
---[[
 local apply = luci.http.formvalue("cbi.apply")
 if apply then
-os.execute("/etc/init.d/passwall restart")
+	luci.util.exec("/etc/init.d/passwall restart >/dev/null 2>&1")
 end
---]]
 
 return m

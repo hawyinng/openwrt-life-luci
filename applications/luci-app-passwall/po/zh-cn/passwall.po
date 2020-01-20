@@ -112,9 +112,6 @@ msgstr "检测中..."
 msgid "Clear"
 msgstr "清除"
 
-msgid "Main switch"
-msgstr "总开关"
-
 msgid "TCP Node"
 msgstr "TCP节点"
 
@@ -720,6 +717,9 @@ msgstr "<br />none：默认值，不进行伪装，发送的数据是没有特�
 
 msgid "A legal file path. This file must not exist before running V2Ray."
 msgstr "一个合法的文件路径。在运行 V2Ray 之前，这个文件必须不存在。"
+
+msgid "Mux"
+msgstr "多路复用"
 
 msgid "TCP Open Socks"
 msgstr "开启Socks"
