@@ -1,24 +1,6 @@
 msgid "Pass Wall"
 msgstr "科学上网"
 
-msgid "Shadowsocks Server"
-msgstr "ShadowSocks 服务器"
-
-msgid "ShadowsocksR Server"
-msgstr "ShadowSocksR 服务器"
-
-msgid "Socks5 Server"
-msgstr "Socks5 服务器"
-
-msgid "V2ray Server"
-msgstr "V2ray 服务器"
-
-msgid "Brook Server"
-msgstr "Brook 服务器"
-
-msgid "Trojan Server"
-msgstr "Trojan 服务器"
-
 msgid "Auto"
 msgstr "自动"
 
@@ -282,6 +264,15 @@ msgstr "节点备注"
 
 msgid "Add Mode"
 msgstr "添加方式"
+
+msgid "V2ray Balancing"
+msgstr "V2ray 负载均衡"
+
+msgid "Load balancing node list"
+msgstr "负载均衡节点列表"
+
+msgid "Load balancing node list, <a target='_blank' href='https://toutyrater.github.io/app/balance.html'>document</a>"
+msgstr "负载均衡节点列表，<a target='_blank' href='https://toutyrater.github.io/app/balance.html'>说明文档</a>"
 
 msgid "Address (Support Domain Name)"
 msgstr "地址（支持域名）"
