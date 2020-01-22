@@ -1,0 +1,23 @@
+
+config macvlan
+	option vlanifname 'vth1'
+	option ifname 'eth0'
+	option enable '0'
+	option mac 'AA:11:22:33:44:55'
+
+config macvlan
+	option vlanifname 'vth2'
+	option ifname 'eth0'
+	option enable '0'
+	option mac 'AA:11:22:33:44:56'
+
+config macvlan
+	option vlanifname 'vth3'
+	option enable '0'
+	option ifname 'eth0'
+
+config macvlan
+	option vlanifname 'vth4'
+	option ifname 'eth0'
+	option enable '0'
+

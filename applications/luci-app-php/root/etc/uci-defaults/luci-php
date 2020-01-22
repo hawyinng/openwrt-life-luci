@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@php[-1]
+	add ucitrack php
+	set ucitrack.@php[-1].init=php7-fpm
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0

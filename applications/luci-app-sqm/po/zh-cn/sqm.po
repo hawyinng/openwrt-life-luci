@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-17 23:32+0200\n"
+"PO-Revision-Date: 2015-08-17 23:46+0200\n"
+"Last-Translator: KGHX <kghx@qq.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.6\n"
+
+msgid "Smart Queue Management"
+msgstr "智能队列管理"
+
+msgid ""
+"With <abbr title=\"Smart Queue Management\">SQM</abbr> you can enable "
+"traffic shaping, better mixing (Fair Queueing), active queue length "
+"management (AQM) and prioritisation on one network interface."
+msgstr ""
+"使用 <abbr title=\"智能列队管理\">SQM</abbr> 你可以启用流量整形，更好的混合"
+"(公平列队)主动列队管理(AQM) 并设置网络接口优先级。"
+
+msgid "Queues"
+msgstr "队列"
+
+msgid "Basic Settings"
+msgstr "基本设置"
+
+msgid "Queue Discipline"
+msgstr "队列规则"
+
+msgid "Link Layer Adaptation"
+msgstr "链路层适配"
+
+msgid "The SQM GUI has just enabled the sqm initscript on your behalf. Remember to disable the sqm initscript manually under System Startup menu in case this change was not wished for."
+msgstr "SQM脚本已经启动，如果不希望开机自动启动，请前往系统启动菜单禁用。"
+
+msgid "Interface name"
+msgstr "接口"
+
+msgid "Download speed (kbit/s) (ingress)"
+msgstr "下载速度(kbit/s)（入站）"
+
+msgid "set to 0 to selectively disable ingress shaping."
+msgstr "设置为0禁用入站控制。"
+
+msgid "Upload speed (kbit/s) (egress)"
+msgstr "上传速度(kbit/s)（出站）"
+
+msgid "set to 0 to selectively disable egress shaping."
+msgstr "设置为0禁用出站控制。"
+
+msgid "Create log file for this SQM instance under /var/run/sqm/${Interface_name}.[start|stop]-sqm.log."
+msgstr "为此SQM脚本创建日志文件到 /var/run/sqm/${Interface_name}.[start|stop]-sqm.log。"
+
+msgid "SQM log level"
+msgstr "SQM的日志等级"
+
+msgid "Queuing disciplines"
+msgstr "队列规则"
+
+msgid "default"
+msgstr "默认"
+
+msgid "Silent"
+msgstr "静默"
+
+msgid "Trace"
+msgstr "跟踪"
+
+msgid "Queue setup script"
+msgstr "队列脚本"
+
+msgid "Advanced options"
+msgstr "高级选项"
+
+msgid "Squash DSCP on inbound packets (ingress):"
+msgstr "压缩入站DSCP"
+
+msgid "Ignore DSCP on ingress:"
+msgstr "忽略入站DSCP"
+
+msgid "Explicit congestion notification (ECN) status on inbound packets (ingress):"
+msgstr "入站数据包的显式拥塞通知（ECN）状态"
+
+msgid "Explicit congestion notification (ECN) status on outbound packets (egress)."
+msgstr "出站数据包的显式拥塞通知（ECN）状态"
+
+msgid "Dangerous Configuration"
+msgstr "危险配置"
+
+msgid "Hard limit on ingress queues; leave empty for default."
+msgstr "入站队列的硬限制；默认为空。"
+
+msgid "Hard limit on egress queues; leave empty for default."
+msgstr "出站队列的硬限制；默认为空。"
+
+msgid "Latency target for ingress, e.g 5ms [units: s, ms, or us]; leave empty for automatic selection, put in the word default for the qdisc's default."
+msgstr "入站的延迟目标，例如 5ms [单位：s，ms，us]; 留空为自动选择，auto为队列规则默认值。"
+
+msgid "Latency target for egress, e.g. 5ms [units: s, ms, or us]; leave empty for automatic selection, put in the word default for the qdisc's default."
+msgstr "出站的延迟目标，例如 5ms [单位：s，ms，us]; 留空为自动选择，auto为队列规则默认值。"
+
+msgid "Advanced option string to pass to the ingress queueing disciplines; no error checking, use very carefully."
+msgstr "传递到入站队列规则的高级选项字符串;没有错误检查，请谨慎使用！"
+
+msgid "Advanced option string to pass to the egress queueing disciplines; no error checking, use very carefully."
+msgstr "传递到出站队列规则的高级选项字符串;没有错误检查，请谨慎使用！"
+
+msgid "Which link layer to account for:"
+msgstr "包含的链路层："
+
+msgid "Per Packet Overhead (byte):"
+msgstr "每个数据包开销（字节）："
+
+msgid "Show Advanced Linklayer Options, (only needed if MTU > 1500)."
+msgstr "高级选项，（仅当MTU>1500时需要）。"
+
+msgid "Maximal Size for size and rate calculations, tcMTU (byte); needs to be >= interface MTU + overhead:"
+msgstr "大小和速率计算的最大值，tcMTU（byte）;需要 >= 接口MTU + 开销："
+
+msgid "Number of entries in size/rate tables, TSIZE; for ATM choose TSIZE = (tcMTU + 1) / 16:"
+msgstr "大小/速率表中的条目数量，TSIZE;对于ATM选择TSIZE = (tcMTU + 1) / 16："
+
+msgid "Minimal packet size, MPU (byte); needs to be > 0 for ethernet size tables:"
+msgstr "最小数据包大小，MPU（byte）;在以太网中需要>0："
+
+msgid "Which linklayer adaptation mechanism to use; for testing only"
+msgstr "使用哪种链路层适配机制;仅用于测试！"

@@ -1,0 +1,143 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Disk Man"
+msgstr "磁盘管理"
+
+msgid "Manage Disks over LuCI."
+msgstr "通过LuCI管理磁盘。"
+
+msgid "Disks"
+msgstr "磁盘列表"
+
+msgid "Path"
+msgstr "路径"
+
+msgid "Serial Number"
+msgstr "序列号"
+
+msgid "Temp"
+msgstr "温度"
+
+msgid "Partition Table"
+msgstr "分区表"
+
+msgid "SATA Version"
+msgstr "SATA版本"
+
+msgid "Health"
+msgstr "健康"
+
+msgid "Rescan Disks"
+msgstr "重新扫描磁盘"
+
+msgid "File System"
+msgstr "文件系统"
+
+msgid "Format"
+msgstr "格式化"
+
+msgid "Mount Options"
+msgstr "挂载选项"
+
+msgid "Mount"
+msgstr "挂载"
+
+msgid "Umount"
+msgstr "卸载"
+
+msgid "RAID Devices"
+msgstr "RAID设备"
+
+msgid "RAID mode"
+msgstr "RAID模式"
+
+msgid "Members"
+msgstr "成员"
+
+msgid "Level"
+msgstr "等级"
+
+msgid "RAID Creation"
+msgstr "创建RAID"
+
+msgid "Raid Name"
+msgstr "RAID名称"
+
+msgid "Raid Level"
+msgstr "RAID等级"
+
+msgid "Raid Member"
+msgstr "RAID成员"
+
+msgid "Create Raid"
+msgstr "生成RAID"
+
+msgid "Partition Management"
+msgstr "分区管理"
+
+msgid "Partition Disk over LuCI."
+msgstr "通过LuCI分区磁盘。"
+
+msgid "Device Info"
+msgstr "设备信息"
+
+msgid "Sector Size"
+msgstr "扇区大小"
+
+msgid "Rotation Rate"
+msgstr "转速"
+
+msgid "Eject"
+msgstr "弹出"
+
+msgid "Partitions Info"
+msgstr "分区信息"
+
+msgid "Default 2048 sector alignment, support +size{b,k,m,g,t} in End Sector"
+msgstr "默认2048扇区对齐，【结束扇区】支持 +容量{b,k,m,g,t} 格式，例：+500m +10g +1t"
+
+msgid "Start Sector"
+msgstr "起始扇区"
+
+msgid "End Sector"
+msgstr "结束扇区"
+
+msgid "Useage"
+msgstr "已用"
+
+msgid "New"
+msgstr "新建"
+
+msgid "One or more fields contain invalid values!"
+msgstr "一个或多个字段包含无效值！"
+
+msgid "One or more required fields have no value!"
+msgstr "一个或多个必填字段为空！"
+
+msgid "No Attrbute to display."
+msgstr "没有要显示的属性。"
+
+msgid "S.M.A.R.T Attrbutes"
+msgstr "S.M.A.R.T 属性"
+
+msgid "Attrbute"
+msgstr "属性名称"
+
+msgid "Flag"
+msgstr "标记"
+
+msgid "current"
+msgstr "当前"
+
+msgid "Worst"
+msgstr "最差"
+
+msgid "Threshold"
+msgstr "阈值"
+
+msgid "Updated"
+msgstr "更新"
+
+msgid "Data"
+msgstr "数据"

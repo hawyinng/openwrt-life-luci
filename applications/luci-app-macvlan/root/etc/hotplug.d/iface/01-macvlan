@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$ACTION" = "ifup" ] || exit 0
+case "$DEVICE" in
+	vth*)
+		exit 0
+		;;
+	*)
+		/etc/init.d/macvlan start
+		;;
+esac

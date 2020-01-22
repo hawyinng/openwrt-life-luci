@@ -1,0 +1,14 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@rsyncd[-1]
+	add ucitrack rsyncd
+	set ucitrack.@rsyncd[-1].init=rsyncd
+	commit ucitrack
+EOF
+
+chmod 600 /etc/rsyncd.secrets
+chmod 600 /etc/rsyncd.password
+
+rm -f /tmp/luci-indexcache
+exit 0

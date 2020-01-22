@@ -1,0 +1,16 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@amule[-1]
+	add ucitrack amule
+	set ucitrack.@amule[-1].init=amule
+	commit ucitrack
+EOF
+
+mkdir -p ${IPKG_INSTROOT}/etc/amule/
+touch ${IPKG_INSTROOT}/etc/amule/addresses.dat
+touch ${IPKG_INSTROOT}/etc/amule/ipfilter_static.dat
+touch ${IPKG_INSTROOT}/etc/amule/shareddir.dat
+
+rm -f /tmp/luci-indexcache
+exit 0

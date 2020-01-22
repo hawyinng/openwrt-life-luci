@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@mysqld[-1]
+	add ucitrack mysqld
+	set ucitrack.@mysqld[-1].init=mysqld
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0

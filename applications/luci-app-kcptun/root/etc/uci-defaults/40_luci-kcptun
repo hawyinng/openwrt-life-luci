@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@kcptun[-1]
+	add ucitrack kcptun
+	set ucitrack.@kcptun[-1].init=kcptun
+	commit ucitrack
+EOF
+
+rm -rf /tmp/luci-indexcache /tmp/luci-modulecache
+exit 0

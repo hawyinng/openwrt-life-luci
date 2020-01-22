@@ -1,0 +1,41 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+. /lib/functions.sh
+
+START=42
+
+dellink(){
+	vlandev=$1
+	devlist=`ifconfig|grep HWaddr|cut -d ' '  -f 1`
+	for dev in $devlist
+	do
+	  [ $vlandev = $dev ] && ip link del $dev
+       done
+}
+
+macvlan_get(){
+
+	config_get vlanifname $1 vlanifname
+	config_get ifname $1 ifname
+	config_get mac $1 mac
+	dellink $vlanifname
+
+	config_get enable $1 enable
+	[ $enable -gt 0 ] || return 1
+
+	echo ip link add link $ifname $vlanifname type macvlan
+	ip link add link $ifname $vlanifname type macvlan
+	echo $vlanifname    $mac   
+	[ `echo $mac|grep ^..:..:..:..:..` ] && {
+            echo ifconfig $vlanifname hw ether $mac
+            ifconfig $vlanifname hw ether $mac
+	}
+
+	echo ifconfig $vlanifname up
+	ifconfig $vlanifname up
+}
+
+start() {
+	config_load macvlan
+	config_foreach macvlan_get macvlan
+}

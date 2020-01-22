@@ -1,0 +1,14 @@
+msgid "macvlan used to generate a virtual interface."
+msgstr "macvlan用于生成虚拟接口。"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "vlanifname"
+msgstr "虚拟接口名称"
+
+msgid "ifname"
+msgstr "目标接口名称"
+
+msgid "VLAN-MAC-Address"
+msgstr "虚拟-MAC-地址"
