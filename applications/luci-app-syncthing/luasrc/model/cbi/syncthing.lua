@@ -3,7 +3,7 @@
 
 local sys = require "luci.sys"
 
-m = Map("syncthing", translate("Syncthing open source data synchronization tool"))
+m = Map("syncthing", translate("Syncthing is an open source distributed data synchronization tool"))
 
 m:section(SimpleSection).template  = "syncthing/syncthing_status"
 
@@ -25,7 +25,10 @@ function o.write(self, section, value)
 	Flag.write(self, section, value)
 end
 
-s:option(Value, "port", translate("Port")).default = 8384
-s.rmempty = true
+o = s:option(Value, "port", translate("Port"))
+o.datatype = "port"
+o.placeholder = "8384"
+o.default = "8384"
+o.rmempty = false
 
 return m
