@@ -491,8 +491,8 @@ msgstr "Remap SIGUSR1 signals"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or ip address"
-msgstr "Remote host name or ip address"
+msgid "Remote host name or IP address"
+msgstr "Remote host name or IP address"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
 msgid "Remote ping timeout"

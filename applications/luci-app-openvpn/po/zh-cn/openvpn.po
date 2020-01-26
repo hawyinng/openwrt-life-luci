@@ -20,6 +20,15 @@ msgstr ""
 msgid "Instance name"
 msgstr "实例名称"
 
+msgid "Service"
+msgstr "服务"
+
+msgid "Networking"
+msgstr "网络"
+
+msgid "Cryptography"
+msgstr "加密"
+
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:363
 msgid "'net30', 'p2p', or 'subnet'"
 msgstr "“net30”，“p2p”，或“子网”"
@@ -468,8 +477,8 @@ msgstr "重映射 SIGUSR1 信号"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or ip address"
-msgstr "远程主机名或 ip 地址"
+msgid "Remote host name or IP address"
+msgstr "远程主机名或IP地址"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
 msgid "Remote ping timeout"
