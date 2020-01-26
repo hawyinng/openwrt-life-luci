@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=Disk Manager interface for LuCI
-LUCI_DEPENDS:=+e2fsprogs +parted +smartmontools +blkid +btrfs-progs
+LUCI_DEPENDS:=+e2fsprogs +parted +smartmontools +blkid
 LUCI_PKGARCH:=all
 PKG_VERSION:=0.1.5
 PKG_RELEASE:=1
