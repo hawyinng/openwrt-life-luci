@@ -11,7 +11,7 @@ else
 	state_msg = "<b><font color=\"red\">" .. translate("Not running") .. "</font></b>"
 end
 
-m = Map("smbd", translate("Network Shares-smbd") .. state_msg)
+m = Map("ksmbd", translate("Network Shares-ksmbd") .. state_msg)
 
 s = m:section(TypedSection, "globals")
 s.anonymous = true
@@ -24,11 +24,11 @@ en.rmempty = false
 
 function en.write(self, section, value)
 	if value == "1" then
-		sys.exec("/etc/init.d/smbd enable")
-		sys.exec("/etc/init.d/smbd start")
+		sys.exec("/etc/init.d/ksmbd enable")
+		sys.exec("/etc/init.d/ksmbd start")
 	else
-		sys.exec("/etc/init.d/smbd stop")
-		sys.exec("/etc/init.d/smbd disable")
+		sys.exec("/etc/init.d/ksmbd stop")
+		sys.exec("/etc/init.d/ksmbd disable")
 	end
 
 	Flag.write(self, section, value)
@@ -52,22 +52,22 @@ o = s:taboption("general", Value, "workgroup", translate("Workgroup"))
 o.placeholder = "WORKGROUP"
 
 o = s:taboption("general", Value, "description", translate("Description"))
-o.placeholder = "SMBD on OpenWrt"
+o.placeholder = "Ksmbd on OpenWrt"
 
 tmpl = s:taboption("template", Value, "_tmpl","", 
-	translate("This is the content of the file '/etc/smbd/smb.conf.template' from which your smbd configuration will be generated. " ..
+	translate("This is the content of the file '/etc/ksmbd/smb.conf.template' from which your ksmbd configuration will be generated. " ..
 		"Values enclosed by pipe symbols ('|') should not be changed. They get their values from the 'General Settings' tab."))
 
 tmpl.template = "cbi/tvalue"
 tmpl.rows = 20
 
 function tmpl.cfgvalue(self, section)
-	return nixio.fs.readfile("/etc/smbd/smb.conf.template")
+	return nixio.fs.readfile("/etc/ksmbd/smb.conf.template")
 end
 
 function tmpl.write(self, section, value)
 	value = value:gsub("\r\n", "\n")
-	nixio.fs.writefile("/etc/smbd/smb.conf.template", value)
+	nixio.fs.writefile("/etc/ksmbd/smb.conf.template", value)
 end
 
 
