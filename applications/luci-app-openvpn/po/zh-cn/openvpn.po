@@ -20,6 +20,15 @@ msgstr ""
 msgid "Instance name"
 msgstr "实例名称"
 
+msgid "Service"
+msgstr "服务"
+
+msgid "Networking"
+msgstr "网络"
+
+msgid "Cryptography"
+msgstr "加密"
+
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:363
 msgid "'net30', 'p2p', or 'subnet'"
 msgstr "“net30”，“p2p”，或“子网”"
