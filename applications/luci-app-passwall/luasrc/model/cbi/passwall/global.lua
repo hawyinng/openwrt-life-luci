@@ -144,15 +144,6 @@ o:value("208.67.222.222,208.67.220.220",
         "208.67.222.222, 208.67.220.220 (Open DNS)")
 o:depends("dns_mode", "chinadns-ng")
 
----- Use TCP Node Resolve DNS
-if is_installed("pdnsd") or is_installed("pdnsd-alt") or is_finded("pdnsd") then
-    o = s:option(Flag, "use_tcp_node_resolve_dns",
-                 translate("Use TCP Node Resolve DNS"),
-                 translate("If checked, DNS is resolved using the TCP node."))
-    o.default = 1
-    o:depends("dns_mode", "pdnsd")
-end
-
 o = s:option(Value, "dns2socks_forward", translate("DNS Address"))
 o.default = "8.8.4.4"
 o:value("8.8.4.4", "8.8.4.4 (Google DNS)")

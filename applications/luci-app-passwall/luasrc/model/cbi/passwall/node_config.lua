@@ -75,9 +75,6 @@ end
 if is_installed("brook") or is_finded("brook") then
     type:value("Brook", translate("Brook"))
 end
-if is_installed("trojan") or is_finded("trojan") then
-    type:value("Trojan", translate("Trojan"))
-end
 
 v2ray_protocol = s:option(ListValue, "v2ray_protocol",
                           translate("V2ray Protocol"))
@@ -150,6 +147,7 @@ ssr_encrypt_method:depends("type", "SSR")
 v2ray_security = s:option(ListValue, "v2ray_security",
                           translate("Encrypt Method"))
 for a, t in ipairs(v2ray_security_list) do v2ray_security:value(t) end
+v2ray_security.default = "auto"
 v2ray_security:depends("type", "V2ray")
 
 protocol = s:option(ListValue, "protocol", translate("Protocol"))
@@ -178,7 +176,6 @@ tcp_fast_open:value("false")
 tcp_fast_open:value("true")
 tcp_fast_open:depends("type", "SS")
 tcp_fast_open:depends("type", "SSR")
-tcp_fast_open:depends("type", "Trojan")
 
 ss_plugin = s:option(ListValue, "ss_plugin", translate("plugin"))
 ss_plugin:value("none", translate("none"))
@@ -220,12 +217,11 @@ v2ray_VMess_id = s:option(Value, "v2ray_VMess_id", translate("ID"))
 v2ray_VMess_id.password = true
 v2ray_VMess_id:depends("type", "V2ray")
 
-v2ray_VMess_alterId = s:option(Value, "v2ray_VMess_alterId",
-                               translate("Alter ID"))
+v2ray_VMess_alterId = s:option(Value, "v2ray_VMess_alterId", translate("Alter ID"))
+v2ray_VMess_alterId.default = 4
 v2ray_VMess_alterId:depends("type", "V2ray")
 
-v2ray_VMess_level =
-    s:option(Value, "v2ray_VMess_level", translate("User Level"))
+v2ray_VMess_level = s:option(Value, "v2ray_VMess_level", translate("User Level"))
 v2ray_VMess_level.default = 1
 v2ray_VMess_level:depends("type", "V2ray")
 
@@ -235,11 +231,13 @@ v2ray_stream_security = s:option(ListValue, "v2ray_stream_security",
                                      'Whether or not transport layer encryption is enabled, the supported options are "none" for unencrypted (default) and "TLS" for using TLS.'))
 v2ray_stream_security:value("none", "none")
 v2ray_stream_security:value("tls", "tls")
+v2ray_stream_security.default = "tls"
 v2ray_stream_security:depends("type", "V2ray")
 v2ray_stream_security:depends("type", "V2ray_balancing")
 
 -- [[ TLS部分 ]] --
 tls_serverName = s:option(Value, "tls_serverName", translate("Domain"))
+tls_serverName.placeholder = "www.baidu.com"
 tls_serverName:depends("v2ray_stream_security", "tls")
 
 tls_allowInsecure = s:option(Flag, "tls_allowInsecure",
@@ -256,6 +254,7 @@ v2ray_transport:value("ws", "WebSocket")
 v2ray_transport:value("h2", "HTTP/2")
 v2ray_transport:value("ds", "DomainSocket")
 v2ray_transport:value("quic", "QUIC")
+v2ray_transport.default = "ws"
 v2ray_transport:depends("type", "V2ray")
 v2ray_transport:depends("type", "V2ray_balancing")
 
@@ -271,6 +270,7 @@ v2ray_tcp_guise:depends("v2ray_transport", "tcp")
 -- HTTP域名
 v2ray_tcp_guise_http_host = s:option(DynamicList, "v2ray_tcp_guise_http_host",
                                      translate("HTTP Host"))
+v2ray_tcp_guise_http_host.placeholder = "www.baidu.com"
 v2ray_tcp_guise_http_host:depends("v2ray_tcp_guise", "http")
 
 -- HTTP路径
@@ -315,9 +315,11 @@ v2ray_mkcp_writeBufferSize:depends("v2ray_transport", "mkcp")
 -- [[ WebSocket部分 ]]--
 
 v2ray_ws_host = s:option(Value, "v2ray_ws_host", translate("WebSocket Host"))
+v2ray_ws_host.placeholder = "www.baidu.com"
 v2ray_ws_host:depends("v2ray_transport", "ws")
 
 v2ray_ws_path = s:option(Value, "v2ray_ws_path", translate("WebSocket Path"))
+v2ray_ws_path.placeholder = "ray"
 v2ray_ws_path:depends("v2ray_transport", "ws")
 
 -- [[ HTTP/2部分 ]]--
@@ -340,6 +342,7 @@ v2ray_quic_security = s:option(ListValue, "v2ray_quic_security",
 v2ray_quic_security:value("none")
 v2ray_quic_security:value("aes-128-gcm")
 v2ray_quic_security:value("chacha20-poly1305")
+v2ray_quic_security.default = "aes-128-gcm"
 v2ray_quic_security:depends("v2ray_transport", "quic")
 
 v2ray_quic_key = s:option(Value, "v2ray_quic_key",
@@ -392,16 +395,6 @@ v2ray_tcp_socks_auth_password = s:option(Value, "v2ray_tcp_socks_auth_password",
                                          "Socks5 " .. translate("Password"))
 v2ray_tcp_socks_auth_password:depends("v2ray_tcp_socks_auth", "password")
 
--- [[ Trojan Cert ]]--
-trojan_verify_cert = s:option(Flag, "trojan_verify_cert",
-                              translate("Trojan Verify Cert"))
-trojan_verify_cert:depends("type", "Trojan")
-
-trojan_cert_path = s:option(Value, "trojan_cert_path",
-                            translate("Trojan Cert Path"))
-trojan_cert_path.default = ""
-trojan_cert_path:depends("trojan_verify_cert", "1")
-
 
 function rmempty_restore()
     address.rmempty = true
@@ -437,11 +430,6 @@ type.validate = function(self, value)
         address.rmempty = false
         port.rmempty = false
         password.rmempty = false
-    elseif value == "Trojan" then
-        address.rmempty = false
-        port.rmempty = false
-        password.rmempty = false
-        tcp_fast_open.rmempty = false
     end
     return value
 end
