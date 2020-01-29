@@ -17,23 +17,23 @@ msgstr ""
 msgid "miniDLNA Settings"
 msgstr "miniDLNA 设置"
 
-msgid "Album art names:"
+msgid "Album art names"
 msgstr "专辑艺术名："
 
 msgid "Allow wide links"
 msgstr "允许全局链接"
 
-msgid "Announced model number:"
-msgstr "通告的型号："
+msgid "Announced model number"
+msgstr "通告的型号"
 
-msgid "Announced serial number:"
-msgstr "通告的序列号："
+msgid "Announced serial number"
+msgstr "通告的序列号"
 
 msgid "Browse directory"
 msgstr "浏览目录"
 
-msgid "Database directory:"
-msgstr "数据库目录："
+msgid "Database directory"
+msgstr "数据库目录"
 
 msgid "Enable TIVO"
 msgstr "启用 TIVO"
@@ -41,14 +41,14 @@ msgstr "启用 TIVO"
 msgid "Enable inotify"
 msgstr "启用 inotify"
 
-msgid "Friendly name:"
-msgstr "友好名称："
+msgid "Friendly name"
+msgstr "友好名称"
 
-msgid "Log directory:"
-msgstr "日志目录："
+msgid "Log directory"
+msgstr "日志目录"
 
-msgid "Media directories:"
-msgstr "媒体目录："
+msgid "Media directories"
+msgstr "媒体目录"
 
 msgid ""
 "MiniDLNA is server software with the aim of being fully compliant with DLNA/"
@@ -66,8 +66,8 @@ msgstr "音乐"
 msgid "Network interfaces to serve."
 msgstr "服务的网络接口。"
 
-msgid "Notify interval:"
-msgstr "通知的时间间隔："
+msgid "Notify interval"
+msgstr "通知的时间间隔"
 
 msgid "Notify interval in seconds."
 msgstr "通知的时间间隔（秒）。"
@@ -75,14 +75,14 @@ msgstr "通知的时间间隔（秒）。"
 msgid "Pictures"
 msgstr "图片"
 
-msgid "Port:"
-msgstr "端口："
+msgid "Port"
+msgstr "端口"
 
 msgid "Port for HTTP (descriptions, SOAP, media transfer) traffic."
 msgstr "HTTP（描述，SOAP，媒体传输）流量的端口。"
 
-msgid "Presentation URL:"
-msgstr "服务网址："
+msgid "Presentation URL"
+msgstr "服务网址"
 
 msgid "Root container"
 msgstr "根目录"
@@ -99,7 +99,7 @@ msgstr "设定自定义名称。"
 msgid ""
 "Set this if you would like to specify the directory where you want MiniDLNA "
 "to store its database and album art cache."
-msgstr "设定 miniDLNA 数据库和专辑封面缓存目录"
+msgstr "设定 miniDLNA 数据库和专辑封面缓存目录。"
 
 msgid ""
 "Set this if you would like to specify the directory where you want MiniDLNA "
