@@ -94,7 +94,7 @@ msgid "Notify interval"
 msgstr "通知间隔"
 
 msgid "Presentation URL"
-msgstr "显示 URL"
+msgstr "服务网址"
 
 msgid "Puts extra debugging information into the system log"
 msgstr "将额外的调试信息打印至系统日志中"
