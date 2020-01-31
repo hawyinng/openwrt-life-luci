@@ -227,3 +227,6 @@ msgstr ""
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr ""
+
+#~ msgid "Action"
+#~ msgstr "Handling"

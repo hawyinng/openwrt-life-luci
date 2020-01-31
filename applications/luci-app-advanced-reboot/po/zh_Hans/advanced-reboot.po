@@ -5,16 +5,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2019-10-18 07:54+0000\n"
+"PO-Revision-Date: 2020-01-30 07:33+0000\n"
 "Last-Translator: Zheng Qian <sotux82@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsadvanced-reboot/zh_Hans/>\n"
-"Language: zh-cn\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1-dev\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:163
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/advanced_reboot.htm:10
@@ -25,6 +25,10 @@ msgstr "高级重启"
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/advanced_reboot.htm:60
 msgid "Alternative"
 msgstr "备用"
+
+#: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/applyreboot.htm:42
+msgid "Changes applied."
+msgstr "更改已应用。"
 
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:123
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:124
@@ -68,6 +72,11 @@ msgstr "执行关机..."
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/power_off.htm:10
 msgid "Power Off Device"
 msgstr "设备关机"
+
+#: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/alternative_reboot.htm:25
+#: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/power_off.htm:21
+msgid "Proceed"
+msgstr "继续"
 
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/alternative_reboot.htm:10
 msgid "Reboot Device to an Alternative Partition"
@@ -150,6 +159,13 @@ msgstr "无法为分区设置双引导标志分区项"
 msgid "Unable to set firmware environment variable"
 msgstr "无法设置固件环境变量"
 
+#: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:118
+#: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:119
+#: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:123
+#: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:124
+msgid "Unknown"
+msgstr "未知"
+
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/alternative_reboot.htm:12
 msgid ""
 "WARNING: An alternative partition might have its own settings and completely "
@@ -174,6 +190,10 @@ msgid ""
 msgstr ""
 "警告：对于不支持关机的设备，关机可能会导致重新启动。<br /><br />点击下方“继"
 "续”，使设备关机。"
+
+#: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/applyreboot.htm:46
+msgid "Waiting for changes to be applied..."
+msgstr "正在等待应用更改…"
 
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/advanced_reboot.htm:83
 msgid "Warning: Device (%s) is unknown or isn't a dual-partition device!"
