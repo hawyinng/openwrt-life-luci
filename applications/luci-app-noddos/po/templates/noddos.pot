@@ -14,11 +14,11 @@ msgid "Clients"
 msgstr ""
 
 #: applications/luci-app-noddos/luasrc/view/noddos/clients.htm:83
-msgid "DHCP Hostname"
+msgid "DhcpHostname"
 msgstr ""
 
 #: applications/luci-app-noddos/luasrc/view/noddos/clients.htm:82
-msgid "DHCP Vendor"
+msgid "DhcpVendor"
 msgstr ""
 
 #: applications/luci-app-noddos/luasrc/model/cbi/noddos.lua:25

@@ -1,15 +1,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2014-07-12 19:47+0200\n"
-"Last-Translator: koli <lukas.koluch@gmail.com>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-12-05 17:06+0000\n"
+"Last-Translator: Jiri Tersel <jiri.tersel@seznam.cz>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsopenvpn/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 2.0.6\n"
+"X-Generator: Weblate 3.10-dev\n"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:821
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:824
@@ -150,10 +151,6 @@ msgstr "Připojit ke vzdálenému hostiteli prostřednictvím HTTP proxy"
 msgid "Connection retry interval"
 msgstr "Interval opakování připojení"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:47
-msgid "Daemonize after initialization"
-msgstr "Po inicializaci změnit na démona"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:232
 msgid "Delay n seconds after connection"
 msgstr "Zpoždění n sekund po připojení"
@@ -164,8 +161,8 @@ msgstr "Pozdržet otevření TUN/TAP a spojeného skriptu do navázání spojen�
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie Hellman parameters"
-msgstr "Parametry Diffie Hellman"
+msgid "Diffie-Hellman parameters"
+msgstr "Parametry Diffie-Hellman"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
 msgid "Directory for custom client config files"
@@ -283,7 +280,7 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Spustit příkaz po přidání tras"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote ip change"
+msgid "Execute shell command on remote IP change"
 msgstr "Spustit příkaz po změně IP adresy"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
@@ -305,10 +302,6 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:741
 msgid "Exit on TLS negotiation failure"
 msgstr "Ukončit při selhání vyjednávání TLS"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:753
-msgid "Get PEM password from controlling tty before we daemonize"
-msgstr "Získat heslo PEM z řídící TTY před démonizací"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:572
 msgid "HMAC authentication for packets"
@@ -366,7 +359,7 @@ msgid "Local certificate"
 msgstr "Lokální certifikát"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or ip address"
+msgid "Local host name or IP address"
 msgstr "Název místního hostitele nebo IP adresa"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -414,10 +407,6 @@ msgstr "OpenVPN instance"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:83
 msgid "Optimize TUN/TAP/UDP writes"
 msgstr "Optimalizovat zápisy TUN/TAP/UDP"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:51
-msgid "Output to syslog and do not daemonize"
-msgstr "Vypsat do syslog a nedémonizovat"
 
 #: applications/luci-app-openvpn/luasrc/view/openvpn/pageswitch.htm:11
 msgid "Overview"
@@ -499,7 +488,7 @@ msgstr "Přemapovat signály SIGUSR1"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or ip address"
+msgid "Remote host name or IP address"
 msgstr "Název vzdáleného hostitele nebo adresa IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -554,10 +543,6 @@ msgstr "Opakovat po neomezenou dobu u chyb SOCKS proxy"
 msgid "Route subnet to client"
 msgstr "Směrovat podsíť klientovi"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:59
-msgid "Run as an inetd or xinetd server"
-msgstr "Spustit jako inetd nebo xinetd server"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:144
 msgid "Run script cmd on client connection"
 msgstr "Spustit skript cmd pro připojení klienta"
@@ -592,17 +577,9 @@ msgstr "Vybrat šablonu …"
 msgid "Send notification to peer on disconnect"
 msgstr "Poslat protistraně oznámení při odpojení"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:35
-msgid "Set GID to group"
-msgstr "Nastavit GID na skupinu"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:265
 msgid "Set TCP/UDP MTU"
 msgstr "Nastavit TCP/UDP MTU"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:31
-msgid "Set UID to user"
-msgstr "Nastavit UID na uživatele"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:396
 msgid "Set aside a pool of subnets"
@@ -815,10 +792,6 @@ msgstr "Použít uživatelské jméno jako Common Name"
 msgid "Write log to file"
 msgstr "Zapsat protokol do souboru"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:75
-msgid "Write process ID to file"
-msgstr "Zapsat ID procesu do souboru"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:95
 msgid "Write status to file every n seconds"
 msgstr "Zapisovat stav do souboru každých n sekund"
@@ -839,3 +812,27 @@ msgstr "časový limit nečinnosti TUN/TAP"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "ano (%i)"
+
+#~ msgid "Daemonize after initialization"
+#~ msgstr "Po inicializaci změnit na démona"
+
+#~ msgid "Get PEM password from controlling tty before we daemonize"
+#~ msgstr "Získat heslo PEM z řídící TTY před démonizací"
+
+#~ msgid "Output to syslog and do not daemonize"
+#~ msgstr "Vypsat do syslog a nedémonizovat"
+
+#~ msgid "Run as an inetd or xinetd server"
+#~ msgstr "Spustit jako inetd nebo xinetd server"
+
+#~ msgid "Set GID to group"
+#~ msgstr "Nastavit GID na skupinu"
+
+#~ msgid "Set UID to user"
+#~ msgstr "Nastavit UID na uživatele"
+
+#~ msgid "Write process ID to file"
+#~ msgstr "Zapsat ID procesu do souboru"
+
+#~ msgid "Invalid"
+#~ msgstr "Neplatné"

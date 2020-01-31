@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-16 06:58+0200\n"
-"PO-Revision-Date: 2009-08-16 12:27+0200\n"
-"Last-Translator: Hong Phuc Dang <dhppat@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-11-13 13:06+0000\n"
+"Last-Translator: Le Van Uoc <kunkun3012@gmail.com>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/openwrt/"
+"luciapplicationsopenvpn/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.10-dev\n"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:821
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:824
@@ -149,10 +151,6 @@ msgstr ""
 msgid "Connection retry interval"
 msgstr "Khoảng thử kết nối"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:47
-msgid "Daemonize after initialization"
-msgstr "Daemonize sau khi khởi tạo"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:232
 msgid "Delay n seconds after connection"
 msgstr ""
@@ -163,8 +161,8 @@ msgstr "Trì hoãn tun/tap mở và up script execution"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie Hellman parameters"
-msgstr "Tham số Diffie Hellman "
+msgid "Diffie-Hellman parameters"
+msgstr "Tham số Diffie-Hellman "
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
 msgid "Directory for custom client config files"
@@ -282,8 +280,8 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Thực hiện shell cmd sau khi tuyến đã thêm vào"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote ip change"
-msgstr "Thực hiện lệnh shell trên ip thay đổi từ xa"
+msgid "Execute shell command on remote IP change"
+msgstr "Thực hiện lệnh shell trên IP thay đổi từ xa"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
 msgid ""
@@ -300,10 +298,6 @@ msgstr ""
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:741
 msgid "Exit on TLS negotiation failure"
 msgstr "Exit trên TLS khi thương lượng thất bại"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:753
-msgid "Get PEM password from controlling tty before we daemonize"
-msgstr "Lấy mật mã PEM từ điều khiển tty trước khi chúng ta daemonize"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:572
 msgid "HMAC authentication for packets"
@@ -359,7 +353,7 @@ msgid "Local certificate"
 msgstr "Chứng chỉ địa phương"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or ip address"
+msgid "Local host name or IP address"
 msgstr "Tên host địa phương và địa chỉ IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -408,10 +402,6 @@ msgstr "OpenVPN instances"
 msgid "Optimize TUN/TAP/UDP writes"
 msgstr "Tối ưu hóa TUN/TAP/UDP writes"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:51
-msgid "Output to syslog and do not daemonize"
-msgstr "Output tới syslog và đừng daemonize"
-
 #: applications/luci-app-openvpn/luasrc/view/openvpn/pageswitch.htm:11
 msgid "Overview"
 msgstr ""
@@ -459,7 +449,7 @@ msgstr "Cổng"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:156
 msgid "Protocol"
-msgstr "Protocol"
+msgstr "Giao thức"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:529
 msgid "Proxy timeout in seconds"
@@ -491,7 +481,7 @@ msgstr "Remap tín hiệu SIGUSR1"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or ip address"
+msgid "Remote host name or IP address"
 msgstr "Tên host ngoài vùng và địa chỉ IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -546,10 +536,6 @@ msgstr "Thử lại trên Socks proxy lỗi"
 msgid "Route subnet to client"
 msgstr "Tuyến subnet tới khách hàng"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:59
-msgid "Run as an inetd or xinetd server"
-msgstr "Chạy như inetd hoặc xinetd server"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:144
 msgid "Run script cmd on client connection"
 msgstr "Chạy script cmd trên đối tượng kết nối"
@@ -583,17 +569,9 @@ msgstr ""
 msgid "Send notification to peer on disconnect"
 msgstr "Gửi thông báo cho bạn bè về ngắt kết nối"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:35
-msgid "Set GID to group"
-msgstr "Cài đặt GID tới nhóm"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:265
 msgid "Set TCP/UDP MTU"
 msgstr "Cài đặt TCP/UDP MTU"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:31
-msgid "Set UID to user"
-msgstr "Cài đặt UID tới người dùng"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:396
 msgid "Set aside a pool of subnets"
@@ -804,10 +782,6 @@ msgstr "Dùng tên đăng nhập như tên thông thường"
 msgid "Write log to file"
 msgstr "Viết log lên tập tin"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:75
-msgid "Write process ID to file"
-msgstr "Viết xử lý ID lên tập tin"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:95
 msgid "Write status to file every n seconds"
 msgstr "Viết tình trạng tới tập tin mỗi n giây"
@@ -828,3 +802,24 @@ msgstr "tun/tap timeout không có hành động"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "Có (%i)"
+
+#~ msgid "Daemonize after initialization"
+#~ msgstr "Daemonize sau khi khởi tạo"
+
+#~ msgid "Get PEM password from controlling tty before we daemonize"
+#~ msgstr "Lấy mật mã PEM từ điều khiển tty trước khi chúng ta daemonize"
+
+#~ msgid "Output to syslog and do not daemonize"
+#~ msgstr "Output tới syslog và đừng daemonize"
+
+#~ msgid "Run as an inetd or xinetd server"
+#~ msgstr "Chạy như inetd hoặc xinetd server"
+
+#~ msgid "Set GID to group"
+#~ msgstr "Cài đặt GID tới nhóm"
+
+#~ msgid "Set UID to user"
+#~ msgstr "Cài đặt UID tới người dùng"
+
+#~ msgid "Write process ID to file"
+#~ msgstr "Viết xử lý ID lên tập tin"
