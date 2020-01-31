@@ -297,7 +297,7 @@ msgstr "信号强度"
 msgid ""
 "Space separated list of additional arguments passed to the Auto Login "
 "Script, i.e. username and password"
-msgstr "传递给自动登录脚本的其他可选参数列表，空格分隔，即用户名和密码"
+msgstr "传递给自动登录脚本的其他可选参数列表，空格分隔，比如用户名和密码"
 
 #: applications/luci-app-travelmate/luasrc/view/travelmate/runtime.htm:116
 msgid "Station ID (RADIO/SSID/BSSID)"

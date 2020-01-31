@@ -42,10 +42,6 @@ msgstr "自动禁用 MJPEG 模式"
 msgid "Blink"
 msgstr "闪烁"
 
-#: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:207
-msgid "Check to save the stream to an mjpeg file"
-msgstr "勾选以保存视频流至 mjpeg 文件"
-
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:220
 msgid "Command to run"
 msgstr "运行的命令"
@@ -79,10 +75,6 @@ msgid ""
 "Execute command after saving picture. Mjpg-streamer parses the filename as "
 "first parameter to your script."
 msgstr "保存图片后执行命令。文件名将作为第一个参数传递给命令。"
-
-#: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:36
-msgid "File input"
-msgstr "文件输入"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:34
 msgid "File output"
@@ -135,10 +127,6 @@ msgstr "将ringbuffer中的最后一张图片软链接到指定的固定名称�
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:213
 msgid "Max. number of pictures to hold"
 msgstr "保存的图片数量上限"
-
-#: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:207
-msgid "Mjpeg output"
-msgstr "Mjpeg 输出"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:81
 msgid "Off"

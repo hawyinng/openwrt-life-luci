@@ -3002,7 +3002,7 @@ msgid "Specify the secret encryption key here."
 msgstr "在此指定密钥。"
 
 msgid "Start"
-msgstr "开始"
+msgstr "启动"
 
 msgid "Start priority"
 msgstr "启动优先级"
@@ -3043,7 +3043,7 @@ msgid "Status"
 msgstr "状态"
 
 msgid "Stop"
-msgstr "关闭"
+msgstr "停止"
 
 msgid "Strict order"
 msgstr "严谨查序"
