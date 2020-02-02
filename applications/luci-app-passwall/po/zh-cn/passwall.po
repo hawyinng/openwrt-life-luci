@@ -142,8 +142,8 @@ msgstr "DNS地址"
 msgid "China DNS Server"
 msgstr "中国DNS服务器"
 
-msgid "Example: 127.0.0.1#5355 ,Represents DNS on using 127.0.0.1 the 5355 port.<br />Only use two at most."
-msgstr "例：127.0.0.1#5355 使用本机5355端口的DNS服务。<br />最多使用2个DNS服务器。"
+msgid "If you want to work with other DNS acceleration services, use the default.<br />Example: 127.0.0.1#5355 ,Represents DNS on using 127.0.0.1 the 5355 port.<br />Only use two at most."
+msgstr "如果要配合其他DNS服务器一起工作，请使用默认。<br />例：127.0.0.1#5355 使用本机5355端口的DNS服务。<br />最多使用2个DNS服务器。"
 
 msgid "Upstream trust DNS Server for ChinaDNS-NG"
 msgstr "ChinaDNS-NG可信DNS"
