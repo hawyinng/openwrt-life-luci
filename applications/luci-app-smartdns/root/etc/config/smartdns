@@ -19,8 +19,8 @@ config smartdns
 	option seconddns_port '5354'
 	option seconddns_server_group 'public'
 	option seconddns_enabled '1'
-	option redirect 'none'
-	list old_redirect 'none'
+	option redirect 'dnsmasq-upstream'
+	list old_redirect 'dnsmasq-upstream'
 	list old_port '5355'
 	list old_enabled '0'
 
