@@ -106,7 +106,6 @@ define Package/$(PKG_NAME)/conffiles
 /etc/config/passwall_rule/chnroute
 /etc/config/passwall_rule/gfwlist.conf
 /etc/config/passwall_rule/router
-/etc/config/passwall_rule/user.conf
 /etc/config/passwall_rule/whitelist_host
 /etc/config/passwall_rule/whitelist_ip
 endef
