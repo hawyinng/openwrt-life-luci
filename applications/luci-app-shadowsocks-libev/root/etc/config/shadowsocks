@@ -6,15 +6,18 @@ config transparent_proxy
 	list main_server 'nil'
 	option udp_relay_server 'nil'
 	option local_port '1234'
+	option mtu '1492'
 
 config socks5_proxy
 	list server 'nil'
 	option local_port '1080'
+	option mtu '1492'
 
 config port_forward
 	list server 'nil'
 	option local_port '5354'
 	option destination '208.67.222.222:53'
+	option mtu '1492'
 
 config servers
 	option alias 'sample'
@@ -27,7 +30,8 @@ config servers
 	option encrypt_method 'aes-256-gcm'
 
 config access_control
-	option wan_bp_list '/etc/chnroute.txt'
+	option wan_bp_list '/etc/shadowsocks/chnroute.txt'
+	option wan_fw_list '/etc/shadowsocks/publicdns.txt'
 	option lan_target 'SS_SPEC_WAN_AC'
 	option self_proxy '0'
 
