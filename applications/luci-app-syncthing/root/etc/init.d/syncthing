@@ -7,11 +7,14 @@ run_syncthing()
 	config_get_bool enabled $1 enabled
 	if [ $enabled = 1 ]; then
 	local port
+	local home
+	local logfile
 	config_get port $1 port
+	config_get home $1 home
+	config_get logfile $1 logfile
 	state=`pgrep syncthing | wc -l`
 	if [ $state = 0 ] ; then
-		export HOME="/root"
-        syncthing -gui-address="0.0.0.0:$port" -logfile="/var/log/syncthing.log" -no-browser >/dev/null 2>&1 &
+        syncthing -gui-address="0.0.0.0:$port" -home="$home" -logfile="$logfile" -no-browser >/dev/null 2>&1 &
 	fi
 	fi
 }

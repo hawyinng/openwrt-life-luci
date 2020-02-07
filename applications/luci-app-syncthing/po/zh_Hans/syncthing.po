@@ -6,3 +6,9 @@ msgstr "Syncthing是一个开源的分布式数据同步工具"
 
 msgid "Settings"
 msgstr "设置"
+
+msgid "Home directory"
+msgstr "主目录"
+
+msgid "Log file"
+msgstr "日志文件"

@@ -1,5 +1,7 @@
 
 config setting 'base'
 	option port '8384'
+	option home '/etc/syncthing/'
+	option logfile '/var/log/syncthing.log'
 	option enabled '0'
 
