@@ -31,4 +31,14 @@ o.placeholder = "8384"
 o.default = "8384"
 o.rmempty = false
 
+o = s:option(Value, "home", translate("Home directory"))
+o.placeholder = "/etc/syncthing/"
+o.default = "/etc/syncthing/"
+o.rmempty = false
+
+o = s:option(Value, "logfile", translate("Log file"))
+o.placeholder = "/var/log/syncthing.log"
+o.default = "/var/log/syncthing.log"
+o.rmempty = false
+
 return m
