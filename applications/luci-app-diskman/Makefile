@@ -1,7 +1,7 @@
 #
-# Copyright (C) 2017-2019 Xingwang Liao <kuoruan@gmail.com>
+# Copyright (C) 2019 lisaac <lisaac.cn@gmail.com>
 #
-# This is free software, licensed under the MIT License.
+# This is free software, licensed under the Apache License, Version 2.0 .
 #
 
 include $(TOPDIR)/rules.mk
@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 LUCI_TITLE:=Disk Manager interface for LuCI
 LUCI_DEPENDS:=+luci-compat +e2fsprogs +parted +smartmontools +blkid
 LUCI_PKGARCH:=all
-PKG_VERSION:=0.1.5
+PKG_VERSION:=0.2.1
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=lisaac <https://github.com/lisaac/luci-app-diskman>
