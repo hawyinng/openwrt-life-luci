@@ -8,7 +8,7 @@ return L.view.extend({
 		return Promise.all([
 			L.resolveDefault(fs.stat('/sbin/block'), null),
 			L.resolveDefault(fs.stat('/etc/config/fstab'), null),
-			L.resolveDefault(fs.exec('/usr/sbin/usmbd', ['-V']), {}).then(function(res) { return L.toArray((res.stdout || '').match(/version : (\S+)/))[1] }),
+			L.resolveDefault(fs.exec('/usr/sbin/ksmbd.mountd', ['-V']), {}).then(function(res) { return L.toArray((res.stdout || '').match(/version : (\S+)/))[1] }),
 			L.resolveDefault(fs.exec('/sbin/modinfo', ['ksmbd']), {}).then(function(res) { return L.toArray((res.stdout || '').match(/version:\t(\S+)/))[1] }),
 		]);
 	},
@@ -45,7 +45,8 @@ return L.view.extend({
 
 		o = s.taboption('template', form.TextValue, '_tmpl',
 			_(''),
-			_("This is the content of the file '/etc/ksmbd/smb.conf.template' from which your ksmbd configuration will be generated. Values enclosed by pipe symbols ('|') should not be changed. They get their values from the 'General Settings' tab."));
+			_("This is the content of the file '/etc/ksmbd/smb.conf.template' from which your ksmbd configuration will be generated. "
+			+ "Values enclosed by pipe symbols ('|') should not be changed. They get their values from the 'General Settings' tab."));
 		o.rows = 20;
 		o.cfgvalue = function(section_id) {
 			return fs.trimmed('/etc/ksmbd/smb.conf.template');
