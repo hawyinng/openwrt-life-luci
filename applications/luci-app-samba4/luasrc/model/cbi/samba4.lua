@@ -41,6 +41,8 @@ o.placeholder = "WORKGROUP"
 o = s:taboption("general", Value, "description", translate("Description"))
 o.placeholder = "Samba4 on OpenWrt"
 
+o = s:taboption("general", Flag, "allow_legacy_protocols", translate("Allow legacy protocols"))
+
 o = s:taboption("general", Flag, "disable_async_io", translate("Force synchronous  I/O"),
 	translate("On lower-end devices may increase speeds, by forceing synchronous I/O instead of the default asynchronous."))
 o.rmempty = false
