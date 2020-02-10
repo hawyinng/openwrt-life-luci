@@ -60,7 +60,8 @@ return L.view.extend({
 		
 		o = s.taboption('template', form.TextValue, '_tmpl',
 			_(''),
-			_("This is the content of the file '/etc/samba/smb.conf.template' from which your samba configuration will be generated. Values enclosed by pipe symbols ('|') should not be changed. They get their values from the 'General Settings' tab."));
+			_("This is the content of the file '/etc/samba/smb.conf.template' from which your samba configuration will be generated. "
+			+ "Values enclosed by pipe symbols ('|') should not be changed. They get their values from the 'General Settings' tab."));
 		o.rows = 20;
 		o.cfgvalue = function(section_id) {
 			return fs.trimmed('/etc/samba/smb.conf.template');
