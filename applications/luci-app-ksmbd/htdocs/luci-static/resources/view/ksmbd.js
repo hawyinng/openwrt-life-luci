@@ -41,6 +41,8 @@ return L.view.extend({
 		o = s.taboption('general', form.Value, 'description', _('Description'));
 		o.placeholder = 'Ksmbd on OpenWrt';
 
+		o = s.taboption('general', form.Flag, 'allow_legacy_protocols', _('Allow legacy protocols'));
+
 		o = s.taboption('template', form.TextValue, '_tmpl',
 			_(''),
 			_("This is the content of the file '/etc/ksmbd/smb.conf.template' from which your ksmbd configuration will be generated. Values enclosed by pipe symbols ('|') should not be changed. They get their values from the 'General Settings' tab."));
