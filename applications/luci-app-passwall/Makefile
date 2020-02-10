@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-passwall
 PKG_VERSION:=3.3
-PKG_RELEASE:=41-20200207
+PKG_RELEASE:=41-20200209
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -116,7 +116,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/
 	cp -pR ./root/* $(1)/
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	po2lmo ./po/zh-cn/passwall.po $(1)/usr/lib/lua/luci/i18n/passwall.zh-cn.lmo
+	po2lmo ./po/zh_Hans/passwall.po $(1)/usr/lib/lua/luci/i18n/passwall.zh-cn.lmo
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
