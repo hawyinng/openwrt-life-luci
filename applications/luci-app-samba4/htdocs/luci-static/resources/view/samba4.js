@@ -39,6 +39,8 @@ return L.view.extend({
 
 		o = s.taboption('general', form.Value, 'description', _('Description'));
 		o.placeholder = 'Samba4 on OpenWrt';
+
+		o = s.taboption('general', form.Flag, 'allow_legacy_protocols', _('Allow legacy protocols'));
 		
 		s.taboption('general', form.Flag, 'disable_async_io', _('Force synchronous I/O'),
 			_('On lower-end devices may increase speeds, by forceing synchronous I/O instead of the default asynchronous.'));

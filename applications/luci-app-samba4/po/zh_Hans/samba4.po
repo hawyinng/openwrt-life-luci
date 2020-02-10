@@ -17,6 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.10-dev\n"
 
+msgid "Allow legacy protocols"
+msgstr "允许旧协议"
+
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:97
 msgid "Allow guests"
 msgstr "允许匿名用户"
