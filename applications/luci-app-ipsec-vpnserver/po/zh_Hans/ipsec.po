@@ -25,5 +25,8 @@ msgstr "PSK密钥"
 msgid "is_nat"
 msgstr "NAT转发"
 
+msgid "Users Manager"
+msgstr "用户管理"
+
 msgid "Specify interface forwarding traffic."
 msgstr "指定接口转发流量。"
