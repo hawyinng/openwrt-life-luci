@@ -1,16 +1,21 @@
-/* 
-Copyright(C) 2018 - 2020 Ruilin Peng(Nick) < pymumu@gmail.com>.
-smartdns is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-smartdns is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+/*************************************************************************
+ *
+ * Copyright (C) 2018-2020 Ruilin Peng (Nick) <pymumu@gmail.com>.
+ *
+ * smartdns is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * smartdns is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 
 'use strict';
 'require fs';
@@ -123,7 +128,8 @@ return L.view.extend({
 
 		m = new form.Map('smartdns', _('SmartDNS'));
 		m.title = _("SmartDNS Server");
-		m.description = _("SmartDNS is a local high-performance DNS server, supports finding fastest IP, supports ad filtering, and supports avoiding DNS poisoning.");
+		m.description = _("SmartDNS is a local high-performance DNS server, supports finding fastest IP, "
+			+ "supports ad filtering, and supports avoiding DNS poisoning.");
 
 		s = m.section(form.NamedSection, '_status');
 		s.anonymous = true;
@@ -180,12 +186,14 @@ return L.view.extend({
 		o.default = o.enabled;
 
 		// Support DualStack ip selection;
-		o = s.taboption("settings", form.Flag, "dualstack_ip_selection", _("Dual-stack IP Selection"), _("Enable IP selection between IPV4 and IPV6"));
+		o = s.taboption("settings", form.Flag, "dualstack_ip_selection", _("Dual-stack IP Selection"),
+			_("Enable IP selection between IPV4 and IPV6"));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// Domain prefetch load ;
-		o = s.taboption("settings", form.Flag, "prefetch_domain", _("Domain prefetch"), _("Enable domain prefetch, accelerate domain response speed."));
+		o = s.taboption("settings", form.Flag, "prefetch_domain", _("Domain prefetch"),
+			_("Enable domain prefetch, accelerate domain response speed."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
@@ -207,7 +215,8 @@ return L.view.extend({
 		o.rempty = true;
 
 		// rr-ttl-min;
-		o = s.taboption("settings", form.Value, "rr_ttl_min", _("Domain TTL Min"), _("Minimum TTL for all domain result."));
+		o = s.taboption("settings", form.Value, "rr_ttl_min", _("Domain TTL Min"),
+			_("Minimum TTL for all domain result."));
 		o.rempty = true;
 		o.placeholder = "300";
 		o.default = 300;
@@ -215,11 +224,13 @@ return L.view.extend({
 
 		// second dns server;
 		// rr-ttl-max;
-		o = s.taboption("settings", form.Value, "rr_ttl_max", _("Domain TTL Max"), _("Maximum TTL for all domain result."));
+		o = s.taboption("settings", form.Value, "rr_ttl_max", _("Domain TTL Max"),
+			_("Maximum TTL for all domain result."));
 		o.rempty = true;
 
 		// Eanble;
-		o = s.taboption("seconddns", form.Flag, "seconddns_enabled", _("Enable"), _("Enable or disable second DNS server."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_enabled", _("Enable"),
+			_("Enable or disable second DNS server."));
 		o.default = o.disabled;
 		o.rempty = false;
 
@@ -235,38 +246,45 @@ return L.view.extend({
 		o.rmempty = false;
 		o.default = o.enabled;
 
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_speed_check", _("Skip Speed Check"), _("Do not check speed."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_speed_check", _("Skip Speed Check"),
+			_("Do not check speed."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// dns server group;
-		o = s.taboption("seconddns", form.Value, "seconddns_server_group", _("Server Group"), _("Query DNS through specific dns server group, such as office, home."));
+		o = s.taboption("seconddns", form.Value, "seconddns_server_group", _("Server Group"),
+			_("Query DNS through specific dns server group, such as office, home."));
 		o.rmempty = true;
 		o.placeholder = "default";
 		o.datatype = "hostname";
 		o.rempty = true;
 
 		// skip address rules;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_addr", _("Skip Address Rules"), _("Skip address rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_addr", _("Skip Address Rules"),
+			_("Skip address rules."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// skip name server rules;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_nameserver", _("Skip Nameserver Rule"), _("Skip nameserver rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_nameserver", _("Skip Nameserver Rule"),
+			_("Skip nameserver rules."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// skip ipset rules;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_ipset", _("Skip Ipset Rule"), _("Skip ipset rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_ipset", _("Skip Ipset Rule"),
+			_("Skip ipset rules."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// skip soa address rule;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_soa", _("Skip SOA Address Rule"), _("Skip SOA address rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_soa", _("Skip SOA Address Rule"),
+			_("Skip SOA address rules."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_dualstack_selection", _("Skip Dualstack Selection"), _("Skip Sualstack Selection."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_dualstack_selection", _("Skip Dualstack Selection"),
+			_("Skip Sualstack Selection."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
@@ -276,7 +294,7 @@ return L.view.extend({
 		o.default = o.disabled;
 
 		// custom settings;
-		o = s.taboption("custom", form.TextValue, "_tmpl",
+		o = s.taboption("custom", form.TextValue, "custom_conf",
 			_(""),
 			_("smartdns custom settings"));
 
@@ -294,7 +312,8 @@ return L.view.extend({
 		o.default = o.disabled;
 		// Upstream servers;
 		s = m.section(form.GridSection, "server", _("Upstream Servers"),
-			_("Upstream Servers, support UDP, TCP protocol. Please configure multiple DNS servers, including multiple foreign DNS servers."));
+			_("Upstream Servers, support UDP, TCP protocol. Please configure multiple DNS servers, "
+				+ "including multiple foreign DNS servers."));
 		s.anonymous = true;
 		s.addremove = true;
 
@@ -302,7 +321,7 @@ return L.view.extend({
 		s.tab('advanced', _('Advanced Settings'));
 
 		// enable flag;
-		o = s.taboption("general", form.Flag, "enabled", _("Enable"), _("Enable"));
+		o = s.taboption("general", form.Flag, "enabled", _("Enable"));
 		o.rmempty = false;
 		o.default = o.enabled;
 		o.editable = true;
@@ -336,7 +355,8 @@ return L.view.extend({
 
 		// Advanced Options
 		// server group
-		o = s.taboption("advanced", form.Value, "server_group", _("Server Group"), _("DNS Server group belongs to, used with nameserver, such as office, home."))
+		o = s.taboption("advanced", form.Value, "server_group", _("Server Group"), _("DNS Server group belongs to, "
+			+ "used with nameserver, such as office, home."))
 		o.rmempty = true
 		o.placeholder = "default"
 		o.datatype = "hostname"
@@ -344,13 +364,15 @@ return L.view.extend({
 		o.modalonly = true;
 
 		// blacklist_ip
-		o = s.taboption("advanced", form.Flag, "blacklist_ip", _("IP Blacklist Filtering"), _("Filtering IP with blacklist"))
+		o = s.taboption("advanced", form.Flag, "blacklist_ip", _("IP Blacklist Filtering"),
+			_("Filtering IP with blacklist"))
 		o.rmempty = false
 		o.default = o.disabled
 		o.modalonly = true;
 
 		// TLS host verify
-		o = s.taboption("advanced", form.Value, "tls_host_verify", _("TLS Hostname Verify"), _("Set TLS hostname to verify."))
+		o = s.taboption("advanced", form.Value, "tls_host_verify", _("TLS Hostname Verify"),
+			_("Set TLS hostname to verify."))
 		o.default = ""
 		o.datatype = "string"
 		o.rempty = true
@@ -359,7 +381,8 @@ return L.view.extend({
 		o.depends("type", "https")
 
 		// SNI host name
-		o = s.taboption("advanced", form.Value, "host_name", _("TLS SNI name"), _("Sets the server name indication for query."))
+		o = s.taboption("advanced", form.Value, "host_name", _("TLS SNI name"),
+			_("Sets the server name indication for query."))
 		o.default = ""
 		o.datatype = "hostname"
 		o.rempty = true
@@ -368,7 +391,8 @@ return L.view.extend({
 		o.depends("type", "https")
 
 		// http host
-		o = s.taboption("advanced", form.Value, "http_host", _("HTTP Host"), _("Set the HTTP host used for the query. Use this parameter when the host of the URL address is an IP address."))
+		o = s.taboption("advanced", form.Value, "http_host", _("HTTP Host"),
+			_("Set the HTTP host used for the query. Use this parameter when the host of the URL address is an IP address."))
 		o.default = ""
 		o.datatype = "hostname"
 		o.rempty = true
@@ -376,7 +400,9 @@ return L.view.extend({
 		o.depends("type", "https")
 
 		// SPKI pin
-		o = s.taboption("advanced", form.Value, "spki_pin", _("TLS SPKI Pinning"), _("Used to verify the validity of the TLS server, The value is Base64 encoded SPKI fingerprint, leaving blank to indicate that the validity of TLS is not verified."))
+		o = s.taboption("advanced", form.Value, "spki_pin", _("TLS SPKI Pinning"),
+			_("Used to verify the validity of the TLS server, The value is Base64 encoded SPKI fingerprint, "
+				+ "leaving blank to indicate that the validity of TLS is not verified."))
 		o.default = ""
 		o.datatype = "string"
 		o.rempty = true
@@ -384,13 +410,12 @@ return L.view.extend({
 		o.depends("type", "tls")
 		o.depends("type", "https")
 
-
 		// other args
-		o = s.taboption("advanced", form.Value, "addition_arg", _("Additional Server Args"), _("Additional Args for upstream dns servers"))
+		o = s.taboption("advanced", form.Value, "addition_arg", _("Additional Server Args"),
+			_("Additional Args for upstream dns servers"))
 		o.default = ""
 		o.rempty = true
 		o.modalonly = true;
-
 
 		// Doman addresss;
 		s = m.section(form.TypedSection, "smartdns", _("Advanced Settings"), _("Advanced Settings"));
@@ -399,10 +424,10 @@ return L.view.extend({
 		s.tab("domain-address", _("Domain Address"), _("Set Specific domain ip address."));
 		s.tab("blackip-list", _("IP Blacklist"), _("Set Specific ip blacklist."));
 
-		o = s.taboption("domain-address", form.TextValue, "_tmpl",
+		o = s.taboption("domain-address", form.TextValue, "address_conf",
 			_(""),
-			_("Specify an IP address to return for any host in the given domains, Queries in the domains are never \
-			forwarded and always replied to with the specified IP address which may be IPv4 or IPv6."));
+			_("Specify an IP address to return for any host in the given domains, Queries in the domains are never "
+				+ "forwarded and always replied to with the specified IP address which may be IPv4 or IPv6."));
 		o.rows = 20;
 		o.cfgvalue = function (section_id) {
 			return fs.trimmed('/etc/smartdns/address.conf');
@@ -413,7 +438,7 @@ return L.view.extend({
 
 		// IP Blacklist;
 		// blacklist;
-		o = s.taboption("blackip-list", form.TextValue, "_tmpl",
+		o = s.taboption("blackip-list", form.TextValue, "blackip_ip_conf",
 			_(""),
 			_("Configure IP blacklists that will be filtered from the results of specific DNS server."));
 		o.rows = 20;

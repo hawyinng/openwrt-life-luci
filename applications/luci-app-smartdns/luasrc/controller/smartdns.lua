@@ -24,8 +24,4 @@ function index()
 	local page
 	page = entry({"admin", "services", "smartdns"}, view("smartdns/smartdns"), _("SmartDNS"), 60)
 	page.dependent = true
-	page = entry({"admin", "services", "smartdns", "status"}, call("act_status"))
-	page.leaf = true
-	page = entry({"admin", "services", "smartdns", "upstream"}, view("smartdns/upstream"), nil)
-	page.leaf = true
 end
