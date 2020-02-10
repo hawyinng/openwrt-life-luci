@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for PHP7.
-LUCI_DEPENDS:=+php7-mod-mysqli +php7-mod-mbstring +php7-mod-ldap +php7-mod-json \
+LUCI_DEPENDS:=+luci-compat +php7-mod-mysqli +php7-mod-mbstring +php7-mod-ldap +php7-mod-json \
 +php7-mod-intl +php7-mod-imap +php7-mod-iconv +php7-mod-gmp +php7-mod-gettext \
 +php7-mod-gd +php7-mod-ftp +php7-mod-fileinfo +php7-mod-exif +php7-mod-dom \
 +php7-mod-curl +php7-mod-ctype +php7-mod-calendar +php7-mod-bcmath \

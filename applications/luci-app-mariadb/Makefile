@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for Mariadb.
-LUCI_DEPENDS:=+mariadb-server-extra +mariadb-client-extra
+LUCI_DEPENDS:=+luci-compat +mariadb-server-extra +mariadb-client-extra
 
 include ../../luci.mk
 

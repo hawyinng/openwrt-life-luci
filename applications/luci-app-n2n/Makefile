@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for N2N VPN.
-LUCI_DEPENDS:=+n2n-edge +n2n-supernode
+LUCI_DEPENDS:=+luci-compat +n2n-edge +n2n-supernode
 
 include ../../luci.mk
 

@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for macvlan
-LUCI_DEPENDS:=+kmod-macvlan
+LUCI_DEPENDS:=+luci-compat +kmod-macvlan
 LUCI_PKGARCH:=all
 PKG_LICENSE:=GPLv2
 

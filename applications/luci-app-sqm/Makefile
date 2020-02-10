@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for SQM QOS.
-LUCI_DEPENDS:=+sqm-scripts
+LUCI_DEPENDS:=+luci-compat +sqm-scripts
 
 include ../../luci.mk
 

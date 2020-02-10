@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for NFS Server.
-LUCI_DEPENDS:=+nfs-kernel-server
+LUCI_DEPENDS:=+luci-compat +nfs-kernel-server
 
 include ../../luci.mk
 

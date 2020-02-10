@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for ChinaDNS.
-LUCI_DEPENDS:=+ChinaDNS +coreutils-nohup
+LUCI_DEPENDS:=+luci-compat +ChinaDNS +coreutils-nohup
 
 include ../../luci.mk
 

@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for rsyncd.
-LUCI_DEPENDS:=+rsyncd
+LUCI_DEPENDS:=+luci-compat +rsyncd
 
 include ../../luci.mk
 

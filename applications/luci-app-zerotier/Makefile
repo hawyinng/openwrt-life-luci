@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI for Zerotier
-LUCI_DEPENDS:=+zerotier
+LUCI_DEPENDS:=+luci-compat +zerotier
 LUCI_PKGARCH:=all
 PKG_VERSION:=1.0
 PKG_RELEASE:=15

@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for qBittorrent
-LUCI_DEPENDS:=+qBittorrent +python3
+LUCI_DEPENDS:=+luci-compat +qBittorrent +python3
 LUCI_PKGARCH:=all
 
 include $(TOPDIR)/feeds/luci/luci.mk

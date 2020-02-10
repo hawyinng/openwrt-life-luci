@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=vsftpd - FTP module
-LUCI_DEPENDS:=+vsftpd-tls
+LUCI_DEPENDS:=+luci-compat +vsftpd-tls
 LUCI_PKGARCH:=all
 
 include ../../luci.mk

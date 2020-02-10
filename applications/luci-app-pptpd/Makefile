@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for PPTPD.
-LUCI_DEPENDS:=+pptpd
+LUCI_DEPENDS:=+luci-compat +pptpd
 
 include ../../luci.mk
 

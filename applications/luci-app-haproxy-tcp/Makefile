@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=luci for haproxy and shadowsocks
-LUCI_DEPENDS:=+haproxy-nossl
+LUCI_DEPENDS:=+luci-compat +haproxy-nossl
 LUCI_PKGARCH:=all
 PKG_NAME:=luci-app-haproxy-tcp
 PKG_VERSION=1.5

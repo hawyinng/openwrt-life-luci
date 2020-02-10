@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Support for cifsmount.
-LUCI_DEPENDS:=+cifsmount
+LUCI_DEPENDS:=+luci-compat +cifsmount
 
 include ../../luci.mk
 

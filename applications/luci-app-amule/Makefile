@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for Amule
-LUCI_DEPENDS:=+antileech
+LUCI_DEPENDS:=+luci-compat +antileech
 LUCI_PKGARCH:=all
 
 include $(TOPDIR)/feeds/luci/luci.mk
