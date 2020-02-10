@@ -54,6 +54,8 @@ o.placeholder = "WORKGROUP"
 o = s:taboption("general", Value, "description", translate("Description"))
 o.placeholder = "Ksmbd on OpenWrt"
 
+o = s:taboption("general", Flag, "allow_legacy_protocols", translate("Allow legacy protocols"))
+
 tmpl = s:taboption("template", Value, "_tmpl","", 
 	translate("This is the content of the file '/etc/ksmbd/smb.conf.template' from which your ksmbd configuration will be generated. " ..
 		"Values enclosed by pipe symbols ('|') should not be changed. They get their values from the 'General Settings' tab."))
