@@ -3,7 +3,7 @@
 local sys = require "luci.sys"
 local net = require "luci.model.network".init()
 local ifaces = sys.net:devices()
-local state=(sys.call("pidof usmbd > /dev/null") == 0)
+local state=(sys.call("pidof ksmbd.mountd > /dev/null") == 0)
 
 if state then
 	state_msg = "<b><font color=\"green\">" .. translate("Running") .. "</font></b>"
