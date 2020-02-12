@@ -48,9 +48,9 @@ s.anonymous = true
 
 o = s:option(Value, "wan_bp_list", translate("Bypassed IP List"))
 o:value("/dev/null", translate("NULL - As Global Proxy"))
-o:value("/etc/chnroute.txt", translate("CHN Route"))
+o:value("/etc/shadowsocks/chnroute.txt", translate("CHN Route"))
 o.datatype = "or(file, '/dev/null')"
-o.default = "/etc/chnroute.txt"
+o.default = "/etc/shadowsocks/chnroute.txt"
 o.rmempty = false
 
 o = s:option(DynamicList, "wan_bp_ips", translate("Bypassed IP"))
