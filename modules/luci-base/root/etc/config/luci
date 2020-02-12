@@ -28,7 +28,7 @@ config internal 'themes'
 	option Bootstrap '/luci-static/bootstrap'
 
 config internal 'apply'
-	option rollback '30'
+	option rollback '90'
 	option holdoff '4'
 	option timeout '5'
 	option display '1.5'
