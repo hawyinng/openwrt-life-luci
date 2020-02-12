@@ -24,7 +24,8 @@ uci:foreach(appname, "nodes", function(e)
             n[e[".name"]] = "%s+%s：[%s] %s" %
                                 {translate(type), "Kcptun", e.remarks, address}
         else
-            n[e[".name"]] = "%s：[%s] %s" % {translate(type), e.remarks, address}
+            n[e[".name"]] = "%s：[%s] %s" %
+                                {translate(type), e.remarks, address}
         end
     end
 end)
@@ -48,7 +49,7 @@ s.anonymous = true
 s.addremove = false
 
 ---- Main switch
-o = s:option(Flag, "enabled", translate("Enabled"))
+o = s:option(Flag, "enabled", translate("Enable"))
 o.rmempty = false
 
 ---- TCP Node
@@ -70,10 +71,10 @@ local udp_node_num = api.uci_get_type("global_other", "udp_node_num", 1)
 for i = 1, udp_node_num, 1 do
     if i == 1 then
         o = s:option(ListValue, "udp_node" .. i, translate("UDP Node"),
-                     translate("For Game Mode or DNS resolution and more.") ..
+                     translate("Used for UDP packet forwarding.") ..
                          translate("The selected server will not use Kcptun."))
         o:value("nil", translate("Close"))
-        o:value("default", translate("Same as the tcp node"))
+        o:value("tcp", translate("Same as the tcp node"))
     else
         o = s:option(ListValue, "udp_node" .. i,
                      translate("UDP Node") .. " " .. i)
@@ -88,11 +89,13 @@ for i = 1, socks5_node_num, 1 do
     if i == 1 then
         o = s:option(ListValue, "socks5_node" .. i, translate("Socks5 Node"),
                      translate("The client can use the router's Socks5 proxy."))
+        o:value("nil", translate("Close"))
+        o:value("tcp", translate("Same as the tcp node"))
     else
         o = s:option(ListValue, "socks5_node" .. i,
                      translate("Socks5 Node") .. " " .. i)
+        o:value("nil", translate("Close"))
     end
-    o:value("nil", translate("Close"))
     for _, key in pairs(key_table) do o:value(key, n[key]) end
 end
 
@@ -178,7 +181,6 @@ o:value("disable", translate("No Proxy"))
 o:value("global", translate("Global Proxy"))
 o:value("gfwlist", translate("GFW List"))
 o:value("chnroute", translate("China WhiteList"))
-o:value("gamemode", translate("Game Mode"))
 o:value("returnhome", translate("Return Home"))
 
 ---- Localhost Proxy Mode
@@ -186,8 +188,7 @@ o = s:option(ListValue, "localhost_proxy_mode",
              translate("Localhost") .. translate("Proxy Mode"), translate(
                  "The server client can also use this rule to scientifically surf the Internet."))
 o:value("default", translate("Default"))
-o:value("global",
-        translate("Global Proxy") .. "（" .. translate("Danger") .. "）")
+o:value("global", translate("Global Proxy"))
 o:value("gfwlist", translate("GFW List"))
 o:value("chnroute", translate("China WhiteList"))
 o.default = "default"
