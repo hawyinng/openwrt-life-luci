@@ -262,7 +262,7 @@ return L.view.extend({
 			_('List of <abbr title="Domain Name System">DNS</abbr> servers to forward requests to'));
 
 		o.optional = true;
-		o.placeholder = '/example.org/10.1.2.3';
+		o.placeholder = '127.0.0.1#5355';
 		o.validate = validateServerSpec;
 
 
