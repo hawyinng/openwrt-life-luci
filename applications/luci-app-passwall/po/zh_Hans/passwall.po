@@ -157,7 +157,7 @@ msgstr "小提示"
 msgid "You can use load balancing for failover."
 msgstr "可以使用负载均衡实现故障切换功能。"
 
-msgid "Restore the default configuration method. Input example in the address bar:"
+msgid "Restore the default configuration method. Input example in the address bar："
 msgstr "恢复默认配置方法，地址栏输入例："
 
 msgid "dnsbyisp"
@@ -748,8 +748,8 @@ msgstr "状态信息显示IP111"
 msgid "Hide Menu"
 msgstr "隐藏菜单"
 
-msgid "After the hidden to the display, input example in the address bar: "
-msgstr "当你隐藏后想再次显示，地址栏输入例："
+msgid "After the hidden to the display, input example in the address bar："
+msgstr "当你隐藏后想再次显示，在地址栏输入例："
 
 msgid "Can't determine ARCH, or ARCH not supported."
 msgstr "无法确认ARCH架构，或是不支持。"
