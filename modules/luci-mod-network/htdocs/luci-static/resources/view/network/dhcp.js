@@ -3,6 +3,7 @@
 'require uci';
 'require form';
 'require validation';
+'require fs';
 
 var callHostHints, callDUIDHints, callDHCPLeases, CBILeaseStatus, CBILease6Status;
 
@@ -148,6 +149,7 @@ return L.view.extend({
 		s.tab('tftp', _('TFTP Settings'));
 		s.tab('advanced', _('Advanced Settings'));
 		s.tab('leases', _('Static Leases'));
+		s.tab('template', _('Edit configuration'));
 
 		s.taboption('general', form.Flag, 'domainneeded',
 			_('Domain required'),
@@ -340,6 +342,17 @@ return L.view.extend({
 		o.optional = true;
 		o.datatype = 'range(0,10000)';
 		o.placeholder = 150;
+
+		o = s.taboption("template", form.TextValue, "_tmpl",
+			_(""),
+			_("This is the content of the file '/etc/dnsmasq.conf'. Make changes as needed, Take effect after manually restart dnsmasq."));
+		o.rows = 20;
+		o.cfgvalue = function (section_id) {
+			return fs.trimmed('/etc/dnsmasq.conf');
+		};
+		o.write = function (section_id, formvalue) {
+			return fs.write('/etc/dnsmasq.conf', formvalue.trim().replace(/\r\n/g, '\n') + '\n');
+		};
 
 		s.taboption('tftp', form.Flag, 'enable_tftp',
 			_('Enable TFTP server')).optional = true;
