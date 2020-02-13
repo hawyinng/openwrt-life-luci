@@ -144,7 +144,7 @@ return L.view.extend({
 			return E('div', { class: 'cbi-map' },
 				E('div', { class: 'cbi-section' }, [
 					E('div', { id: 'service_status' },
-						_('Collecting data ...'))
+						_('Collecting data...'))
 				])
 			);
 		}
