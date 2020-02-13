@@ -20,6 +20,8 @@ config global_delay
 	option start_delay '1'
 
 config global_forwarding
+	option tcp_no_redir_ports 'disable'
+	option udp_no_redir_ports 'disable'
 	option udp_redir_ports '1:65535'
 	option tcp_redir_ports '1:65535'
 	option process '1'

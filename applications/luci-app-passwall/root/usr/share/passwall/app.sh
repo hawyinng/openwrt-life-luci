@@ -190,6 +190,8 @@ BROOK_TCP_CMD=""
 BROOK_UDP_CMD=""
 TCP_REDIR_PORTS=$(config_t_get global_forwarding tcp_redir_ports '80,443')
 UDP_REDIR_PORTS=$(config_t_get global_forwarding udp_redir_ports '1:65535')
+TCP_NO_REDIR_PORTS=$(config_t_get global_forwarding tcp_no_redir_ports 'disable')
+UDP_NO_REDIR_PORTS=$(config_t_get global_forwarding udp_no_redir_ports 'disable')
 KCPTUN_REDIR_PORT=$(config_t_get global_forwarding kcptun_port 12948)
 PROXY_MODE=$(config_t_get global proxy_mode chnroute)
 
@@ -210,6 +212,7 @@ load_config() {
 		process=$(config_t_get global_forwarding process)
 	fi
 	LOCALHOST_PROXY_MODE=$(config_t_get global localhost_proxy_mode default)
+	[ "$LOCALHOST_PROXY_MODE" == "default" ] && LOCALHOST_PROXY_MODE=$PROXY_MODE
 	UP_CHINA_DNS=$(config_t_get global up_china_dns dnsbyisp)
 	[ "$UP_CHINA_DNS" == "default" ] && IS_DEFAULT_CHINA_DNS=1
 	[ ! -f "$RESOLVFILE" -o ! -s "$RESOLVFILE" ] && RESOLVFILE=/tmp/resolv.conf.auto
@@ -794,9 +797,9 @@ add_dnsmasq() {
 	cat $RULE_PATH/whitelist_host | sed "s/^/ipset=&\/./g" | sed "s/$/\/&whitelist/g" | sort | awk '{if ($0!=line) print;line=$0}' > $TMP_DNSMASQ_PATH/whitelist_host.conf
 
 	[ "$DNS_MODE" != "nonuse" ] && {
-		cat $RULE_PATH/blacklist_host | awk '{print "server=/."$1"/127.0.0.1#'$DNS_PORT'\nipset=/."$1"/blacklist"}' > $TMP_DNSMASQ_PATH/blacklist_host.conf
-		cat $RULE_PATH/router | awk '{print "server=/."$1"/127.0.0.1#'$DNS_PORT'\nipset=/."$1"/router"}' > $TMP_DNSMASQ_PATH/router.conf
-		ln -s $RULE_PATH/gfwlist.conf $TMP_DNSMASQ_PATH/gfwlist.conf
+		[ -f "$RULE_PATH/blacklist_host" -a -s "$RULE_PATH/blacklist_host" ] && cat $RULE_PATH/blacklist_host | awk '{print "server=/."$1"/127.0.0.1#'$DNS_PORT'\nipset=/."$1"/blacklist"}' > $TMP_DNSMASQ_PATH/blacklist_host.conf
+		[ -f "$RULE_PATH/router" -a -s "$RULE_PATH/router" ] && cat $RULE_PATH/router | awk '{print "server=/."$1"/127.0.0.1#'$DNS_PORT'\nipset=/."$1"/router"}' > $TMP_DNSMASQ_PATH/router.conf
+		[ -f "$RULE_PATH/gfwlist.conf" -a -s "$RULE_PATH/gfwlist.conf" ] && ln -s $RULE_PATH/gfwlist.conf $TMP_DNSMASQ_PATH/gfwlist.conf
 		
 		subscribe_proxy=$(config_t_get global_subscribe subscribe_proxy 0)
 		[ "$subscribe_proxy" -eq 1 ] && {
@@ -896,11 +899,12 @@ gen_redsocks_config() {
 gen_pdnsd_config() {
 	pdnsd_dir=$CONFIG_PATH/pdnsd
 	mkdir -p $pdnsd_dir
+	touch $pdnsd_dir/pdnsd.cache
 	chown -R root.nogroup $pdnsd_dir
-	[ "$2" == "cache" ] && cache_param="perm_cache = 1024;\ncache_dir = \"$pdnsd_dir\";"
 	cat > $pdnsd_dir/pdnsd.conf <<-EOF
 		global {
-			$(echo -e $cache_param)
+			perm_cache = $2;
+			cache_dir = "$pdnsd_dir";
 			pid_file = "$RUN_PID_PATH/pdnsd.pid";
 			run_as = "root";
 			server_ip = 127.0.0.1;
@@ -934,36 +938,34 @@ gen_pdnsd_config() {
 		EOF
 	}
 		
-	[ "$DNS_MODE" != "chinadns-ng" ] && {
-		cat >> $pdnsd_dir/pdnsd.conf <<-EOF
-			server {
-				label = "opendns";
-				ip = 208.67.222.222, 208.67.220.220;
-				edns_query = on;
-				port = 443;
-				timeout = 4;
-				interval = 60;
-				uptest = none;
-				purge_cache = off;
-			}
-			server {
-				label = "opendns";
-				ip = 208.67.222.222, 208.67.220.220;
-				edns_query = on;
-				port = 5353;
-				timeout = 4;
-				interval = 60;
-				uptest = none;
-				purge_cache = off;
-			}
-			source {
-				ttl = 86400;
-				owner = "localhost.";
-				serve_aliases = on;
-				file = "/etc/hosts";
-			}
-		EOF
-	}
+	cat >> $pdnsd_dir/pdnsd.conf <<-EOF
+		server {
+			label = "opendns";
+			ip = 208.67.222.222, 208.67.220.220;
+			edns_query = on;
+			port = 443;
+			timeout = 4;
+			interval = 60;
+			uptest = none;
+			purge_cache = off;
+		}
+		server {
+			label = "opendns";
+			ip = 208.67.222.222, 208.67.220.220;
+			edns_query = on;
+			port = 5353;
+			timeout = 4;
+			interval = 60;
+			uptest = none;
+			purge_cache = off;
+		}
+		source {
+			ttl = 86400;
+			owner = "localhost.";
+			serve_aliases = on;
+			file = "/etc/hosts";
+		}
+	EOF
 }
 
 stop_dnsmasq() {
@@ -1105,15 +1107,14 @@ start() {
 	! load_config && return 1
 	[ -f "$LOCK_FILE" ] && return 3
 	touch "$LOCK_FILE"
-	start_dns
-	add_dnsmasq
 	start_haproxy
 	start_redir SOCKS5 PROXY tcp
 	start_redir TCP REDIR tcp
 	start_redir UDP REDIR udp
+	start_dns
 	source $APP_PATH/iptables.sh start
+	add_dnsmasq
 	start_crontab
-	set_cru
 	rm -f "$LOCK_FILE"
 	echolog "运行完成！\n"
 	return 0
