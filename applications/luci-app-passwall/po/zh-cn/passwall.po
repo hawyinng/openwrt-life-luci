@@ -106,8 +106,8 @@ msgstr "Socks5节点"
 msgid "Same as the tcp node"
 msgstr "与TCP节点相同"
 
-msgid "For used to surf the Internet."
-msgstr "用于科学上网。"
+msgid "Used for TCP packet forwarding."
+msgstr "用于TCP数据包转发。"
 
 msgid "Used for UDP packet forwarding."
 msgstr "用于UDP数据包转发。"
@@ -208,8 +208,8 @@ msgstr "单进程"
 msgid "Proxy Mode"
 msgstr "代理模式"
 
-msgid "If using GFW mode is not available, try clearing the native cache."
-msgstr "如果使用GFW模式无法使用，请尝试清除本机缓存。"
+msgid "If not available, try clearing the cache."
+msgstr "如果无法使用，请尝试清除缓存。"
 
 msgid "No Proxy"
 msgstr "不代理"
@@ -348,6 +348,15 @@ msgstr "自动重启时间"
 
 msgid "Forwarding Settings"
 msgstr "转发配置"
+
+msgid "TCP No Redir Ports"
+msgstr "TCP不转发端口"
+
+msgid "UDP No Redir Ports"
+msgstr "UDP不转发端口"
+
+msgid "Fill in the ports you don't want to be forwarded by the agent, with the highest priority."
+msgstr "填写你不希望被代理转发的端口，优先级最高。"
 
 msgid "TCP Redir Ports"
 msgstr "TCP转发端口"

@@ -57,7 +57,7 @@ local tcp_node_num = api.uci_get_type("global_other", "tcp_node_num", 1)
 for i = 1, tcp_node_num, 1 do
     if i == 1 then
         o = s:option(ListValue, "tcp_node" .. i, translate("TCP Node"),
-                     translate("For used to surf the Internet."))
+                     translate("Used for TCP packet forwarding."))
     else
         o = s:option(ListValue, "tcp_node" .. i,
                      translate("TCP Node") .. " " .. i)
@@ -173,8 +173,8 @@ o.rmempty = false
 
 ---- Default Proxy Mode
 o = s:option(ListValue, "proxy_mode",
-             translate("Default") .. translate("Proxy Mode"), translate(
-                 "If using GFW mode is not available, try clearing the native cache."))
+             translate("Default") .. translate("Proxy Mode"),
+             translate("If not available, try clearing the cache."))
 o.default = "gfwlist"
 o.rmempty = false
 o:value("disable", translate("No Proxy"))
@@ -188,9 +188,9 @@ o = s:option(ListValue, "localhost_proxy_mode",
              translate("Localhost") .. translate("Proxy Mode"), translate(
                  "The server client can also use this rule to scientifically surf the Internet."))
 o:value("default", translate("Default"))
-o:value("global", translate("Global Proxy"))
 o:value("gfwlist", translate("GFW List"))
 o:value("chnroute", translate("China WhiteList"))
+o:value("global", translate("Global Proxy"))
 o.default = "default"
 o.rmempty = false
 
