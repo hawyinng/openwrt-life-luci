@@ -147,13 +147,6 @@ msgstr ""
 "附加 <em>iptables</em> 参数对区域入流量分类。如：<code>-p tcp --sport 443</"
 "code> 仅匹配入站 HTTPS 流量。"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:137
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:181
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:135
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:86
-msgid "Advanced Settings"
-msgstr "高级设置"
-
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:219
 msgid "Allow \"invalid\" traffic"
 msgstr "允许“无效”流量"
@@ -217,10 +210,6 @@ msgstr "Conntrack 助手"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/custom.js:15
 msgid "Contents have been saved."
 msgstr "内容已保存。"
-
-#: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:650
-msgid "Continue"
-msgstr "继续"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:189
 msgid "Covered devices"
@@ -293,12 +282,6 @@ msgstr ""
 msgid "Drop invalid packets"
 msgstr "丢弃无效数据包"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:180
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:234
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:163
-msgid "Enable"
-msgstr "启用"
-
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:247
 msgid "Enable NAT Loopback"
 msgstr "启用 NAT 环回"
@@ -348,10 +331,6 @@ msgstr "额外的 iptables 参数"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:247
 msgid "Extra source arguments"
 msgstr "额外的源参数"
-
-#: applications/luci-app-firewall/luasrc/controller/firewall.lua:6
-msgid "Firewall"
-msgstr "防火墙"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/custom.js:24
 msgid "Firewall - Custom Rules"
@@ -433,15 +412,6 @@ msgid ""
 "k.a. %{item.hint.name}}.\":%{item.hint.name? data-tooltip=\"%{item.hint."
 "name}\"}}>%{item.ival}</var>}}"
 msgstr ""
-
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:136
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:180
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:134
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:39
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:85
-#: applications/luci-app-firewall/luasrc/controller/firewall.lua:9
-msgid "General Settings"
-msgstr "基本设置"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:73
 msgid "Hardware flow offloading"
@@ -661,13 +631,6 @@ msgid ""
 "or forwarded traffic."
 msgstr "NAT 规则允许对源 IP 的细粒度控制用于出站或转发的流量。"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:157
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:213
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:142
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:101
-msgid "Name"
-msgstr "名称"
-
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:215
 msgid "Only match incoming traffic directed at the given IP address."
 msgstr "仅匹配指定目的 IP 地址的入站流量。"
@@ -729,12 +692,6 @@ msgid ""
 "specific computer or service within the private LAN."
 msgstr ""
 "端口转发允许 Internet 上的远程计算机连接到内部网络中的特定计算机或服务。"
-
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:185
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:280
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:168
-msgid "Protocol"
-msgstr "协议"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:239
 msgid ""
@@ -1086,22 +1043,6 @@ msgstr "区域"
 msgid "accept"
 msgstr "接受"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:265
-#: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:431
-#: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:453
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:210
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:242
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:263
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:289
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:344
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:359
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:393
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:400
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:189
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:202
-msgid "any"
-msgstr "任意"
-
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:48
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:81
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:64
@@ -1180,14 +1121,6 @@ msgstr "此设备"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:273
 msgid "this new zone"
 msgstr "此新区域"
-
-#: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:351
-msgid "unlimited"
-msgstr "无限制"
-
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:242
-msgid "unspecified"
-msgstr "未指定"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:336
 #, fuzzy
