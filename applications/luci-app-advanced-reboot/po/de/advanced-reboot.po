@@ -254,9 +254,3 @@ msgstr "Versuche eine alternative Partition auszuhängen"
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr "zu"
-
-#~ msgid "Action"
-#~ msgstr "Aktion"
-
-#~ msgid "Firmware/OS (Kernel)"
-#~ msgstr "Firmware/Betriebssystem (Kernel)"

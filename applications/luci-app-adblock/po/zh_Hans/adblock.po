@@ -6,27 +6,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-01-02 04:11+0000\n"
-"Last-Translator: Zheng Qian <sotux82@gmail.com>\n"
+"PO-Revision-Date: 2020-02-02 09:02+0000\n"
+"Last-Translator: Kiki Kiki <kikinj@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsadblock/zh_Hans/>\n"
-"Language: zh-cn\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #: applications/luci-app-adblock/luasrc/model/cbi/adblock/overview_tab.lua:78
 msgid ""
 "<b>Caution:</b> To prevent OOM exceptions on low memory devices with less "
 "than 64 MB free RAM, please only select a few of them!"
-msgstr "<b>警告：</b>为防止可用内存少于 64 MB 的低内存设备出现 OOM 异常，请仅选择其中一些！"
+msgstr ""
+"<b>注意：</b>为防止可用内存少于 64 MB 的低内存设备出现 OOM 异常，请仅选择其中"
+"一些！"
 
 #: applications/luci-app-adblock/luasrc/view/adblock/report.htm:86
 #: applications/luci-app-adblock/luasrc/view/adblock/report.htm:89
 msgid "Action"
 msgstr "动作"
+
+#: applications/luci-app-adblock/luasrc/controller/adblock.lua:17
+#: applications/luci-app-adblock/luasrc/model/cbi/adblock/overview_tab.lua:10
+msgid "Adblock"
+msgstr "广告拦截"
 
 #: applications/luci-app-adblock/luasrc/view/adblock/runtime.htm:151
 msgid "Adblock Status"
@@ -38,7 +45,7 @@ msgstr "Adblock 版本"
 
 #: applications/luci-app-adblock/luasrc/model/cbi/adblock/overview_tab.lua:182
 msgid "Additional trigger delay in seconds before adblock processing begins."
-msgstr "触发 Adblock 开始处理前的额外延迟（秒）。"
+msgstr "事件触发启动前的延时（秒）。"
 
 #: applications/luci-app-adblock/luasrc/controller/adblock.lua:23
 msgid "Advanced"
@@ -470,7 +477,6 @@ msgid "Runtime Information"
 msgstr "运行信息"
 
 #: applications/luci-app-adblock/luasrc/model/cbi/adblock/overview_tab.lua:84
-#, fuzzy
 msgid "SSL req."
 msgstr "要求SSL"
 

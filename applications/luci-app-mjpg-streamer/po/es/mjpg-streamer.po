@@ -54,7 +54,7 @@ msgid "Don't initialize dynctrls"
 msgstr "No inicialice dynctrls"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:74
-msgid "Drop frames smaller than this limit"
+msgid "Drop frames smaller then this limit"
 msgstr "Drop frames más pequeños que este límite"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:12
@@ -75,7 +75,7 @@ msgstr "Exceder"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:220
 msgid ""
-"Execute command after saving picture. Mjpg-streamer parses the filename as "
+"Execute command after saving picture. Mjpg-streamer parse the filename as "
 "first parameter to your script."
 msgstr ""
 "Ejecute el comando después de guardar la imagen. Mjpg-streamer analiza el "
@@ -217,12 +217,3 @@ msgid ""
 msgstr ""
 "MJPG-streamer es una aplicación de transmisión para webcams compatibles con "
 "Linux-UVC"
-
-#~ msgid "Check to save the stream to an mjpeg file"
-#~ msgstr "Marque para guardar la secuencia en un archivo mjpeg"
-
-#~ msgid "File input"
-#~ msgstr "Entrada de archivo"
-
-#~ msgid "Mjpeg output"
-#~ msgstr "Salida Mjpeg"

@@ -161,8 +161,8 @@ msgstr "Trì hoãn tun/tap mở và up script execution"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
-msgstr "Tham số Diffie-Hellman "
+msgid "Diffie Hellman parameters"
+msgstr "Tham số Diffie Hellman "
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
 msgid "Directory for custom client config files"
@@ -280,8 +280,8 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Thực hiện shell cmd sau khi tuyến đã thêm vào"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
-msgstr "Thực hiện lệnh shell trên IP thay đổi từ xa"
+msgid "Execute shell command on remote ip change"
+msgstr "Thực hiện lệnh shell trên ip thay đổi từ xa"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
 msgid ""
@@ -353,7 +353,7 @@ msgid "Local certificate"
 msgstr "Chứng chỉ địa phương"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
+msgid "Local host name or ip address"
 msgstr "Tên host địa phương và địa chỉ IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -481,7 +481,7 @@ msgstr "Remap tín hiệu SIGUSR1"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
+msgid "Remote host name or ip address"
 msgstr "Tên host ngoài vùng và địa chỉ IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -802,24 +802,3 @@ msgstr "tun/tap timeout không có hành động"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "Có (%i)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Daemonize sau khi khởi tạo"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "Lấy mật mã PEM từ điều khiển tty trước khi chúng ta daemonize"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr "Output tới syslog và đừng daemonize"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Chạy như inetd hoặc xinetd server"
-
-#~ msgid "Set GID to group"
-#~ msgstr "Cài đặt GID tới nhóm"
-
-#~ msgid "Set UID to user"
-#~ msgstr "Cài đặt UID tới người dùng"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Viết xử lý ID lên tập tin"

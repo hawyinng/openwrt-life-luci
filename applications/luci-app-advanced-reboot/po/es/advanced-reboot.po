@@ -206,11 +206,11 @@ msgstr ""
 "un firmware completamente diferente.<br /><br /> Como la configuración de su "
 "red y el SSID/contraseña Wi-Fi en la partición alternativa pueden ser "
 "diferentes, es posible que tenga que ajustar la configuración de su "
-"computadora para poder para acceder a su dispositivo una vez que se "
-"reinicie.<br /><br /> También tenga en cuenta que un firmware de partición "
+"computadora para poder para acceder a su dispositivo una vez que se reinicie."
+"<br /><br /> También tenga en cuenta que un firmware de partición "
 "alternativo podría no proporcionar una manera fácil de cambiar la partición "
-"activa y volver a iniciar la partición activa.<br /><br /> Haga clic en \""
-"Proceder\" a continuación para reiniciar el dispositivo a una partición "
+"activa y volver a iniciar la partición activa.<br /><br /> Haga clic en "
+"\"Proceder\" a continuación para reiniciar el dispositivo a una partición "
 "alternativa."
 
 #: applications/luci-app-advanced-reboot/luasrc/view/advanced_reboot/power_off.htm:12
@@ -259,9 +259,3 @@ msgstr "intentando desmontar una partición alternativa"
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr "a"
-
-#~ msgid "Action"
-#~ msgstr "Acción"
-
-#~ msgid "Firmware/OS (Kernel)"
-#~ msgstr "Firmware"

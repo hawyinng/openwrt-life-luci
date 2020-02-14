@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:41+0200\n"
-"PO-Revision-Date: 2020-01-26 12:41+0000\n"
+"PO-Revision-Date: 2020-02-09 15:50+0000\n"
 "Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopenvpn/es/>\n"
@@ -159,7 +159,7 @@ msgstr "Espera para la apertura TUN/TAP y ejecución del script de arranque"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
+msgid "Diffie Hellman parameters"
 msgstr "Parámetros Diffie-Hellman"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
@@ -280,7 +280,7 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Comandos a ejecutar tras añadir rutas"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
+msgid "Execute shell command on remote ip change"
 msgstr "Comando a ejecutar si se cambia la IP remota"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
@@ -359,7 +359,7 @@ msgid "Local certificate"
 msgstr "Certificado local"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
+msgid "Local host name or ip address"
 msgstr "Nombre de máquina local o dirección IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -489,8 +489,8 @@ msgstr "Redirigir señales SIGUSR1"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
-msgstr "Nombre de máquina remota o dirección IP"
+msgid "Remote host name or ip address"
+msgstr "Nombre de host remoto o dirección IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
 msgid "Remote ping timeout"
@@ -817,30 +817,3 @@ msgstr "Espera de inactividad tun/tap"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "sí (%i)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Demonizar tras inicialización"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "Obtener la clave PEM del tty de control antes de demonizar"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr "Escribir en SysLog y no demonizar"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Ejecutar como servidor inetd o xinetd"
-
-#~ msgid "Set GID to group"
-#~ msgstr "GID del grupo"
-
-#~ msgid "Set UID to user"
-#~ msgstr "UID del usuario"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Escribir ID del proceso al archivo"
-
-#~ msgid "Remote host name or ip address"
-#~ msgstr "Nombre de host remoto o dirección IP"
-
-#~ msgid "Invalid"
-#~ msgstr "No válido"

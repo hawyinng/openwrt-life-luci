@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-01-03 04:36+0000\n"
-"Last-Translator: INAGAKI Hiroshi <musashino.tech@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 11:01+0000\n"
+"Last-Translator: INAGAKI Hiroshi <musashino.open@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsmjpg-streamer/ja/>\n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:217
 msgid "Allow ringbuffer to exceed limit by this amount"
@@ -54,7 +54,7 @@ msgid "Don't initialize dynctrls"
 msgstr "dynctrlsを初期化しない"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:74
-msgid "Drop frames smaller than this limit"
+msgid "Drop frames smaller then this limit"
 msgstr "この制限よりも小さいフレームをドロップする"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:12
@@ -75,7 +75,7 @@ msgstr "超過"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:220
 msgid ""
-"Execute command after saving picture. Mjpg-streamer parses the filename as "
+"Execute command after saving picture. Mjpg-streamer parse the filename as "
 "first parameter to your script."
 msgstr ""
 "画像保存後にコマンドを実行します。Mjpg-streamerは、ファイル名をスクリプトの最"
@@ -143,7 +143,7 @@ msgstr "オフ"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:80
 msgid "On"
-msgstr "点灯"
+msgstr "オン"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:20
 msgid "Output plugin"
@@ -215,12 +215,3 @@ msgid ""
 msgstr ""
 "Mjpg streamerは、Linux-UVC互換ウェブカメラのためのストリーミング アプリケー"
 "ションです。"
-
-#~ msgid "Check to save the stream to an mjpeg file"
-#~ msgstr "MJPEGファイルに保存するにはチェックします。"
-
-#~ msgid "File input"
-#~ msgstr "ファイル入力"
-
-#~ msgid "Mjpeg output"
-#~ msgstr "MJPEG 出力"

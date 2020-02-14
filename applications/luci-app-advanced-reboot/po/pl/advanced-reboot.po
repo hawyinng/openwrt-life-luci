@@ -257,9 +257,3 @@ msgstr "próba odmontowania alternatywnej partycji"
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr "do"
-
-#~ msgid "Action"
-#~ msgstr "Akcja"
-
-#~ msgid "Firmware/OS (Kernel)"
-#~ msgstr "Firmware/System operacyjny (Jądro)"

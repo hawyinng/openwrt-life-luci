@@ -254,9 +254,3 @@ msgstr "tentando desmontar uma partição alternativa"
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr "para"
-
-#~ msgid "Action"
-#~ msgstr "Ação"
-
-#~ msgid "Firmware/OS (Kernel)"
-#~ msgstr "Firmware/SO (Kernel)"

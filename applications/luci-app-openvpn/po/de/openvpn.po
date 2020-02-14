@@ -160,7 +160,7 @@ msgstr "Shell-Kommando nach Schnittstelleneinrichtung verzögern"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
+msgid "Diffie Hellman parameters"
 msgstr "Diffie-Hellman-Parameter"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
@@ -282,7 +282,7 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Shell-Befehl nach Routen-Einrichtung ausführen"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
+msgid "Execute shell command on remote ip change"
 msgstr "Programm bei Adressänderung der Gegenstelle aufrufen"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
@@ -361,7 +361,7 @@ msgid "Local certificate"
 msgstr "Lokales Zertifikat"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
+msgid "Local host name or ip address"
 msgstr "Lokaler Rechnername oder IP Adresse"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -490,7 +490,7 @@ msgstr "\"USR1\" Systemsignal umleiten"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
+msgid "Remote host name or ip address"
 msgstr "Entfernter Rechnername oder IP-Adresse"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -819,27 +819,3 @@ msgstr "Inaktivitäts-Timeout für TUN/TAP Schnittstellen"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "Gestartet (%s)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Nach der Initialisierung als Hintergrundprozess ausführen"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "PEM-Passwort von Konsole abfragen"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr "Ausgaben ins Systemprotokoll umleiten und im Vordergrund ausführen"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Als <em>inetd</em> oder <em>xinetd</em> Server laufen"
-
-#~ msgid "Set GID to group"
-#~ msgstr "Dienst mit Benutzergruppe laufen lassen"
-
-#~ msgid "Set UID to user"
-#~ msgstr "Dienst als Benutzer laufen lassen"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Prozess-Nummer in Datei schreiben"
-
-#~ msgid "Invalid"
-#~ msgstr "Ungültig"

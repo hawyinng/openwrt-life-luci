@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LuCI: openvpn\n"
 "POT-Creation-Date: 2013-09-06 10:01+0200\n"
-"PO-Revision-Date: 2020-01-25 05:04+0000\n"
-"Last-Translator: Anton Kikin <a.a.kikin@gmail.com>\n"
+"PO-Revision-Date: 2020-02-12 11:01+0000\n"
+"Last-Translator: Alex Ky <esthomolupus@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopenvpn/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.11-dev\n"
 "Project-Info: Это технический перевод, не дословный. Главное-удобный русский "
 "интерфейс, все проверялось в графическом режиме, совместим с другими apps\n"
@@ -167,7 +167,7 @@ msgstr "Использовать задержку запуска tun/tap до в
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
+msgid "Diffie Hellman parameters"
 msgstr "Файл параметров Диффи Хелмана"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
@@ -301,7 +301,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:104
 msgid "Enabled"
-msgstr "Включено"
+msgstr "Включить"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:749
 msgid "Encrypt and authenticate all control channel packets with the key"
@@ -318,7 +318,7 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Выполнить shell команду после добавления маршрутов"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
+msgid "Execute shell command on remote ip change"
 msgstr "Выполнить shell команду при изменении IP-адреса удалённого хоста"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
@@ -400,7 +400,7 @@ msgid "Local certificate"
 msgstr "Локальный сертификат"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
+msgid "Local host name or ip address"
 msgstr "Имя локального хоста или IP-адрес"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -537,7 +537,7 @@ msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
+msgid "Remote host name or ip address"
 msgstr "Имя удалённого хоста или IP-адрес"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -886,25 +886,3 @@ msgstr "Промежуток времени простоя tun/tap"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "да (%i)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Запустить в режиме демона после инициализации"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "Получить PEM пароль от управления tty, прежде чем включить демон"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr ""
-#~ "Записывать события в системный журнал и не переходить в режим демона"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Запуск от имени сервера 'inetd' или 'xinetd'"
-
-#~ msgid "Set GID to group"
-#~ msgstr "Задайте GID группы"
-
-#~ msgid "Set UID to user"
-#~ msgstr "Задайте UID пользователя"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Записать ID процесса в файл"

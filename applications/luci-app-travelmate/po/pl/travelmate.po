@@ -90,7 +90,8 @@ msgstr "Wróć do przeglądu"
 
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/overview_tab.lua:148
 msgid "Buffer size in bytes to prepare nearby scan results."
-msgstr "Rozmiar bufora w bajtach do przygotowania rezultatu skanowania okolicy."
+msgstr ""
+"Rozmiar bufora w bajtach do przygotowania rezultatu skanowania okolicy."
 
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/overview_tab.lua:58
 msgid "Captive Portal Detection"
@@ -249,7 +250,8 @@ msgstr "Wymuś TKIP i CCMP (AES)"
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/overview_tab.lua:136
 msgid ""
 "How long should travelmate wait for a successful wlan uplink connection."
-msgstr "Jak długo travelmate powinien czekać na udane połączenie bezprzewodowe."
+msgstr ""
+"Jak długo travelmate powinien czekać na udane połączenie bezprzewodowe."
 
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/wifi_add.lua:105
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/wifi_edit.lua:87

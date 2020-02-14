@@ -239,9 +239,3 @@ msgstr ""
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr ""
-
-#~ msgid "Action"
-#~ msgstr "Actiune"
-
-#~ msgid "Firmware/OS (Kernel)"
-#~ msgstr "Firmware / sistem de operare (Kernel)"

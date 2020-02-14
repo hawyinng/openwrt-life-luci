@@ -234,12 +234,3 @@ msgstr ""
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr ""
-
-#~ msgid "Action"
-#~ msgstr "Åtgärd"
-
-#~ msgid "Firmware/OS (Kernel)"
-#~ msgstr "Inre mjukvara/OS (Kärna)"
-
-#~ msgid "Warning: This system does not have two partitions!"
-#~ msgstr "Varning: Det här systemet har inte två partitioner!"

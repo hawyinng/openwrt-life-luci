@@ -162,7 +162,7 @@ msgstr "Retarda l'obertura tun/tap i l'execució d'script d'activació"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
+msgid "Diffie Hellman parameters"
 msgstr "Paràmetres Diffie-Hellman"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
@@ -281,7 +281,7 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Executa comanda després d'afegir les rutes"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
+msgid "Execute shell command on remote ip change"
 msgstr "Executa una ordre de consola quan hi hagi un canvi d'IP remot"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
@@ -354,7 +354,7 @@ msgid "Local certificate"
 msgstr "Certificat local"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
+msgid "Local host name or ip address"
 msgstr "Nom de màquina local o adreça IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -482,7 +482,7 @@ msgstr "Remapeja senyals SIGUSR1"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
+msgid "Remote host name or ip address"
 msgstr "Nom de màquina remot o adreça IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -804,27 +804,3 @@ msgstr "temps d'espera màxim d'inactivitat tun/tap"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "sí (%i)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Dimonitza després d'inicialitzar"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "Aconsegueix contrasenya PEM de controlar tty abans de dimonitzar"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr "Sortida al syslog i no dimonitzis"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Executa com un servidor inetd o xinetd"
-
-#~ msgid "Set GID to group"
-#~ msgstr "Estableix el GID al grup"
-
-#~ msgid "Set UID to user"
-#~ msgstr "Estableix l'UID per l'usuari"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Escriu l'ID del procés al fitxer"
-
-#~ msgid "Invalid"
-#~ msgstr "Invàlid"

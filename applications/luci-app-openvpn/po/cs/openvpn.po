@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2019-12-05 17:06+0000\n"
-"Last-Translator: Jiri Tersel <jiri.tersel@seznam.cz>\n"
+"PO-Revision-Date: 2020-02-02 09:02+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsopenvpn/cs/>\n"
 "Language: cs\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.11-dev\n"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:821
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:824
@@ -161,8 +161,8 @@ msgstr "Pozdržet otevření TUN/TAP a spojeného skriptu do navázání spojen�
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
-msgstr "Parametry Diffie-Hellman"
+msgid "Diffie Hellman parameters"
+msgstr "Parametry Diffie Hellman"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
 msgid "Directory for custom client config files"
@@ -265,7 +265,7 @@ msgstr "Povolit správu rozhraní na <em>IP</em> <em>port</em>"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:104
 msgid "Enabled"
-msgstr "Povoleno"
+msgstr "Zapnuto"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:749
 msgid "Encrypt and authenticate all control channel packets with the key"
@@ -280,7 +280,7 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Spustit příkaz po přidání tras"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
+msgid "Execute shell command on remote ip change"
 msgstr "Spustit příkaz po změně IP adresy"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
@@ -359,7 +359,7 @@ msgid "Local certificate"
 msgstr "Lokální certifikát"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
+msgid "Local host name or ip address"
 msgstr "Název místního hostitele nebo IP adresa"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -488,7 +488,7 @@ msgstr "Přemapovat signály SIGUSR1"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
+msgid "Remote host name or ip address"
 msgstr "Název vzdáleného hostitele nebo adresa IP"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -812,27 +812,3 @@ msgstr "časový limit nečinnosti TUN/TAP"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "ano (%i)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Po inicializaci změnit na démona"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "Získat heslo PEM z řídící TTY před démonizací"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr "Vypsat do syslog a nedémonizovat"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Spustit jako inetd nebo xinetd server"
-
-#~ msgid "Set GID to group"
-#~ msgstr "Nastavit GID na skupinu"
-
-#~ msgid "Set UID to user"
-#~ msgstr "Nastavit UID na uživatele"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Zapsat ID procesu do souboru"
-
-#~ msgid "Invalid"
-#~ msgstr "Neplatné"

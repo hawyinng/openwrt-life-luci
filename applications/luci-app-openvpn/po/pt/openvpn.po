@@ -161,7 +161,7 @@ msgstr "Retardar o script de abertura/ativação tun/tap"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
+msgid "Diffie Hellman parameters"
 msgstr "Parametros Diffie-Hellman"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
@@ -282,7 +282,7 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Executar o comando shell após as rotas serem adicionadas"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
+msgid "Execute shell command on remote ip change"
 msgstr "Executar o comando shell quando existir alteração do IP remoto"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
@@ -361,7 +361,7 @@ msgid "Local certificate"
 msgstr "Certificado local"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
+msgid "Local host name or ip address"
 msgstr "Hostname ou endereço IP local"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
@@ -491,7 +491,7 @@ msgstr "Mapear os sinais SIGUSR1"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
+msgid "Remote host name or ip address"
 msgstr "Hostname ou endereço IP remoto"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
@@ -818,30 +818,3 @@ msgstr "Timeout de inactividade tun/tap"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "sim (%i)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Passar a daemon após a inicialização"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "Obter password PEM do terminal de controlo antes de passar a daemon"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr "Registos para o syslog e não passar a daemon"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Executar via inetd ou xinetd"
-
-#~ msgid "Set GID to group"
-#~ msgstr "Assumir GID para o grupo"
-
-#~ msgid "Set UID to user"
-#~ msgstr "Assumir UID para o utilizador"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Escrever PID no ficheiro"
-
-#~ msgid "Remote host name or ip address"
-#~ msgstr "Hostname ou endereço IP remoto"
-
-#~ msgid "Invalid"
-#~ msgstr "Inválido"

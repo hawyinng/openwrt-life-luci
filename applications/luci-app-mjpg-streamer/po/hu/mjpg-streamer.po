@@ -51,8 +51,8 @@ msgid "Don't initialize dynctrls"
 msgstr "Ne készítse elő a dynctrls programot"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:74
-msgid "Drop frames smaller than this limit"
-msgstr "Ennél a korlátnál kisebb képkockák eldobása"
+msgid "Drop frames smaller then this limit"
+msgstr ""
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:12
 msgid "Enable MJPG-streamer"
@@ -72,11 +72,9 @@ msgstr "Meghaladás"
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:220
 msgid ""
-"Execute command after saving picture. Mjpg-streamer parses the filename as "
+"Execute command after saving picture. Mjpg-streamer parse the filename as "
 "first parameter to your script."
 msgstr ""
-"Parancs végrehajtása a fénykép mentése után. Az MJPG-adatközvetítő a "
-"parancsfájl első paramétereként dolgozza fel a fájlnevet."
 
 #: applications/luci-app-mjpg-streamer/luasrc/model/cbi/mjpg-streamer.lua:34
 msgid "File output"
@@ -214,12 +212,3 @@ msgid ""
 msgstr ""
 "Az MJPG-adatközvetítő egy adatközvetítő alkalmazás a Linux-UVC kompatibilis "
 "webkamerákhoz"
-
-#~ msgid "Check to save the stream to an mjpeg file"
-#~ msgstr "Jelölje be az adatfolyam egy mjpeg-fájlba történő mentéséhez"
-
-#~ msgid "File input"
-#~ msgstr "Fájlbemenet"
-
-#~ msgid "Mjpeg output"
-#~ msgstr "Mjpeg kimenet"

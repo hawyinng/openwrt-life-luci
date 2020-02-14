@@ -159,8 +159,8 @@ msgstr "Delay tun/tap open and up script execution"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:661
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:81
-msgid "Diffie-Hellman parameters"
-msgstr "Diffie-Hellman parameters"
+msgid "Diffie Hellman parameters"
+msgstr "Diffie Hellman parameters"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:426
 msgid "Directory for custom client config files"
@@ -278,8 +278,8 @@ msgid "Execute shell cmd after routes are added"
 msgstr "Execute shell cmd after routes are added"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:131
-msgid "Execute shell command on remote IP change"
-msgstr "Execute shell command on remote IP change"
+msgid "Execute shell command on remote ip change"
+msgstr "Execute shell command on remote ip change"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:156
 msgid ""
@@ -351,8 +351,8 @@ msgid "Local certificate"
 msgstr "Local certificate"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:176
-msgid "Local host name or IP address"
-msgstr "Local host name or IP address"
+msgid "Local host name or ip address"
+msgstr "Local host name or ip address"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:669
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:89
@@ -479,8 +479,8 @@ msgstr "Remap SIGUSR1 signals"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:500
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:61
-msgid "Remote host name or IP address"
-msgstr "Remote host name or IP address"
+msgid "Remote host name or ip address"
+msgstr "Remote host name or ip address"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:315
 msgid "Remote ping timeout"
@@ -800,24 +800,3 @@ msgstr "tun/tap inactivity timeout"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn.lua:111
 msgid "yes (%i)"
 msgstr "yes (%i)"
-
-#~ msgid "Daemonize after initialization"
-#~ msgstr "Daemonize after initialization"
-
-#~ msgid "Get PEM password from controlling tty before we daemonize"
-#~ msgstr "Get PEM password from controlling tty before we daemonize"
-
-#~ msgid "Output to syslog and do not daemonize"
-#~ msgstr "Output to syslog and do not daemonize"
-
-#~ msgid "Run as an inetd or xinetd server"
-#~ msgstr "Run as an inetd or xinetd server"
-
-#~ msgid "Set GID to group"
-#~ msgstr "Set GID to group"
-
-#~ msgid "Set UID to user"
-#~ msgstr "Set UID to user"
-
-#~ msgid "Write process ID to file"
-#~ msgstr "Write process ID to file"

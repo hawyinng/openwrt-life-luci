@@ -240,9 +240,3 @@ msgstr ""
 #: applications/luci-app-advanced-reboot/luasrc/controller/advanced_reboot.lua:233
 msgid "to"
 msgstr "đến"
-
-#~ msgid "Action"
-#~ msgstr "Hành động"
-
-#~ msgid "Firmware/OS (Kernel)"
-#~ msgstr "Bộ nạp khởi động"
