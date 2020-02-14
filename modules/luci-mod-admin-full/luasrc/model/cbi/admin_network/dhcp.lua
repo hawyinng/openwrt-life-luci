@@ -52,7 +52,7 @@ rf = s:taboption("files", Value, "resolvfile",
 	translate("local <abbr title=\"Domain Name System\">DNS</abbr> file"))
 
 rf:depends("noresolv", "")
-rf.placeholder = "/tmp/resolv.conf.auto"
+rf.placeholder = "/tmp/resolv.conf.d/resolv.conf.auto"
 rf.optional = true
 
 
