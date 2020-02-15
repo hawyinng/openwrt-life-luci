@@ -106,6 +106,17 @@ local v2ray = {
                     allowInsecure = (node.tls_allowInsecure == "1") and true or
                         false
                 } or nil,
+                tcpSettings = (node.v2ray_transport == "tcp") and {
+                    header = {
+                        type = node.v2ray_tcp_guise,
+                        request = {
+                            path = node.v2ray_tcp_guise_http_path or {"/"},
+                            headers = {
+                                Host = node.v2ray_tcp_guise_http_host or {}
+                            }
+                        } or {}
+                    }
+                } or nil,
                 kcpSettings = (node.v2ray_transport == "mkcp") and {
                     mtu = tonumber(node.v2ray_mkcp_mtu),
                     tti = tonumber(node.v2ray_mkcp_tti),
@@ -118,7 +129,7 @@ local v2ray = {
                     header = {type = node.v2ray_mkcp_guise}
                 } or nil,
                 wsSettings = (node.v2ray_transport == "ws") and {
-                    path = node.v2ray_ws_path,
+                    path = node.v2ray_ws_path or "",
                     headers = (node.v2ray_ws_host ~= nil) and
                         {Host = node.v2ray_ws_host} or nil
                 } or nil,
