@@ -97,7 +97,7 @@ function link_add_node()
     local link = luci.http.formvalue("link")
     luci.sys.call('rm -f /tmp/links.conf && echo "' .. link ..
                       '" >> /tmp/links.conf')
-    luci.sys.call("/usr/share/passwall/subscription.sh add >/dev/null")
+    luci.sys.call("lua /usr/share/passwall/subscribe.lua add >> /var/log/passwall.log")
 end
 
 function get_log()
@@ -110,9 +110,9 @@ function clear_log() luci.sys.call("echo '' > /var/log/passwall.log") end
 function status()
     local e = {}
     e.dns_mode_status = luci.sys.call("netstat -apn | grep -E '7913|5355' >/dev/null") == 0
-    e.haproxy_status = luci.sys.call(
-                           "ps -w | grep -v grep | grep -i 'haproxy -f /var/etc/" ..
-                               appname .. "/haproxy.cfg' >/dev/null") == 0
+    e.haproxy_status = luci.sys.call(string.format(
+                                         "ps -w | grep -v grep | grep '%s/bin/' | grep haproxy >/dev/null",
+                                         appname)) == 0
     e.kcptun_status = luci.sys.call(
                           "ps -w | grep -v grep | grep -i 'log /var/etc/" ..
                               appname .. "/kcptun' >/dev/null") == 0
@@ -127,7 +127,7 @@ function status()
                                     i, i))
         e["tcp_node%s_status" % i] = luci.sys.call(
                                          string.format(
-                                             "ps -w | grep -v grep | grep -i -E '%s/TCP_%s|brook tproxy -l 0.0.0.0:%s|ipt2socks -T -l %s' >/dev/null",
+                                             "ps -w | grep -v grep | grep '%s/bin/' | grep -i -E 'TCP_%s|brook tproxy -l 0.0.0.0:%s|ipt2socks -T -l %s' >/dev/null",
                                              appname, i, listen_port,
                                              listen_port)) == 0
     end
@@ -142,7 +142,7 @@ function status()
                                     i, i))
         e["udp_node%s_status" % i] = luci.sys.call(
                                          string.format(
-                                             "ps -w | grep -v grep | grep -i -E '%s/UDP_%s|brook tproxy -l 0.0.0.0:%s|ipt2socks -U -l %s' >/dev/null",
+                                             "ps -w | grep -v grep | grep '%s/bin/' | grep -i -E 'UDP_%s|brook tproxy -l 0.0.0.0:%s|ipt2socks -U -l %s' >/dev/null",
                                              appname, i, listen_port,
                                              listen_port)) == 0
     end
@@ -157,7 +157,7 @@ function status()
                                     i, i))
         e["socks5_node%s_status" % i] = luci.sys.call(
                                             string.format(
-                                                "ps -w | grep -v grep | grep -i -E '%s/SOCKS5_%s|brook client -l 0.0.0.0:%s' >/dev/null",
+                                                "ps -w | grep -v grep | grep '%s/bin/' | grep -i -E 'SOCKS5_%s|brook client -l 0.0.0.0:%s' >/dev/null",
                                                 appname, i, listen_port)) == 0
     end
     luci.http.prepare_content("application/json")
