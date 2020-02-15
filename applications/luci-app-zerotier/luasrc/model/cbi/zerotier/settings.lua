@@ -11,18 +11,6 @@ en=t:option(Flag,"enabled",translate("Enable"))
 en.default=0
 en.rmempty=false
 
-function en.write(self, section, value)
-	if value == "1" then
-		sys.exec("/etc/init.d/zerotier enable")
-		sys.exec("/etc/init.d/zerotier start")
-	else
-		sys.exec("/etc/init.d/zerotier stop")
-		sys.exec("/etc/init.d/zerotier disable")
-	end
-
-	Flag.write(self, section, value)
-end
-
 e=t:option(DynamicList,"join",translate('ZeroTier Network ID'))
 e.password=true
 e.rmempty=false
