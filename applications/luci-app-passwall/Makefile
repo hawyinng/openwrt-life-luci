@@ -83,9 +83,9 @@ define Package/$(PKG_NAME)
   DEPENDS:=+libmbedtls +iptables-mod-tproxy +iptables-mod-ipopt +ip +ipset +coreutils-base64 +coreutils-nohup +luci-lib-jsonc \
   +bash +wget +resolveip +unzip +dnsmasq-full +tcping \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ipt2socks:ipt2socks \
-  +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks:shadowsocks-libev \
+  +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks:shadowsocks-libev-ss-redir \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR:shadowsocksr-libev-alt \
-  +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks_socks:shadowsocks-libev \
+  +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks_socks:shadowsocks-libev-ss-local \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR_socks:shadowsocksr-libev-ssr-local \
   +PACKAGE_$(PKG_NAME)_INCLUDE_V2ray:v2ray-core \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Brook:brook \
