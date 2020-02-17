@@ -2686,6 +2686,10 @@ msgstr "LCP 响应故障阈值"
 msgid "LCP echo interval"
 msgstr "LCP 响应间隔"
 
+#: modules/luci-mod-system/luasrc/controller/admin/system.lua:25
+msgid "LED Configuration"
+msgstr "LED 配置"
+
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:265
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:374
 msgid "Label"
