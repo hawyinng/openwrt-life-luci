@@ -75,9 +75,6 @@ end
 if is_installed("brook") or is_finded("brook") then
     type:value("Brook", translate("Brook"))
 end
-if is_installed("trojan") or is_finded("trojan") then
-    type:value("Trojan", translate("Trojan"))
-end
 
 v2ray_protocol = s:option(ListValue, "v2ray_protocol",
                           translate("V2ray Protocol"))
@@ -109,7 +106,6 @@ address:depends("type", "SS")
 address:depends("type", "SSR")
 address:depends("type", "V2ray")
 address:depends("type", "Brook")
-address:depends("type", "Trojan")
 
 use_ipv6 = s:option(Flag, "use_ipv6", translate("Use IPv6"))
 use_ipv6.default = 0
@@ -118,7 +114,6 @@ use_ipv6:depends("type", "SS")
 use_ipv6:depends("type", "SSR")
 use_ipv6:depends("type", "V2ray")
 use_ipv6:depends("type", "Brook")
-use_ipv6:depends("type", "Trojan")
 
 port = s:option(Value, "port", translate("Port"))
 port.datatype = "port"
@@ -128,7 +123,6 @@ port:depends("type", "SS")
 port:depends("type", "SSR")
 port:depends("type", "V2ray")
 port:depends("type", "Brook")
-port:depends("type", "Trojan")
 
 username = s:option(Value, "username", translate("Username"))
 username:depends("type", "Socks5")
@@ -139,7 +133,6 @@ password:depends("type", "Socks5")
 password:depends("type", "SS")
 password:depends("type", "SSR")
 password:depends("type", "Brook")
-password:depends("type", "Trojan")
 
 ss_encrypt_method = s:option(ListValue, "ss_encrypt_method",
                              translate("Encrypt Method"))
@@ -183,7 +176,6 @@ tcp_fast_open:value("false")
 tcp_fast_open:value("true")
 tcp_fast_open:depends("type", "SS")
 tcp_fast_open:depends("type", "SSR")
-tcp_fast_open:depends("type", "Trojan")
 
 ss_plugin = s:option(ListValue, "ss_plugin", translate("plugin"))
 ss_plugin:value("none", translate("none"))
@@ -250,7 +242,6 @@ v2ray_stream_security:depends("type", "V2ray_balancing")
 tls_serverName = s:option(Value, "tls_serverName", translate("Domain"))
 tls_serverName.placeholder = "www.baidu.com"
 tls_serverName:depends("v2ray_stream_security", "tls")
-tls_serverName:depends("trojan_verify_cert", "1")
 
 tls_allowInsecure = s:option(Flag, "tls_allowInsecure",
                              translate("allowInsecure"), translate(
@@ -407,16 +398,6 @@ v2ray_tcp_socks_auth_password = s:option(Value, "v2ray_tcp_socks_auth_password",
                                          "Socks5 " .. translate("Password"))
 v2ray_tcp_socks_auth_password:depends("v2ray_tcp_socks_auth", "password")
 
--- [[ Trojan Cert ]]--
-trojan_verify_cert = s:option(Flag, "trojan_verify_cert",
-                              translate("Trojan Verify Cert"))
-trojan_verify_cert:depends("type", "Trojan")
-
-trojan_cert_path = s:option(Value, "trojan_cert_path",
-                            translate("Trojan Cert Path"))
-trojan_cert_path.default = ""
-trojan_cert_path:depends("trojan_verify_cert", "1")
-
 
 function rmempty_restore()
     address.rmempty = true
@@ -452,11 +433,6 @@ type.validate = function(self, value)
         address.rmempty = false
         port.rmempty = false
         password.rmempty = false
-    elseif value == "Trojan" then
-        address.rmempty = false
-        port.rmempty = false
-        password.rmempty = false
-        tcp_fast_open.rmempty = false
     end
     return value
 end
