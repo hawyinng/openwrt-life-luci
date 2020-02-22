@@ -9,13 +9,13 @@
 
 ### Compile/编译
 ```bash
-./scripts/feeds update luci-lib-json
-./scripts/feeds install luci-lib-json
-git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
-git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
+./scripts/feeds update luci-lib-jsonc
+./scripts/feeds install luci-lib-jsonc
+wget https://raw.githubusercontent.com/lisaac/luci-lib-docker/master/Makefile -P package/luci-lib-docker
+wget https://raw.githubusercontent.com/lisaac/luci-app-dockerman/master/Makefile -P package/luci-app-dockerman
 
 #compile package only
-make package/luci-lib-json/compile V=99
+make package/luci-lib-jsonc/compile V=99
 make package/luci-lib-docker/compile v=99
 make package/luci-app-dockerman/compile v=99
 
