@@ -84,6 +84,7 @@ function smartdnsRenderStatus(res) {
 		renderHTML += "<b><font color=green>SmartDNS - " + _("Running") + "</font></b></em>";
 	} else {
 		renderHTML += "<b><font color=red>SmartDNS - " + _("Not running") + "</font></b></em>";
+		return renderHTML;
 	}
 
 	if (redirectMode === "dnsmasq-upstream") {
@@ -191,9 +192,14 @@ return L.view.extend({
 		o.rmempty = false;
 		o.default = o.disabled;
 
-		// Domain prefetch load ;
 		o = s.taboption("settings", form.Flag, "prefetch_domain", _("Domain prefetch"),
-			_("Enable domain prefetch, accelerate domain response speed."));
+		_("Enable domain prefetch, accelerate domain response speed."));
+		o.rmempty = false;
+		o.default = o.disabled;
+		
+		// Domain Serve expired
+		o = s.taboption("settings", form.Flag, "serve_expired", _("Serve expired"),
+			_("Attempts to serve old responses from cache with a TTL of 0 in the response without waiting for the actual resolution to finish."));
 		o.rmempty = false;
 		o.default = o.disabled;
 
@@ -236,8 +242,8 @@ return L.view.extend({
 
 		// Port;
 		o = s.taboption("seconddns", form.Value, "seconddns_port", _("Local Port"), _("Smartdns local server port"));
-		o.placeholder = 7053;
-		o.default = 7053;
+		o.placeholder = 6553;
+		o.default = 6553;
 		o.datatype = "port";
 		o.rempty = false;
 
@@ -245,11 +251,6 @@ return L.view.extend({
 		o = s.taboption("seconddns", form.Flag, "seconddns_tcp_server", _("TCP Server"), _("Enable TCP DNS Server"));
 		o.rmempty = false;
 		o.default = o.enabled;
-
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_speed_check", _("Skip Speed Check"),
-			_("Do not check speed."));
-		o.rmempty = false;
-		o.default = o.disabled;
 
 		// dns server group;
 		o = s.taboption("seconddns", form.Value, "seconddns_server_group", _("Server Group"),
@@ -259,37 +260,41 @@ return L.view.extend({
 		o.datatype = "hostname";
 		o.rempty = true;
 
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_speed_check", _("Skip Speed Check"));
+		o.rmempty = false;
+		o.default = o.disabled;
+
 		// skip address rules;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_addr", _("Skip Address Rules"),
-			_("Skip address rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_addr", _("Skip Address Rules"));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// skip name server rules;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_nameserver", _("Skip Nameserver Rule"),
-			_("Skip nameserver rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_nameserver", _("Skip Nameserver Rule"));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// skip ipset rules;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_ipset", _("Skip Ipset Rule"),
-			_("Skip ipset rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_ipset", _("Skip Ipset Rule"));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// skip soa address rule;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_soa", _("Skip SOA Address Rule"),
-			_("Skip SOA address rules."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_rule_soa", _("Skip SOA Address Rule"));
 		o.rmempty = false;
 		o.default = o.disabled;
 
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_dualstack_selection", _("Skip Dualstack Selection"),
-			_("Skip Sualstack Selection."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_dualstack_selection", _("Skip Dualstack Selection"));
 		o.rmempty = false;
 		o.default = o.disabled;
 
 		// skip cache;
-		o = s.taboption("seconddns", form.Flag, "seconddns_no_cache", _("Skip Cache"), _("Skip Cache."));
+		o = s.taboption("seconddns", form.Flag, "seconddns_no_cache", _("Skip Cache"));
+		o.rmempty = false;
+		o.default = o.disabled;
+
+		// Force AAAA SOA
+		o = s.taboption("seconddns", form.Flag, "force_aaaa_soa", _("Force AAAA SOA"));
 		o.rmempty = false;
 		o.default = o.disabled;
 

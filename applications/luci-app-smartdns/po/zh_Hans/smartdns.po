@@ -70,6 +70,12 @@ msgstr "域名预加载"
 msgid "Enable domain prefetch, accelerate domain response speed."
 msgstr "启用域名预加载，加速域名响应速度。"
 
+msgid "Serve expired"
+msgstr "缓存过期服务"
+
+msgid "Attempts to serve old responses from cache with a TTL of 0 in the response without waiting for the actual resolution to finish."
+msgstr "查询性能优化，有请求时尝试回应TTL为0的过期记录，以避免查询等待。"
+
 msgid "Redirect"
 msgstr "重定向"
 
@@ -130,38 +136,23 @@ msgstr "使用指定服务器组查询，比如office, home。"
 msgid "Skip Address Rules"
 msgstr "跳过address规则"
 
-msgid "Skip address rules."
-msgstr "跳过address规则。"
-
 msgid "Skip Nameserver Rule"
 msgstr "跳过Nameserver规则"
-
-msgid "Skip nameserver rules."
-msgstr "跳过Nameserver规则。"
 
 msgid "Skip Ipset Rule"
 msgstr "跳过ipset规则"
 
-msgid "Skip ipset rules."
-msgstr "跳过ipset规则。"
-
 msgid "Skip SOA Address Rule"
 msgstr "跳过address SOA(#)规则"
-
-msgid "Skip SOA address rules."
-msgstr "跳过address SOA(#)规则。"
 
 msgid "Skip Dualstack Selection"
 msgstr "跳过双栈优选"
 
-msgid "Skip Sualstack Selection."
-msgstr "跳过双栈优选。"
-
 msgid "Skip Cache"
 msgstr "跳过cache"
 
-msgid "Skip Cache."
-msgstr "跳过cache。"
+msgid "Force AAAA SOA"
+msgstr "停用IPV6地址解析"
 
 msgid "Upstream Servers"
 msgstr "上游服务器"

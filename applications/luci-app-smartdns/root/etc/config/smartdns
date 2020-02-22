@@ -14,6 +14,7 @@ config smartdns
 	option seconddns_no_rule_soa '0'
 	option seconddns_no_dualstack_selection '0'
 	option seconddns_no_cache '0'
+	option force_aaaa_soa '1'
 	option coredump '0'
 	option port '5355'
 	option seconddns_port '5354'
