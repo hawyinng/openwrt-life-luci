@@ -6,16 +6,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:40+0200\n"
-"PO-Revision-Date: 2019-12-04 12:05+0000\n"
-"Last-Translator: lissom <kkjoy2617@gmail.com>\n"
+"PO-Revision-Date: 2020-02-19 13:28+0000\n"
+"Last-Translator: xiazhang <xz@xia.plus>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationssamba4/zh_Hans/>\n"
-"Language: zh-cn\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.11\n"
 
 msgid "Allow legacy protocols"
 msgstr "允许旧协议"
@@ -103,7 +103,7 @@ msgstr "在低端设备上，可以通过强制使用同步I/O而不是默认的
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:76
 msgid "Path"
-msgstr "目录"
+msgstr "路径"
 
 #: applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js:71
 msgid ""

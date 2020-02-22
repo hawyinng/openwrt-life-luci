@@ -52,7 +52,7 @@ msgstr "网络共享-samba3"
 
 #: applications/luci-app-samba/luasrc/model/cbi/samba.lua:46
 msgid "Path"
-msgstr "目录"
+msgstr "路径"
 
 #: applications/luci-app-samba/luasrc/model/cbi/samba.lua:53
 msgid "Read-only"

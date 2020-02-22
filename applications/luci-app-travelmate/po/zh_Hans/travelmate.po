@@ -5,16 +5,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2019-12-04 12:06+0000\n"
-"Last-Translator: lissom <kkjoy2617@gmail.com>\n"
+"PO-Revision-Date: 2020-02-19 13:29+0000\n"
+"Last-Translator: xiazhang <xz@xia.plus>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationstravelmate/zh_Hans/>\n"
-"Language: zh-cn\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.11\n"
 
 #: applications/luci-app-travelmate/luasrc/view/travelmate/runtime.htm:206
 msgid "AP on"
@@ -27,7 +27,7 @@ msgstr "动作"
 
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/overview_tab.lua:74
 msgid "Add Open Uplinks"
-msgstr "添加开放式上行连接"
+msgstr "添加开放的上行链路"
 
 #: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:68
 msgid "Add Uplink"
