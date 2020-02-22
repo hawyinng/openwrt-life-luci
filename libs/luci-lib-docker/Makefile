@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 LUCI_TITLE:=Docker Engine API for LuCI
 LUCI_DEPENDS:=+luci-lib-json
 LUCI_PKGARCH:=all
-PKG_VERSION:=0.1.1
+PKG_VERSION:=0.1.2
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=lisaac <https://github.com/lisaac/luci-lib-docker>
