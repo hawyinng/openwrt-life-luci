@@ -55,6 +55,21 @@ o:value("https", translate("https"))
 o.default     = "udp"
 o.rempty      = false
 
+---- server group
+o = s:option(Value, "server_group", translate("Server Group"), translate("DNS Server group belongs to, used with nameserver, such as office, home."))
+o.rmempty     = true
+o.placeholder = "default"
+o.datatype    = "hostname"
+o.rempty      = true
+
+---- blacklist_ip
+o = s:option(Flag, "blacklist_ip", translate("IP Blacklist Filtering"), translate("Filtering IP with blacklist"))
+o.rmempty     = false
+o.default     = o.disabled
+o.cfgvalue    = function(...)
+    return Flag.cfgvalue(...) or "0"
+end
+
 ---- TLS host verify
 o = s:option(Value, "tls_host_verify", translate("TLS Hostname Verify"), translate("Set TLS hostname to verify."))
 o.default     = ""
@@ -77,21 +92,6 @@ o.default     = ""
 o.datatype    = "hostname"
 o.rempty      = true
 o:depends("type", "https")
-
----- server group
-o = s:option(Value, "server_group", translate("Server Group"), translate("DNS Server group belongs to, used with nameserver, such as office, home."))
-o.rmempty     = true
-o.placeholder = "default"
-o.datatype    = "hostname"
-o.rempty      = true
-
----- blacklist_ip
-o = s:option(Flag, "blacklist_ip", translate("IP Blacklist Filtering"), translate("Filtering IP with blacklist"))
-o.rmempty     = false
-o.default     = o.disabled
-o.cfgvalue    = function(...)
-    return Flag.cfgvalue(...) or "0"
-end
 
 ---- SPKI pin
 o = s:option(Value, "spki_pin", translate("TLS SPKI Pinning"), translate("Used to verify the validity of the TLS server, The value is Base64 encoded SPKI fingerprint, leaving blank to indicate that the validity of TLS is not verified."))
