@@ -71,16 +71,19 @@ if is_finded("ssr-redir") then type:value("SSR", translate("ShadowsocksR")) end
 if is_installed("v2ray") or is_finded("v2ray") then
     type:value("V2ray", translate("V2ray"))
     type:value("V2ray_balancing", translate("V2ray Balancing"))
+    type:value("V2ray_shunt", translate("V2ray Shunt"))
 end
 if is_installed("brook") or is_finded("brook") then
     type:value("Brook", translate("Brook"))
+end
+if is_installed("trojan") or is_finded("trojan") then
+    type:value("Trojan", translate("Trojan"))
 end
 
 v2ray_protocol = s:option(ListValue, "v2ray_protocol",
                           translate("V2ray Protocol"))
 v2ray_protocol:value("vmess", translate("Vmess"))
 v2ray_protocol:depends("type", "V2ray")
-v2ray_protocol:depends("type", "V2ray_balancing")
 
 local n = {}
 uci:foreach(appname, "nodes", function(e)
@@ -95,9 +98,24 @@ table.sort(key_table)
 
 v2ray_balancing_node = s:option(DynamicList, "v2ray_balancing_node",
                                 translate("Load balancing node list"), translate(
-                                    "Load balancing node list, <a target='_blank' href='https://toutyrater.github.io/app/balance.html'>document</a>"))
+                                    "Load balancing node list, <a target='_blank' href='https://toutyrater.github.io/routing/balance2.html'>document</a>"))
 for _, key in pairs(key_table) do v2ray_balancing_node:value(key, n[key]) end
 v2ray_balancing_node:depends("type", "V2ray_balancing")
+
+youtube_node = s:option(ListValue, "youtube_node", "Youtube " .. translate("Node"))
+youtube_node:value("nil", translate("Close"))
+for _, key in pairs(key_table) do youtube_node:value(key, n[key]) end
+youtube_node:depends("type", "V2ray_shunt")
+
+netflix_node = s:option(ListValue, "netflix_node", "Netflix " .. translate("Node"))
+netflix_node:value("nil", translate("Close"))
+for _, key in pairs(key_table) do netflix_node:value(key, n[key]) end
+netflix_node:depends("type", "V2ray_shunt")
+
+default_node = s:option(ListValue, "default_node", translate("Default") .. " " .. translate("Node"))
+default_node:value("nil", translate("Close"))
+for _, key in pairs(key_table) do default_node:value(key, n[key]) end
+default_node:depends("type", "V2ray_shunt")
 
 address = s:option(Value, "address", translate("Address (Support Domain Name)"))
 address.rmempty = false
@@ -106,6 +124,7 @@ address:depends("type", "SS")
 address:depends("type", "SSR")
 address:depends("type", "V2ray")
 address:depends("type", "Brook")
+address:depends("type", "Trojan")
 
 use_ipv6 = s:option(Flag, "use_ipv6", translate("Use IPv6"))
 use_ipv6.default = 0
@@ -114,6 +133,7 @@ use_ipv6:depends("type", "SS")
 use_ipv6:depends("type", "SSR")
 use_ipv6:depends("type", "V2ray")
 use_ipv6:depends("type", "Brook")
+use_ipv6:depends("type", "Trojan")
 
 port = s:option(Value, "port", translate("Port"))
 port.datatype = "port"
@@ -123,6 +143,7 @@ port:depends("type", "SS")
 port:depends("type", "SSR")
 port:depends("type", "V2ray")
 port:depends("type", "Brook")
+port:depends("type", "Trojan")
 
 username = s:option(Value, "username", translate("Username"))
 username:depends("type", "Socks5")
@@ -133,6 +154,7 @@ password:depends("type", "Socks5")
 password:depends("type", "SS")
 password:depends("type", "SSR")
 password:depends("type", "Brook")
+password:depends("type", "Trojan")
 
 ss_encrypt_method = s:option(ListValue, "ss_encrypt_method",
                              translate("Encrypt Method"))
@@ -176,6 +198,7 @@ tcp_fast_open:value("false")
 tcp_fast_open:value("true")
 tcp_fast_open:depends("type", "SS")
 tcp_fast_open:depends("type", "SSR")
+tcp_fast_open:depends("type", "Trojan")
 
 ss_plugin = s:option(ListValue, "ss_plugin", translate("plugin"))
 ss_plugin:value("none", translate("none"))
@@ -236,12 +259,12 @@ v2ray_stream_security:value("none", "none")
 v2ray_stream_security:value("tls", "tls")
 v2ray_stream_security.default = "tls"
 v2ray_stream_security:depends("type", "V2ray")
-v2ray_stream_security:depends("type", "V2ray_balancing")
 
 -- [[ TLS部分 ]] --
 tls_serverName = s:option(Value, "tls_serverName", translate("Domain"))
 tls_serverName.placeholder = "www.baidu.com"
 tls_serverName:depends("v2ray_stream_security", "tls")
+tls_serverName:depends("trojan_verify_cert", "1")
 
 tls_allowInsecure = s:option(Flag, "tls_allowInsecure",
                              translate("allowInsecure"), translate(
@@ -259,7 +282,6 @@ v2ray_transport:value("ds", "DomainSocket")
 v2ray_transport:value("quic", "QUIC")
 v2ray_transport.default = "ws"
 v2ray_transport:depends("type", "V2ray")
-v2ray_transport:depends("type", "V2ray_balancing")
 
 -- [[ TCP部分 ]]--
 
@@ -361,7 +383,6 @@ v2ray_quic_guise:depends("v2ray_transport", "quic")
 
 v2ray_mux = s:option(Flag, "v2ray_mux", translate("Mux"))
 v2ray_mux:depends("type", "V2ray")
-v2ray_mux:depends("type", "V2ray_balancing")
 
 v2ray_mux_concurrency = s:option(Value, "v2ray_mux_concurrency",
                                  translate("Mux Concurrency"))
@@ -398,6 +419,15 @@ v2ray_tcp_socks_auth_password = s:option(Value, "v2ray_tcp_socks_auth_password",
                                          "Socks5 " .. translate("Password"))
 v2ray_tcp_socks_auth_password:depends("v2ray_tcp_socks_auth", "password")
 
+-- [[ Trojan Cert ]]--
+trojan_verify_cert = s:option(Flag, "trojan_verify_cert",
+                              translate("Trojan Verify Cert"))
+trojan_verify_cert:depends("type", "Trojan")
+
+trojan_cert_path = s:option(Value, "trojan_cert_path",
+                            translate("Trojan Cert Path"))
+trojan_cert_path.default = ""
+trojan_cert_path:depends("trojan_verify_cert", "1")
 
 function rmempty_restore()
     address.rmempty = true
@@ -433,6 +463,11 @@ type.validate = function(self, value)
         address.rmempty = false
         port.rmempty = false
         password.rmempty = false
+    elseif value == "Trojan" then
+        address.rmempty = false
+        port.rmempty = false
+        password.rmempty = false
+        tcp_fast_open.rmempty = false
     end
     return value
 end
