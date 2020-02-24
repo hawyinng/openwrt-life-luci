@@ -265,11 +265,17 @@ msgstr "添加方式"
 msgid "V2ray Balancing"
 msgstr "V2ray 负载均衡"
 
+msgid "V2ray Shunt"
+msgstr "V2ray 分流"
+
+msgid "V2ray_shunt"
+msgstr "V2ray 分流"
+
 msgid "Load balancing node list"
 msgstr "负载均衡节点列表"
 
-msgid "Load balancing node list, <a target='_blank' href='https://toutyrater.github.io/app/balance.html'>document</a>"
-msgstr "负载均衡节点列表，<a target='_blank' href='https://toutyrater.github.io/app/balance.html'>说明文档</a>"
+msgid "Load balancing node list, <a target='_blank' href='https://toutyrater.github.io/routing/balance2.html'>document</a>"
+msgstr "负载均衡节点列表，<a target='_blank' href='https://toutyrater.github.io/routing/balance2.html'>说明文档</a>"
 
 msgid "Address (Support Domain Name)"
 msgstr "地址（支持域名）"
