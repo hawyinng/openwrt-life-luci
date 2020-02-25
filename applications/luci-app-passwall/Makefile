@@ -7,8 +7,8 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-passwall
 PKG_VERSION:=3.6
-PKG_RELEASE:=1
-PKG_DATE:=20200224
+PKG_RELEASE:=2
+PKG_DATE:=20200225
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -82,7 +82,7 @@ define Package/$(PKG_NAME)
   TITLE:=LuCI support for PassWall By Lienol
   PKGARCH:=all
   DEPENDS:=+libmbedtls +iptables-mod-tproxy +iptables-mod-ipopt +ip +ipset +coreutils-base64 +coreutils-nohup +luci-lib-jsonc \
-  +bash +wget +resolveip +unzip +dnsmasq-full +tcping \
+  +wget +resolveip +unzip +dnsmasq-full +tcping \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ipt2socks:ipt2socks \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks:shadowsocks-libev-ss-redir \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR:shadowsocksr-libev-alt \
@@ -106,6 +106,7 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/conffiles
+/etc/config/passwall_rule/adblock.conf
 /etc/config/passwall_rule/blacklist_ip
 /etc/config/passwall_rule/chnlist
 /etc/config/passwall_rule/chnroute
