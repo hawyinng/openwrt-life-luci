@@ -7,8 +7,8 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-passwall
 PKG_VERSION:=3.6
-PKG_RELEASE:=2
-PKG_DATE:=20200225
+PKG_RELEASE:=3
+PKG_DATE:=20200226
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -106,7 +106,6 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/conffiles
-/etc/config/passwall_rule/adblock.conf
 /etc/config/passwall_rule/blacklist_ip
 /etc/config/passwall_rule/chnlist
 /etc/config/passwall_rule/chnroute
