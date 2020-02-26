@@ -680,7 +680,7 @@ msgid "Use Kcptun"
 msgstr "使用Kcptun"
 
 msgid "Please confirm whether the Kcptun is installed. If not, please go to Rule Update download installation."
-msgstr "请确认KCP是否已安装，若没有请到自动更新下载安装。"
+msgstr "请确认Kcptun是否已安装，若没有请到自动更新下载安装。"
 
 msgid "Kcptun Server"
 msgstr "Kcptun服务器"
@@ -693,6 +693,12 @@ msgstr "Kcptun参数配置"
 
 msgid "--crypt aes192 --key abc123 --mtu 1350 --sndwnd 128 --rcvwnd 1024 --mode fast"
 msgstr "默认Kcptun和SS服务器相同IP,参数中无需配置服务器IP和本地端口，需要配置的参数和格式如：--crypt aes192 --key abc123 --mtu 1350 --sndwnd 128 --rcvwnd 1024 --mode fast"
+
+msgid "Brook Protocol"
+msgstr "Brook协议"
+
+msgid "Use TLS"
+msgstr "使用TLS"
 
 msgid "V2ray Protocol"
 msgstr "V2ray协议"
