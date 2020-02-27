@@ -6,6 +6,11 @@ m = Map("passwall")
 s = m:section(TypedSection, "global_rules", translate("Rule status"))
 s.anonymous = true
 s:append(Template("passwall/rule/rule_version"))
+o = s:option(Flag, "adblock", translate("Enable adblock"))
+o.rmempty = false
+
+o = s:option(Value, "adblock_url", translate("adblock_url"))
+o.default = "https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt"
 
 ---- Auto Update
 o = s:option(Flag, "auto_update", translate("Enable auto update rules"))
@@ -28,8 +33,9 @@ o:depends("auto_update", 1)
 
 -- [[ Subscribe Settings ]]--
 s = m:section(TypedSection, "global_subscribe", translate("Node Subscribe"),
-              translate(
-                  "Please input the subscription url first, save and submit before updating. If you subscribe to update, it is recommended to delete all subscriptions and then re-subscribe."))
+              "<font color='red'>" .. translate(
+                  "Please input the subscription url first, save and submit before updating. If you subscribe to update, it is recommended to delete all subscriptions and then re-subscribe.") ..
+                  "</font>")
 s.anonymous = true
 
 ---- Subscribe via proxy
@@ -96,7 +102,9 @@ o.rmempty = false
 
 -- [[ App Settings ]]--
 s = m:section(TypedSection, "global_app", translate("App Update"),
-              translate("Please confirm that your firmware supports FPU."))
+              "<font color='red'>" ..
+                  translate("Please confirm that your firmware supports FPU.") ..
+                  "</font>")
 s.anonymous = true
 s:append(Template("passwall/rule/v2ray_version"))
 s:append(Template("passwall/rule/kcptun_version"))

@@ -216,8 +216,7 @@ if is_finded("v2ray-plugin") then ss_plugin:value("v2ray-plugin") end
 if is_finded("obfs-local") then ss_plugin:value("obfs-local") end
 ss_plugin:depends("type", "SS")
 
-ss_plugin_opts =
-    s:option(Value, "ss_plugin_opts", translate("opts"))
+ss_plugin_opts = s:option(Value, "ss_plugin_opts", translate("opts"))
 ss_plugin_opts:depends("ss_plugin", "v2ray-plugin")
 ss_plugin_opts:depends("ss_plugin", "obfs-local")
 
@@ -233,10 +232,6 @@ use_kcp:depends("type", "Brook")
 kcp_server = s:option(Value, "kcp_server", translate("Kcptun Server"))
 kcp_server.placeholder = translate("Default:Current Server")
 kcp_server:depends("use_kcp", "1")
-
-kcp_use_ipv6 = s:option(Flag, "kcp_use_ipv6", translate("Use IPv6"))
-kcp_use_ipv6.default = 0
-kcp_use_ipv6:depends("use_kcp", "1")
 
 kcp_port = s:option(Value, "kcp_port", translate("Kcptun Port"))
 kcp_port.datatype = "port"
