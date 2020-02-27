@@ -292,6 +292,12 @@ msgstr "容器使用的主机名"
 msgid "Download"
 msgstr "下载"
 
+msgid "Import"
+msgstr "导入"
+
+msgid "Export"
+msgstr "导出"
+
 msgid "Path"
 msgstr "路径"
 
@@ -309,3 +315,21 @@ msgstr "远程节点域名"
 
 msgid "Remote Port"
 msgstr "远程节点端口"
+
+msgid "Import Images"
+msgstr "导入镜像"
+
+msgid "load"
+msgstr "载入"
+
+msgid "Remove tag"
+msgstr "移除镜像标签"
+
+msgid "New tag"
+msgstr "新镜像标签"
+
+msgid "Container detail"
+msgstr "容器详情"
+
+msgid "Please input new tag"
+msgstr "请输入新镜像标签名称"
