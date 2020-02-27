@@ -85,7 +85,7 @@ ENABLED=$(config_t_get global enabled 0)
 
 	#dns
 	if [ "$dns_mode" != "nonuse" ]; then
-		icount=$(netstat -apn | grep 5355 | wc -l)
+		icount=$(netstat -apn | grep 7913 | wc -l)
 		if [ $icount = 0 ]; then
 			/etc/init.d/passwall restart
 			exit 0

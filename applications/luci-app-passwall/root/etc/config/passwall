@@ -7,7 +7,6 @@ config global
 	option dns_mode 'chinadns-ng'
 	option up_china_dns 'default'
 	option up_trust_chinadns_ng_dns '127.0.0.1#5354'
-	option dns_53 '0'
 	option proxy_mode 'gfwlist'
 	option localhost_proxy_mode 'gfwlist'
 

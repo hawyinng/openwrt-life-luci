@@ -184,9 +184,6 @@ msgstr "只有多线接入才有效。"
 msgid "Not Specify"
 msgstr "不指定"
 
-msgid "DNS Hijack"
-msgstr "DNS劫持"
-
 msgid "custom"
 msgstr "自定义"
 
@@ -342,18 +339,6 @@ msgstr "单位：秒"
 
 msgid "Units:minutes"
 msgstr "单位：分钟"
-
-msgid "Open and close automatically"
-msgstr "定时自动开关"
-
-msgid "Automatically turn off time"
-msgstr "自动关闭时间"
-
-msgid "Automatically turn on time"
-msgstr "自动开启时间"
-
-msgid "Automatically restart time"
-msgstr "自动重启时间"
 
 msgid "Forwarding Settings"
 msgstr "转发配置"
@@ -771,12 +756,6 @@ msgstr "状态信息显示节点检测"
 
 msgid "Status Show IP111"
 msgstr "状态信息显示IP111"
-
-msgid "Hide Menu"
-msgstr "隐藏菜单"
-
-msgid "After the hidden to the display, input example in the address bar:"
-msgstr "当你隐藏后想再次显示，在地址栏输入例："
 
 msgid "Can't determine ARCH, or ARCH not supported."
 msgstr "无法确认ARCH架构，或是不支持。"
