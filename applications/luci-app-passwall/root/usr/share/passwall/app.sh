@@ -5,13 +5,13 @@
 . $IPKG_INSTROOT/lib/functions/service.sh
 
 CONFIG=passwall
-CONFIG_PATH=/var/etc/$CONFIG
-RUN_BIN_PATH=$CONFIG_PATH/bin
-RUN_ID_PATH=$CONFIG_PATH/id
+TMP_PATH=/var/etc/$CONFIG
+TMP_BIN_PATH=$TMP_PATH/bin
+TMP_ID_PATH=$TMP_PATH/id
 LOCK_FILE=/var/lock/$CONFIG.lock
 LOG_FILE=/var/log/$CONFIG.log
-RULE_PATH=/etc/config/${CONFIG}_rule
 APP_PATH=/usr/share/$CONFIG
+RULES_PATH=/usr/share/${CONFIG}/rules
 TMP_DNSMASQ_PATH=/var/etc/dnsmasq-passwall.d
 DNSMASQ_PATH=/etc/dnsmasq.d
 RESOLVFILE=/tmp/resolv.conf.d/resolv.conf.auto
@@ -120,12 +120,12 @@ ln_start_bin() {
 	local file=$1
 	local bin=$2
 	local cmd=$3
-	if [ -n "${RUN_BIN_PATH}/$bin" -a -f "${RUN_BIN_PATH}/$bin" ];then
-		${RUN_BIN_PATH}/$bin $cmd >/dev/null 2>&1 &
+	if [ -n "${TMP_BIN_PATH}/$bin" -a -f "${TMP_BIN_PATH}/$bin" ];then
+		${TMP_BIN_PATH}/$bin $cmd >/dev/null 2>&1 &
 	else
 		if [ -n "$file" -a -f "$file" ];then
-			ln -s $file ${RUN_BIN_PATH}/$bin
-			${RUN_BIN_PATH}/$bin $cmd >/dev/null 2>&1 &
+			ln -s $file ${TMP_BIN_PATH}/$bin
+			${TMP_BIN_PATH}/$bin $cmd >/dev/null 2>&1 &
 		else
 			echolog "找不到$bin主程序，无法启动！"
 		fi
@@ -208,11 +208,11 @@ load_config() {
 	UDP_REDIR_PORT1=$(config_t_get global_forwarding udp_redir_port 1051)
 	UDP_REDIR_PORT2=$(expr $UDP_REDIR_PORT1 + 1)
 	UDP_REDIR_PORT3=$(expr $UDP_REDIR_PORT2 + 1)
-	SOCKS5_PROXY_PORT1=$(config_t_get global_forwarding socks5_proxy_port 1080)
+	SOCKS5_PROXY_PORT1=$(config_t_get global_forwarding socks5_proxy_port 1081)
 	SOCKS5_PROXY_PORT2=$(expr $SOCKS5_PROXY_PORT1 + 1)
 	SOCKS5_PROXY_PORT3=$(expr $SOCKS5_PROXY_PORT2 + 1)
 	PROXY_IPV6=$(config_t_get global_forwarding proxy_ipv6 0)
-	mkdir -p /var/etc $CONFIG_PATH $RUN_BIN_PATH $RUN_ID_PATH
+	mkdir -p /var/etc $TMP_PATH $TMP_BIN_PATH $TMP_ID_PATH
 	return 0
 }
 
@@ -311,7 +311,7 @@ gen_start_config() {
 			eval port=\$UDP_REDIR_PORT$5
 			ln_start_bin $(find_bin ipt2socks) ipt2socks_udp_$5 "-U -l $port -b 0.0.0.0 -s $node_address -p $node_port -R"
 			
-			# local redsocks_config_file=$CONFIG_PATH/UDP_$i.conf
+			# local redsocks_config_file=$TMP_PATH/UDP_$i.conf
 			# gen_redsocks_config $redsocks_config_file udp $port $node_address $node_port $server_username $server_password
 			# ln_start_bin $(find_bin redsocks2) redsocks2 "-c $redsocks_config_file"
 		elif [ "$type" == "v2ray" -o "$type" == "v2ray_balancing" -o "$type" == "v2ray_shunt" ]; then
@@ -331,7 +331,7 @@ gen_start_config() {
 			eval port=\$UDP_REDIR_PORT$5
 			ln_start_bin $(find_bin ipt2socks) ipt2socks_udp_$5 "-U -l $port -b 0.0.0.0 -s 127.0.0.1 -p $socks5_port -R"
 				
-			# local redsocks_config_file=$CONFIG_PATH/redsocks_UDP_$i.conf
+			# local redsocks_config_file=$TMP_PATH/redsocks_UDP_$i.conf
 			# gen_redsocks_config $redsocks_config_file udp $port "127.0.0.1" $socks5_port
 			# ln_start_bin $(find_bin redsocks2) redsocks2 "-c $redsocks_config_file"
 		elif [ "$type" == "brook" ]; then
@@ -369,7 +369,7 @@ gen_start_config() {
 			eval port=\$TCP_REDIR_PORT$5
 			ln_start_bin $(find_bin ipt2socks) ipt2socks_tcp_$5 "-T -l $port -b 0.0.0.0 -s $node_address -p $node_port -R"
 			
-			# local redsocks_config_file=$CONFIG_PATH/TCP_$i.conf
+			# local redsocks_config_file=$TMP_PATH/TCP_$i.conf
 			# gen_redsocks_config $redsocks_config_file tcp $port $node_address $socks5_port $server_username $server_password
 			# ln_start_bin $(find_bin redsocks2) redsocks2 "-c $redsocks_config_file"
 		elif [ "$type" == "v2ray" -o "$type" == "v2ray_balancing" -o "$type" == "v2ray_shunt" ]; then
@@ -377,23 +377,24 @@ gen_start_config() {
 			ln_start_bin $(config_t_get global_app v2ray_file $(find_bin v2ray))/v2ray v2ray "-config=$config_file"
 		elif [ "$type" == "trojan" ]; then
 			lua $API_GEN_TROJAN $node nat "0.0.0.0" $local_port >$config_file
-			ln_start_bin $(find_bin trojan) trojan "-c $config_file"
+			for k in $(seq 1 $process); do
+				ln_start_bin $(find_bin trojan) trojan "-c $config_file"
+			done
 		else
 			local kcptun_use=$(config_n_get $node use_kcp 0)
 			if [ "$kcptun_use" == "1" ]; then
 				local kcptun_server_host=$(config_n_get $node kcp_server)
 				local kcptun_port=$(config_n_get $node kcp_port)
 				local kcptun_config="$(config_n_get $node kcp_opts)"
-				local lbenabled=$(config_t_get global_haproxy balancing_enable 0)
 				if [ -z "$kcptun_port" -o -z "$kcptun_config" ]; then
-					echolog "【未配置Kcptun参数】，跳过~"
+					echolog "Kcptun未配置参数，错误！"
 					force_stop
 				fi
-				if [ -n "$kcptun_port" -a -n "$kcptun_config" -a "$lbenabled" == "0" ]; then
+				if [ -n "$kcptun_port" -a -n "$kcptun_config" ]; then
 					local run_kcptun_ip=$server_host
 					[ -n "$kcptun_server_host" ] && run_kcptun_ip=$(get_host_ip $network_type $kcptun_server_host)
-					KCPTUN_REDIR_PORT=$(get_not_exists_port_after $KCPTUN_REDIR_PORT udp)
-					ln_start_bin $(config_t_get global_app kcptun_client_file $(find_bin kcptun-client)) kcptun-client "--log $CONFIG_PATH/kcptun_${5}.log -l 0.0.0.0:$KCPTUN_REDIR_PORT -r $run_kcptun_ip:$kcptun_port $kcptun_config"
+					KCPTUN_REDIR_PORT=$(get_not_exists_port_after $KCPTUN_REDIR_PORT tcp)
+					ln_start_bin $(config_t_get global_app kcptun_client_file $(find_bin kcptun-client)) kcptun_tcp_$5 "-l 0.0.0.0:$KCPTUN_REDIR_PORT -r $run_kcptun_ip:$kcptun_port $kcptun_config"
 				fi
 			fi
 			if [ "$type" == "ssr" ]; then
@@ -407,8 +408,8 @@ gen_start_config() {
 				local plugin=$(config_n_get $node ss_plugin)
 				if [ "$plugin" != "none" ]; then
 					[ "$plugin" == "v2ray-plugin" -o "$plugin" == "obfs-local" ] && {
-					local opts=$(config_n_get $node ss_plugin_opts)
-					plugin_params="--plugin $plugin --plugin-opts $opts"
+						local opts=$(config_n_get $node ss_plugin_opts)
+						plugin_params="--plugin $plugin --plugin-opts $opts"
 					}
 				fi
 				for k in $(seq 1 $process); do
@@ -444,13 +445,13 @@ start_redir() {
 		eval node=\$${1}_NODE$i
 		[ "$node" != "nil" ] && {
 			TYPE=$(echo $(config_n_get $node type) | tr 'A-Z' 'a-z')
-			local config_file=$CONFIG_PATH/${1}_${i}.json
+			local config_file=$TMP_PATH/${1}_${i}.json
 			eval current_port=\$${1}_${2}_PORT$i
 			local port=$(echo $(get_not_exists_port_after $current_port $3))
 			eval ${1}_${2}$i=$port
 			gen_start_config $node $port $1 $config_file $i
 			#eval ip=\$${1}_NODE${i}_IP
-			echo $node > $RUN_ID_PATH/${1}_${i}
+			echo $node > $TMP_ID_PATH/${1}_${i}
 		}
 	done
 }
@@ -467,7 +468,7 @@ start_crontab() {
 	sed -i '/$CONFIG/d' /etc/crontabs/root >/dev/null 2>&1 &
 	start_daemon=$(config_t_get global_delay start_daemon)
 	if [ "$start_daemon" = "1" ]; then
-		echo "*/2 * * * * nohup $APP_PATH/monitor.sh > /dev/null 2>&1" >>/etc/crontabs/root
+		echo "*/1 * * * * nohup $APP_PATH/monitor.sh > /dev/null 2>&1" >>/etc/crontabs/root
 		echolog "已启动守护进程。"
 	fi
 
@@ -505,12 +506,6 @@ start_crontab() {
 	autoupdatesubscribe=$(config_t_get global_subscribe auto_update_subscribe)
 	weekupdatesubscribe=$(config_t_get global_subscribe week_update_subscribe)
 	dayupdatesubscribe=$(config_t_get global_subscribe time_update_subscribe)
-	if [ "$autoupdate" = "1" ]; then
-		local t="0 $dayupdate * * $weekupdate"
-		[ "$weekupdate" = "7" ] && t="0 $dayupdate * * *"
-		echo "$t lua $APP_PATH/rule_update.lua nil log > /dev/null 2>&1 &" >>/etc/crontabs/root
-		echolog "配置定时任务：自动更新规则。"
-	fi
 
 	if [ "$autoupdatesubscribe" = "1" ]; then
 		local t="0 $dayupdatesubscribe * * $weekupdate"
@@ -557,9 +552,9 @@ start_dns() {
 	;;
 	chinadns-ng)
 		other_port=$(expr $DNS_PORT + 1)
-		cat $RULE_PATH/gfwlist.conf | sort | uniq | sed -e '/127.0.0.1/d' | sed 's/ipset=\/.//g' | sed 's/\/gfwlist//g' > $CONFIG_PATH/gfwlist.txt
-		[ -f "$CONFIG_PATH/gfwlist.txt" ] && local gfwlist_param="-g $CONFIG_PATH/gfwlist.txt"
-		[ -f "$RULE_PATH/chnlist" ] && local chnlist_param="-m $RULE_PATH/chnlist"
+		cat $RULES_PATH/gfwlist.conf | sort | uniq | sed -e '/127.0.0.1/d' | sed 's/ipset=\/.//g' | sed 's/\/gfwlist//g' > $TMP_PATH/gfwlist.txt
+		[ -f "$TMP_PATH/gfwlist.txt" ] && local gfwlist_param="-g $TMP_PATH/gfwlist.txt"
+		[ -f "$APP_PATH/chnlist" ] && local chnlist_param="-m $APP_PATH/chnlist"
 		
 		up_trust_chinadns_ng_dns=$(config_t_get global up_trust_chinadns_ng_dns "pdnsd")
 		if [ "$up_trust_chinadns_ng_dns" == "pdnsd" ]; then
@@ -596,17 +591,16 @@ start_dns() {
 
 add_dnsmasq() {
 	mkdir -p $TMP_DNSMASQ_PATH $DNSMASQ_PATH /var/dnsmasq.d
-	cat $RULE_PATH/whitelist_host | sed -e "/^$/d" | sed "s/^/ipset=&\/./g" | sed "s/$/\/&whitelist/g" | sort | awk '{if ($0!=line) print;line=$0}' > $TMP_DNSMASQ_PATH/whitelist_host.conf
+	cat $RULES_PATH/whitelist_host | sed -e "/^$/d" | sed "s/^/ipset=&\/./g" | sed "s/$/\/&whitelist/g" | sort | awk '{if ($0!=line) print;line=$0}' > $TMP_DNSMASQ_PATH/whitelist_host.conf
 
 	local adblock=$(config_t_get global_rules adblock 0)
 	[ "$adblock" == "1" ] && {
-		[ -f "$RULE_PATH/adblock.conf" -a -s "$RULE_PATH/adblock.conf" ] && ln -s $RULE_PATH/adblock.conf $TMP_DNSMASQ_PATH/adblock.conf
+		[ -f "$RULES_PATH/adblock.conf" -a -s "$RULES_PATH/adblock.conf" ] && ln -s $RULES_PATH/adblock.conf $TMP_DNSMASQ_PATH/adblock.conf
 	}
 
 	[ "$DNS_MODE" != "nonuse" ] && {
-		[ -f "$RULE_PATH/blacklist_host" -a -s "$RULE_PATH/blacklist_host" ] && cat $RULE_PATH/blacklist_host | sed -e "/^$/d" | awk '{print "server=/."$1"/127.0.0.1#'$DNS_PORT'\nipset=/."$1"/blacklist"}' > $TMP_DNSMASQ_PATH/blacklist_host.conf
-		[ -f "$RULE_PATH/router" -a -s "$RULE_PATH/router" ] && cat $RULE_PATH/router | sed -e "/^$/d" | awk '{print "server=/."$1"/127.0.0.1#'$DNS_PORT'\nipset=/."$1"/router"}' > $TMP_DNSMASQ_PATH/router.conf
-		[ -f "$RULE_PATH/gfwlist.conf" -a -s "$RULE_PATH/gfwlist.conf" ] && ln -s $RULE_PATH/gfwlist.conf $TMP_DNSMASQ_PATH/gfwlist.conf
+		[ -f "$RULES_PATH/blacklist_host" -a -s "$RULES_PATH/blacklist_host" ] && cat $RULES_PATH/blacklist_host | sed -e "/^$/d" | awk '{print "server=/."$1"/127.0.0.1#'$DNS_PORT'\nipset=/."$1"/blacklist"}' > $TMP_DNSMASQ_PATH/blacklist_host.conf
+		[ -f "$RULES_PATH/gfwlist.conf" -a -s "$RULES_PATH/gfwlist.conf" ] && ln -s $RULES_PATH/gfwlist.conf $TMP_DNSMASQ_PATH/gfwlist.conf
 		
 		subscribe_proxy=$(config_t_get global_subscribe subscribe_proxy 0)
 		[ "$subscribe_proxy" -eq 1 ] && {
@@ -623,10 +617,10 @@ add_dnsmasq() {
 					[ -n "$url" -a "$url" != "" ] && {
 						if [ -n "$(echo -n "$url" | grep "//")" ]; then
 							echo -n "$url" | awk -F'/' '{print $3}' | sed "s/^/server=&\/./g" | sed "s/$/\/127.0.0.1#$DNS_PORT/g" >>$TMP_DNSMASQ_PATH/subscribe.conf
-							echo -n "$url" | awk -F'/' '{print $3}' | sed "s/^/ipset=&\/./g" | sed "s/$/\/router/g" >>$TMP_DNSMASQ_PATH/subscribe.conf
+							echo -n "$url" | awk -F'/' '{print $3}' | sed "s/^/ipset=&\/./g" | sed "s/$/\/blacklist/g" >>$TMP_DNSMASQ_PATH/subscribe.conf
 						else
 							echo -n "$url" | awk -F'/' '{print $1}' | sed "s/^/server=&\/./g" | sed "s/$/\/127.0.0.1#$DNS_PORT/g" >>$TMP_DNSMASQ_PATH/subscribe.conf
-							echo -n "$url" | awk -F'/' '{print $1}' | sed "s/^/ipset=&\/./g" | sed "s/$/\/router/g" >>$TMP_DNSMASQ_PATH/subscribe.conf
+							echo -n "$url" | awk -F'/' '{print $1}' | sed "s/^/ipset=&\/./g" | sed "s/$/\/blacklist/g" >>$TMP_DNSMASQ_PATH/subscribe.conf
 						fi
 					}
 				done
@@ -719,7 +713,7 @@ gen_redsocks_config() {
 }
 
 gen_pdnsd_config() {
-	pdnsd_dir=$CONFIG_PATH/pdnsd
+	pdnsd_dir=$TMP_PATH/pdnsd
 	mkdir -p $pdnsd_dir
 	touch $pdnsd_dir/pdnsd.cache
 	chown -R root.nogroup $pdnsd_dir
@@ -732,13 +726,14 @@ gen_pdnsd_config() {
 			server_port = $1;
 			status_ctl = on;
 			query_method = tcp_only;
-			min_ttl = 1d;
+			min_ttl = 1h;
 			max_ttl = 1w;
 			timeout = 10;
-			tcp_qtimeout = 1;
 			par_queries = 1;
 			neg_domain_pol = on;
 			udpbufsize = 1024;
+			proc_limit = 2;
+			procq_limit = 8;
 		}
 		
 	EOF
@@ -751,7 +746,7 @@ gen_pdnsd_config() {
 				edns_query = on;
 				port = 53;
 				timeout = 4;
-				interval = 60;
+				interval = 10m;
 				uptest = none;
 				purge_cache = off;
 			}
@@ -765,8 +760,8 @@ gen_pdnsd_config() {
 			ip = 208.67.222.222, 208.67.220.220;
 			edns_query = on;
 			port = 443;
-			timeout = 4;
-			interval = 60;
+			timeout = 3;
+			interval = 10m;
 			uptest = none;
 			purge_cache = off;
 		}
@@ -775,16 +770,10 @@ gen_pdnsd_config() {
 			ip = 208.67.222.222, 208.67.220.220;
 			edns_query = on;
 			port = 5353;
-			timeout = 4;
-			interval = 60;
+			timeout = 3;
+			interval = 10m;
 			uptest = none;
 			purge_cache = off;
-		}
-		source {
-			ttl = 86400;
-			owner = "localhost.";
-			serve_aliases = on;
-			file = "/etc/hosts";
 		}
 	EOF
 }
@@ -801,7 +790,7 @@ start_haproxy() {
 	[ "$enabled" = "1" ] && {
 		haproxy_bin=$(find_bin haproxy)
 		[ -f "$haproxy_bin" ] && {
-			local HAPROXY_PATH=$CONFIG_PATH/haproxy
+			local HAPROXY_PATH=$TMP_PATH/haproxy
 			mkdir -p $HAPROXY_PATH
 			local HAPROXY_FILE=$HAPROXY_PATH/config.cfg
 			bport=$(config_t_get global_haproxy haproxy_port)
@@ -991,8 +980,8 @@ stop() {
 	source $APP_PATH/iptables.sh stop
 	flush_include
 	kill_all v2ray-plugin obfs-local
-	ps -w | grep -E "$CONFIG_PATH" | grep -v "grep" | awk '{print $1}' | xargs kill -9 >/dev/null 2>&1 &
-	rm -rf $TMP_DNSMASQ_PATH $CONFIG_PATH
+	ps -w | grep -E "$TMP_PATH" | grep -v "grep" | awk '{print $1}' | xargs kill -9 >/dev/null 2>&1 &
+	rm -rf $TMP_DNSMASQ_PATH $TMP_PATH
 	stop_dnsmasq
 	stop_crontab
 	echolog "关闭相关程序，清理相关文件和缓存完成。"

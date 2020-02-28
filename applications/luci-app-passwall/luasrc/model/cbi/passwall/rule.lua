@@ -2,34 +2,12 @@ local e = require "nixio.fs"
 local e = require "luci.sys"
 
 m = Map("passwall")
--- [[ Rule Settings ]]--
-s = m:section(TypedSection, "global_rules", translate("Rule status"))
-s.anonymous = true
-s:append(Template("passwall/rule/rule_version"))
-
----- Auto Update
-o = s:option(Flag, "auto_update", translate("Enable auto update rules"))
-o.default = 0
-o.rmempty = false
-
----- Week Update
-o = s:option(ListValue, "week_update", translate("Week update rules"))
-o:value(7, translate("Every day"))
-for e = 1, 6 do o:value(e, translate("Week") .. e) end
-o:value(0, translate("Week") .. translate("day"))
-o.default = 0
-o:depends("auto_update", 1)
-
----- Time Update
-o = s:option(ListValue, "time_update", translate("Day update rules"))
-for e = 0, 23 do o:value(e, e .. translate("oclock")) end
-o.default = 0
-o:depends("auto_update", 1)
 
 -- [[ Subscribe Settings ]]--
 s = m:section(TypedSection, "global_subscribe", translate("Node Subscribe"),
-              translate(
-                  "Please input the subscription url first, save and submit before updating. If you subscribe to update, it is recommended to delete all subscriptions and then re-subscribe."))
+              "<font color='red'>" .. translate(
+                  "Please input the subscription url first, save and submit before updating. If you subscribe to update, it is recommended to delete all subscriptions and then re-subscribe.") ..
+                  "</font>")
 s.anonymous = true
 
 ---- Subscribe via proxy
@@ -96,7 +74,9 @@ o.rmempty = false
 
 -- [[ App Settings ]]--
 s = m:section(TypedSection, "global_app", translate("App Update"),
-              translate("Please confirm that your firmware supports FPU."))
+              "<font color='red'>" ..
+                  translate("Please confirm that your firmware supports FPU.") ..
+                  "</font>")
 s.anonymous = true
 s:append(Template("passwall/rule/v2ray_version"))
 s:append(Template("passwall/rule/kcptun_version"))
