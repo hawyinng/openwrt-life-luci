@@ -251,8 +251,8 @@ msgid ""
 "for new ones. The currently used uplink is emphasized in blue, faulty "
 "stations in red."
 msgstr ""
-"此处显示 travelmate 接口（%s）所有已配置上行连接的概述。您可以编辑、删除或重"
-"新排序现有连接，或扫描新上行连接。当前使用的上行连接以蓝色突出显示，故障接入点以红色显示。"
+"此处显示 travelmate 接口（%s）所有已配置上行链路的概述。您可以编辑、删除或重"
+"新排序现有链路，或扫描新上行链路。蓝色表示当前使用的上行链路，红色表示故障接入点。"
 
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/overview_tab.lua:107
 msgid "Radio Selection / Order"

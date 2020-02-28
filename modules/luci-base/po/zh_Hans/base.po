@@ -4,15 +4,15 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-02-07 09:18+0000\n"
-"Last-Translator: Fangshing87 <zhouus05@gmail.com>\n"
+"PO-Revision-Date: 2020-02-25 09:43+0000\n"
+"Last-Translator: Zheng Qian <sotux82@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luci/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.11-dev\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 msgid "CPU Model"
 msgstr "CPU 型号"
@@ -2508,7 +2508,7 @@ msgstr "安装扩展协议..."
 msgid ""
 "Instead of joining any network with a matching SSID, only connect to the "
 "BSSID <code>%h</code>."
-msgstr "不使用匹配的SSID连接任何网络，仅连接到BSSID <code>%h</code>."
+msgstr "仅连接到 BSSID 是 <code>%h</code> 的网络，而不是其它 SSID 相同的网格。"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:459
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:466
