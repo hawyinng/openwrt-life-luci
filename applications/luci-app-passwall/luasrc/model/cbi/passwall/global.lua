@@ -56,8 +56,7 @@ o.rmempty = false
 local tcp_node_num = tonumber(api.uci_get_type("global_other", "tcp_node_num", 1))
 for i = 1, tcp_node_num, 1 do
     if i == 1 then
-        o = s:option(ListValue, "tcp_node" .. i, translate("TCP Node"),
-                     translate("Used for TCP packet forwarding."))
+        o = s:option(ListValue, "tcp_node" .. i, translate("TCP Node"))
     else
         o = s:option(ListValue, "tcp_node" .. i,
                      translate("TCP Node") .. " " .. i)
@@ -70,9 +69,7 @@ end
 local udp_node_num = tonumber(api.uci_get_type("global_other", "udp_node_num", 1))
 for i = 1, udp_node_num, 1 do
     if i == 1 then
-        o = s:option(ListValue, "udp_node" .. i, translate("UDP Node"),
-                     translate("Used for UDP packet forwarding.") ..
-                         translate("The selected server will not use Kcptun."))
+        o = s:option(ListValue, "udp_node" .. i, translate("UDP Node"))
         o:value("nil", translate("Close"))
         o:value("tcp", translate("Same as the tcp node"))
     else
@@ -87,8 +84,7 @@ end
 local socks5_node_num = tonumber(api.uci_get_type("global_other", "socks5_node_num", 1))
 for i = 1, socks5_node_num, 1 do
     if i == 1 then
-        o = s:option(ListValue, "socks5_node" .. i, translate("Socks5 Node"),
-                     translate("The client can use the router's Socks5 proxy."))
+        o = s:option(ListValue, "socks5_node" .. i, translate("Socks5 Node"))
         o:value("nil", translate("Close"))
         o:value("tcp", translate("Same as the tcp node"))
     else
@@ -117,8 +113,7 @@ o:value("210.2.4.8", "210.2.4.8 (CNNIC DNS)")
 o:value("180.76.76.76", "180.76.76.76 (" .. translate("Baidu") .. "DNS)")
 
 ---- DNS Forward Mode
-o = s:option(ListValue, "dns_mode", translate("DNS Mode"), translate(
-                 "if you use no patterns are used, DNS of wan will be used by default as upstream of dnsmasq."))
+o = s:option(ListValue, "dns_mode", translate("DNS Mode"))
 o.rmempty = false
 o:reset_values()
 if is_finded("chinadns-ng") then o:value("chinadns-ng", "ChinaDNS-NG") end
@@ -133,9 +128,7 @@ o:value("nonuse", translate("No patterns are used"))
 
 ---- Upstream trust DNS Server for ChinaDNS-NG
 o = s:option(Value, "up_trust_chinadns_ng_dns",
-             translate("Upstream trust DNS Server for ChinaDNS-NG") .. "(UDP)",
-             translate(
-                 "Example: 127.0.0.1#5354<br />Only use two at most."))
+             translate("Upstream trust DNS Server for ChinaDNS-NG") .. "(UDP)")
 o.default = "pdnsd"
 if is_installed("pdnsd") or is_installed("pdnsd-alt") or is_finded("pdnsd") then
     o:value("pdnsd", "pdnsd + " .. translate("Use TCP Node Resolve DNS"))
@@ -168,8 +161,7 @@ o:depends("up_trust_chinadns_ng_dns", "pdnsd")
 
 ---- Default Proxy Mode
 o = s:option(ListValue, "proxy_mode",
-             translate("Default") .. translate("Proxy Mode"),
-             translate("If not available, try clearing the cache."))
+             translate("Default") .. translate("Proxy Mode"))
 o.default = "gfwlist"
 o.rmempty = false
 o:value("disable", translate("No Proxy"))
@@ -180,8 +172,7 @@ o:value("returnhome", translate("Return Home"))
 
 ---- Localhost Proxy Mode
 o = s:option(ListValue, "localhost_proxy_mode",
-             translate("Localhost") .. translate("Proxy Mode"), translate(
-                 "The server client can also use this rule to scientifically surf the Internet."))
+             translate("Localhost") .. translate("Proxy Mode"))
 o:value("default", translate("Default"))
 o:value("gfwlist", translate("GFW List"))
 o:value("chnroute", translate("China WhiteList"))
