@@ -96,9 +96,7 @@ for i = 1, socks5_node_num, 1 do
 end
 
 ---- China DNS Server
-o = s:option(Value, "up_china_dns", translate("China DNS Server") .. "(UDP)",
-             translate(
-                 "If you want to work with other DNS acceleration services, use the default.<br />Example: 127.0.0.1#5355 ,Represents DNS on using 127.0.0.1 the 5355 port.<br />Only use two at most."))
+o = s:option(Value, "up_china_dns", translate("China DNS Server") .. "(UDP)")
 o.default = "default"
 o:value("default", translate("Default"))
 o:value("dnsbyisp", translate("dnsbyisp"))
