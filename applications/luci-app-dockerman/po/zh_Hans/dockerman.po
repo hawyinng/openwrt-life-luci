@@ -106,7 +106,7 @@ msgstr "子网络"
 msgid "New"
 msgstr "新建"
 
-msgid "Resolv CLI"
+msgid "Resolve CLI"
 msgstr "解析命令行"
 
 msgid "Docker Image"
@@ -333,3 +333,6 @@ msgstr "容器详情"
 
 msgid "Please input new tag"
 msgstr "请输入新镜像标签名称"
+
+msgid "Console"
+msgstr "控制台"

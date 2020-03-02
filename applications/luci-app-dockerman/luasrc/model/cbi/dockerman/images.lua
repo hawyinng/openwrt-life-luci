@@ -232,6 +232,6 @@ end
 
 local btnload = action:option(Button, "load")
 btnload.inputtitle= translate("load")
-btnload.template = "dockerman/image_load"
+btnload.template = "dockerman/images_load"
 btnload.inputstyle = "add"
 return m
