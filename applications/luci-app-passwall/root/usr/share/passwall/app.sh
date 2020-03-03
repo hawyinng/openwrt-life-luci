@@ -518,9 +518,8 @@ start_crontab() {
 	autoupdatesubscribe=$(config_t_get global_subscribe auto_update_subscribe)
 	weekupdatesubscribe=$(config_t_get global_subscribe week_update_subscribe)
 	dayupdatesubscribe=$(config_t_get global_subscribe time_update_subscribe)
-
 	if [ "$autoupdatesubscribe" = "1" ]; then
-		local t="0 $dayupdatesubscribe * * $weekupdate"
+		local t="0 $dayupdatesubscribe * * $weekupdatesubscribe"
 		[ "$weekupdatesubscribe" = "7" ] && t="0 $dayupdatesubscribe * * *"
 		echo "$t lua $APP_PATH/subscribe.lua start log > /dev/null 2>&1 &" >>/etc/crontabs/root
 		echolog "配置定时任务：自动更新节点订阅。"
