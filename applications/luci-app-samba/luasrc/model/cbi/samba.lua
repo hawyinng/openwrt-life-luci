@@ -56,7 +56,7 @@ s:option(Value, "name", translate("Name"))
 pth = s:option(Value, "path", translate("Path"))
 pth.placeholder = "/mnt/sda"
 if nixio.fs.access("/etc/config/fstab") then
-        pth.titleref = luci.dispatcher.build_url("admin", "system", "fstab")
+        pth.titleref = luci.dispatcher.build_url("admin", "system", "mounts")
 end
 
 o = s:option(Value, "users", translate("Allowed users"))
