@@ -1,9 +1,6 @@
 msgid "Pass Wall"
 msgstr "PassWall"
 
-msgid "Enable adblock"
-msgstr "启用去广告"
-
 msgid "Auto"
 msgstr "自动"
 
@@ -61,7 +58,7 @@ msgstr "负载均衡"
 msgid "Enter interface"
 msgstr "进入界面"
 
-msgid "Update rules"
+msgid "Rule Update"
 msgstr "更新规则"
 
 msgid "Access control"
