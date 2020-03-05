@@ -7,8 +7,8 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-passwall
 PKG_VERSION:=3.6
-PKG_RELEASE:=10
-PKG_DATE:=20200303
+PKG_RELEASE:=13
+PKG_DATE:=20200305
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -89,6 +89,7 @@ define Package/$(PKG_NAME)
   +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks_socks:shadowsocks-libev-ss-local \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR_socks:shadowsocksr-libev-ssr-local \
   +PACKAGE_$(PKG_NAME)_INCLUDE_V2ray:v2ray-core \
+  +PACKAGE_$(PKG_NAME)_INCLUDE_Trojan:ipt2socks \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Brook:brook \
   +PACKAGE_$(PKG_NAME)_INCLUDE_kcptun:kcptun-client \
   +PACKAGE_$(PKG_NAME)_INCLUDE_haproxy:haproxy \

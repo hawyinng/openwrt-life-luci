@@ -32,7 +32,7 @@ function index()
               cbi("passwall/balancing"), _("Load Balancing"), 95).leaf = true
     end
     entry({"admin", "vpn", "passwall", "rule"}, cbi("passwall/rule"),
-          _("Update rules"), 96).leaf = true
+          _("Rule Update"), 96).leaf = true
     entry({"admin", "vpn", "passwall", "acl"}, cbi("passwall/acl"),
           _("Access control"), 97).leaf = true
     entry({"admin", "vpn", "passwall", "log"}, form("passwall/log"),
@@ -122,8 +122,8 @@ function status()
                               appname, i)) == 0
         e["tcp_node%s_status" % i] = luci.sys.call(
                                          string.format(
-                                             "ps -w | grep -v grep | grep '%s/bin/' | grep -i -E 'TCP_%s|brook_tcp_%s|ipt2socks_tcp_%s' >/dev/null",
-                                             appname, i, i, i)) == 0
+                                             "ps -w | grep -v grep | grep -v kcptun | grep '%s/bin/' | grep -i -E 'TCP_%s' >/dev/null",
+                                             appname, i)) == 0
     end
 
     local udp_node_num = luci.sys.exec(
@@ -132,8 +132,8 @@ function status()
     for i = 1, udp_node_num, 1 do
         e["udp_node%s_status" % i] = luci.sys.call(
                                          string.format(
-                                             "ps -w | grep -v grep | grep '%s/bin/' | grep -i -E 'UDP_%s|brook_udp_%s|ipt2socks_udp_%s' >/dev/null",
-                                             appname, i, i, i)) == 0
+                                             "ps -w | grep -v grep | grep '%s/bin/' | grep -i -E 'UDP_%s' >/dev/null",
+                                             appname, i)) == 0
     end
 
     local socks5_node_num = luci.sys.exec(
@@ -146,7 +146,7 @@ function status()
                               appname, i)) == 0
         e["socks5_node%s_status" % i] = luci.sys.call(
                                             string.format(
-                                                "ps -w | grep -v grep | grep '%s/bin/' | grep -i -E 'SOCKS5_%s|brook_socks_%s' >/dev/null",
+                                                "ps -w | grep -v grep | grep -v kcptun | grep '%s/bin/' | grep -i -E 'SOCKS_%s|SOCKS5_%s' >/dev/null",
                                                 appname, i, i)) == 0
     end
     luci.http.prepare_content("application/json")
