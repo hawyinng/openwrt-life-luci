@@ -19,7 +19,7 @@ config smartdns
 	option port '5355'
 	option seconddns_port '5354'
 	option seconddns_server_group 'public'
-	option seconddns_enabled '0'
+	option seconddns_enabled '1'
 	option redirect 'none'
 	option cache_size '512'
 	list old_redirect 'none'

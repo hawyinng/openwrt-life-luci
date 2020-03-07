@@ -6,7 +6,7 @@ config global
 	option socks5_node1 'nil'
 	option dns_mode 'chinadns-ng'
 	option up_china_dns '127.0.0.1#5355'
-	option up_trust_chinadns_ng_dns '1.1.1.1,208.67.222.222'
+	option up_trust_chinadns_ng_dns '127.0.0.1#5354'
 	option proxy_mode 'gfwlist'
 	option localhost_proxy_mode 'gfwlist'
 
