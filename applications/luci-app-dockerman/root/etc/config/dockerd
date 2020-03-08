@@ -1,0 +1,7 @@
+
+config section 'local'
+        option enable 'true'
+        option iptables 'true'
+        option data_root '/mnt/sdb/docker'
+        option log_level 'warn'
+
