@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 LUCI_TITLE:=Disk Manager interface for LuCI
 LUCI_DEPENDS:=+e2fsprogs +parted +smartmontools +blkid +lsblk
 LUCI_PKGARCH:=all
-PKG_VERSION:=0.2.4
+PKG_VERSION:=0.2.5
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=lisaac <https://github.com/lisaac/luci-app-diskman>
