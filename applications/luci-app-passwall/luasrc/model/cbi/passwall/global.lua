@@ -175,7 +175,7 @@ o:value("returnhome", translate("Return Home"))
 
 ---- Localhost Proxy Mode
 o = s:option(ListValue, "localhost_proxy_mode",
-             translate("Localhost") .. translate("Proxy Mode"))
+             translate("Router Localhost") .. translate("Proxy Mode"))
 o:value("default", translate("Default"))
 o:value("gfwlist", translate("GFW List"))
 o:value("chnroute", translate("China WhiteList"))
