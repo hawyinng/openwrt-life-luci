@@ -175,8 +175,8 @@ msgstr "中国白名单"
 msgid "Return Home"
 msgstr "回国模式"
 
-msgid "Localhost"
-msgstr "本机"
+msgid "Router Localhost"
+msgstr "路由器自身"
 
 msgid "Add Node"
 msgstr "添加节点"

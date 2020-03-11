@@ -42,9 +42,9 @@ config global_other
 
 config global_rules
 	option auto_update '0'
-	option gfwlist_version '2020-02-27'
-	option chnroute_version '2020-02-27'
-	option chnlist_version '2020-02-27'
+	option gfwlist_version '2020-03-10'
+	option chnroute_version '2020-03-10'
+	option chnlist_version '2020-03-10'
 	option gfwlist_update '0'
 	option chnroute_update '0'
 	option chnlist_update '0'
