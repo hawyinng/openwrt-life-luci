@@ -2,6 +2,9 @@
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 
+msgid "OpenClash"
+msgstr "OpenClash"
+
 msgid "A Clash Client For OpenWrt"
 msgstr "一个运行在OpenWrt上的Clash客户端，兼容Shadowsocks、Vmess、Snell等协议，根据灵活的规则配置实现策略代理"
 
@@ -14,8 +17,14 @@ msgstr "技术支持"
 msgid "Overviews"
 msgstr "运行状态"
 
+msgid "Global Settings"
+msgstr "全局设置"
+
 msgid "Game Rules and Groups"
 msgstr "游戏规则与策略组管理"
+
+msgid "General Settings"
+msgstr "常规设置"
 
 msgid "DNS Setting"
 msgstr "DNS设置"
@@ -31,6 +40,12 @@ msgstr "外部控制"
 
 msgid "GEOIP数据库订阅"
 msgstr "外部控制"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "Disable"
+msgstr "停用"
 
 msgid "RUNNING"
 msgstr "运行中"
@@ -72,7 +87,7 @@ msgid "Download Configurations"
 msgstr "下载配置"
 
 msgid "Select Mode"
-msgstr "运行模式"
+msgstr "*运行模式"
 
 msgid "redir-host"
 msgstr "Redir-Host（兼容）模式"
@@ -96,7 +111,7 @@ msgid "Select Mode For OpenClash Work, Try Flush DNS Cache If Network Error"
 msgstr "选择运行模式，Redir-Host模式下无法代理路由器自身流量，如客户端的网络异常请尝试清除DNS缓存"
 
 msgid "Proxy Mode"
-msgstr "代理模式"
+msgstr "*代理模式"
 
 msgid "Select Proxy Mode"
 msgstr "选择默认代理模式"
@@ -138,7 +153,7 @@ msgid "When enabled, the control panel and the connection broker port will not b
 msgstr "启用后将禁止从公网访问控制面板和连接代理端口"
 
 msgid "Redirect Local DNS Setting"
-msgstr "本地DNS劫持"
+msgstr "*本地DNS劫持"
 
 msgid "Set Local DNS Redirect"
 msgstr "默认启用，将自动设置Dnsmasq的上游服务器，如和其他插件冲突可停用，但须将OpenClash作为冲突插件的唯一上游服务器"
@@ -220,6 +235,9 @@ msgstr ""
 "固件须配置好IPV6的NAT，如你不使用IPV6请关闭固件的相关服务，避免客户端连接出现异常"
 
 msgid "Rules Setting"
+msgstr "规则设置"
+
+msgid "Rules Setting(Access Control)"
 msgstr "规则设置（访问控制）"
 
 msgid "Config Manage"
@@ -415,6 +433,9 @@ msgstr "测速流量"
 msgid "Telegram"
 msgstr "Telegram流量"
 
+msgid "PayPal"
+msgstr "PayPal流量"
+
 msgid "AdBlock"
 msgstr "广告流量"
 
@@ -428,10 +449,16 @@ msgid "Choose Proxy Group, Base On Your Servers Group in config.yaml"
 msgstr "指定流量(策略)的代理方式，只支持选择（服务器组），信息来源于您的配置文件"
 
 msgid "Custom Clash Rules"
+msgstr "自定义规则"
+
+msgid "Custom Clash Rules(Access Control)"
 msgstr "自定义规则(访问控制)"
 
 msgid "Custom Rules Here, For More Go Github:https://github.com/Dreamacro/clash/blob/master/README.md, IP To CIDR: http://ip2cidr.com"
-msgstr "设置自定义规则，详细信息请前往Github( https://github.com/Dreamacro/clash/blob/master/README.md )查询，在线IP段转CIDR地址：http://ip2cidr.com"
+msgstr "设置自定义规则（顶部），详细信息请前往Github( https://github.com/Dreamacro/clash/blob/master/README.md )查询，在线IP段转CIDR地址：http://ip2cidr.com"
+
+msgid "Custom Rules 2 Here, For More Go Github:https://github.com/Dreamacro/clash/blob/master/README.md, IP To CIDR: http://ip2cidr.com"
+msgstr "设置自定义规则（底部），详细信息请前往Github( https://github.com/Dreamacro/clash/blob/master/README.md )查询，在线IP段转CIDR地址：http://ip2cidr.com"
 
 msgid "Custom Hosts Here, For More Go Github:https://github.com/Dreamacro/clash/blob/master/README.md"
 msgstr "设置自定义Hosts，详细信息请前往Github( https://github.com/Dreamacro/clash/blob/master/README.md )查询"
@@ -464,7 +491,7 @@ msgid "<New>"
 msgstr "<可更新>"
 
 msgid "Chose to Download"
-msgstr "选择内核编译版本"
+msgstr "*选择内核编译版本"
 
 msgid "Select Based On Your CPU Model For Core Update, Wrong Version Will Not Work"
 msgstr "请根据处理器架构选择以便下载、更新对应内核，错误的版本将不能正常运行"
@@ -534,6 +561,9 @@ msgstr "使用第三方规则快速创建配置文件（创建后可在全局设
 msgid "Disable Create Config"
 msgstr "只更新配置文件服务器节点信息"
 
+msgid "Type"
+msgstr "节点类型"
+
 msgid "Server Alias"
 msgstr "别名（请勿重名）"
 
@@ -555,6 +585,9 @@ msgstr "服务器节点类型"
 msgid "Using incorrect encryption mothod may causes service fail to start"
 msgstr "输入不正确的参数组合可能会导致服务无法启动"
 
+msgid "Password"
+msgstr "密码"
+
 msgid "Encrypt Method"
 msgstr "加密方式"
 
@@ -572,6 +605,9 @@ msgstr "登录用户名"
 
 msgid "Auth Password"
 msgstr "登录密码"
+
+msgid "None"
+msgstr "未配置"
 
 msgid "Create Config"
 msgstr "一键生成配置文件"
@@ -651,6 +687,12 @@ msgstr "文件名"
 msgid "Switch Config"
 msgstr "切换"
 
+msgid "Size"
+msgstr "文件大小"
+
+msgid "Remove"
+msgstr "移除"
+
 msgid "(Enable or Disable Subscribe)"
 msgstr "（启用或禁用更新）"
 
@@ -675,6 +717,9 @@ msgstr "（空值无效）"
 msgid "Keyword Match"
 msgstr "筛选节点"
 
+msgid "Exclude Keyword Match"
+msgstr "排除节点"
+
 msgid "(eg: hk or tw&bgp)"
 msgstr "（格式示例：香港、台湾&bgp）"
 
@@ -691,7 +736,7 @@ msgid "Edit Proxy-Provider"
 msgstr "编辑代理集配置"
 
 msgid "Provider Type"
-msgstr "代理集类型"
+msgstr "代理集类型
 
 msgid "Choose The Provider Type"
 msgstr "选择代理集的类型"
@@ -747,8 +792,53 @@ msgstr "序号"
 msgid "Game Rules Manage"
 msgstr "管理游戏规则"
 
-msgid "*Proxy UDP Traffics"
-msgstr "代理UDP流量"
+msgid "Proxy UDP Traffics"
+msgstr "*代理UDP流量"
 
 msgid "Select Mode For UDP Traffics, The Servers Must Support UDP while Choose Proxy"
 msgstr "启用时服务器必须支持UDP转发"
+
+msgid "Operation Mode"
+msgstr "模式设置"
+
+msgid "Select Operation Mode"
+msgstr "*页面操作模式"
+
+msgid "Select Mode For Page Settings, Switch By Click the Button Bellow"
+msgstr "选择全局设置的操作模式，单击下面的按钮进行切换"
+
+msgid "redir-host mode"
+msgstr "Redir-Host 模式"
+
+msgid "fake-ip mode"
+msgstr "Fake-IP 模式"
+
+msgid "Switch Operation Mode"
+msgstr "切换操作模式"
+
+msgid "Switch Mode"
+msgstr "切换"
+
+msgid "Access Control"
+msgstr "访问控制"
+
+msgid "Access Control Mode"
+msgstr "访问控制模式"
+
+msgid "Black List Mode"
+msgstr "黑名单模式"
+
+msgid "White List Mode"
+msgstr "白名单模式"
+
+msgid "LAN Bypassed Host List"
+msgstr "不走代理的局域网LAN IP"
+
+msgid "LAN Proxied Host List"
+msgstr "走代理的局域网LAN IP"
+
+msgid "Rule Match Proxy Mode"
+msgstr "*仅代理命中规则流量"
+
+msgid "Only Proxy Rules Match, Prevent BT Passing"
+msgstr "仅允许代理命中规则的流量，防止BT下载流量经过代理"
