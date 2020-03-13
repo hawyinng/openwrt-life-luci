@@ -38,6 +38,7 @@ o:value("http", "HTTP")
 o:value("https", "HTTPS")
 o:value("stcp", "STCP")
 o:value("xtcp", "XTCP")
+o:value("tcpmux", "TCPMUX")
 
 o = s:option(Value, "plugin", translate("Plugin"))
 o:value("", translate("None"))
