@@ -17,14 +17,8 @@ msgstr "技术支持"
 msgid "Overviews"
 msgstr "运行状态"
 
-msgid "Global Settings"
-msgstr "全局设置"
-
 msgid "Game Rules and Groups"
 msgstr "游戏规则与策略组管理"
-
-msgid "General Settings"
-msgstr "常规设置"
 
 msgid "DNS Setting"
 msgstr "DNS设置"
@@ -40,12 +34,6 @@ msgstr "外部控制"
 
 msgid "GEOIP数据库订阅"
 msgstr "外部控制"
-
-msgid "Enable"
-msgstr "启用"
-
-msgid "Disable"
-msgstr "停用"
 
 msgid "RUNNING"
 msgstr "运行中"
@@ -248,9 +236,6 @@ msgstr "上传文件类型"
 
 msgid "Proxy Provider File"
 msgstr "代理集文件"
-
-msgid "Upload"
-msgstr "上传"
 
 msgid "File saved to"
 msgstr "文件已成功上传到"
@@ -484,9 +469,6 @@ msgstr "当前内核版本"
 msgid "Last Core Version"
 msgstr "最新内核版本"
 
-msgid "Unknown"
-msgstr "查询失败"
-
 msgid "<New>"
 msgstr "<可更新>"
 
@@ -561,9 +543,6 @@ msgstr "使用第三方规则快速创建配置文件（创建后可在全局设
 msgid "Disable Create Config"
 msgstr "只更新配置文件服务器节点信息"
 
-msgid "Type"
-msgstr "节点类型"
-
 msgid "Server Alias"
 msgstr "别名（请勿重名）"
 
@@ -585,9 +564,6 @@ msgstr "服务器节点类型"
 msgid "Using incorrect encryption mothod may causes service fail to start"
 msgstr "输入不正确的参数组合可能会导致服务无法启动"
 
-msgid "Password"
-msgstr "密码"
-
 msgid "Encrypt Method"
 msgstr "加密方式"
 
@@ -605,9 +581,6 @@ msgstr "登录用户名"
 
 msgid "Auth Password"
 msgstr "登录密码"
-
-msgid "None"
-msgstr "未配置"
 
 msgid "Create Config"
 msgstr "一键生成配置文件"
@@ -687,12 +660,6 @@ msgstr "文件名"
 msgid "Switch Config"
 msgstr "切换"
 
-msgid "Size"
-msgstr "文件大小"
-
-msgid "Remove"
-msgstr "移除"
-
 msgid "(Enable or Disable Subscribe)"
 msgstr "（启用或禁用更新）"
 
@@ -736,7 +703,7 @@ msgid "Edit Proxy-Provider"
 msgstr "编辑代理集配置"
 
 msgid "Provider Type"
-msgstr "代理集类型
+msgstr "代理集类型"
 
 msgid "Choose The Provider Type"
 msgstr "选择代理集的类型"
