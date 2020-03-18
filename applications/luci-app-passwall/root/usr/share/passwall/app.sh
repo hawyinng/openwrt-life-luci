@@ -691,7 +691,21 @@ add_dnsmasq() {
 			no-poll
 			no-resolv
 		EOF
-	}
+	else
+		# 如果有某些人DNS设置了默认，但是没有设置上级DNS会上不了网，做个防呆...(真是服了你们这些xxx)
+		[ -z "$DEFAULT_DNS1" ] && {
+			local tmp=$(get_host_ip ipv4 www.baidu.com 1)
+			[ -z "$tmp" ] && {
+				cat <<-EOF > /var/dnsmasq.d/dnsmasq-$CONFIG.conf
+					server=$UP_CHINA_DNS1
+					no-poll
+					no-resolv
+				EOF
+				echolog "你没有设置接口DNS，请前往设置！"
+				/etc/init.d/dnsmasq restart >/dev/null 2>&1 &
+			}
+		}
+	fi
 	
 	echo "conf-dir=$TMP_DNSMASQ_PATH" >> /var/dnsmasq.d/dnsmasq-$CONFIG.conf
 	cp -rf /var/dnsmasq.d/dnsmasq-$CONFIG.conf $DNSMASQ_PATH/dnsmasq-$CONFIG.conf
