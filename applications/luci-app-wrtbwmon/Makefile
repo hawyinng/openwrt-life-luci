@@ -6,10 +6,9 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for Wrtbwmon
-LUCI_DEPENDS:=+luci-i18n-nlbwmon-zh-cn
 LUCI_PKGARCH:=all
 PKG_VERSION:=1.0
-PKG_RELEASE:=7
+PKG_RELEASE:=8
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
