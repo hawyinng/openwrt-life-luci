@@ -7,8 +7,10 @@ config global
 	option dns_mode 'chinadns-ng'
 	option up_china_dns '127.0.0.1#5355'
 	option up_trust_chinadns_ng_dns '127.0.0.1#5354'
-	option proxy_mode 'gfwlist'
-	option localhost_proxy_mode 'gfwlist'
+	option tcp_proxy_mode 'gfwlist'
+	option udp_proxy_mode 'gfwlist'
+	option localhost_tcp_proxy_mode 'gfwlist'
+	option localhost_udp_proxy_mode 'gfwlist'
 
 config global_haproxy
 	option balancing_enable '0'
