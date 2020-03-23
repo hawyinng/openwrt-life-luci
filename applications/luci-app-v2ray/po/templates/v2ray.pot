@@ -117,7 +117,7 @@ msgstr ""
 msgid "Allow transparent"
 msgstr ""
 
-#: luasrc/view/v2ray/import_outbound.htm:13
+#: luasrc/view/v2ray/import_outbound.htm:37
 msgid "Allowed link format: <code>%s</code>"
 msgstr ""
 
@@ -216,6 +216,10 @@ msgstr ""
 
 #: luasrc/model/cbi/v2ray/inbound-detail.lua:199
 msgid "Client email"
+msgstr ""
+
+#: luasrc/view/v2ray/import_outbound.htm:46
+msgid "Close"
 msgstr ""
 
 #: luasrc/model/cbi/v2ray/main.lua:51 luasrc/view/v2ray/list_status.htm:54
@@ -408,7 +412,7 @@ msgstr ""
 msgid "Extra proxy list"
 msgstr ""
 
-#: luasrc/controller/v2ray.lua:187
+#: luasrc/controller/v2ray.lua:202
 msgid "Failed to create new section"
 msgstr ""
 
@@ -416,7 +420,7 @@ msgstr ""
 msgid "Failed to open file."
 msgstr ""
 
-#: luasrc/controller/v2ray.lua:260
+#: luasrc/controller/v2ray.lua:276
 msgid "Failed to save section"
 msgstr ""
 
@@ -530,16 +534,20 @@ msgid ""
 "255."
 msgstr ""
 
-#: luasrc/view/v2ray/import_outbound.htm:12
-#: luasrc/view/v2ray/import_outbound.htm:37
+#: luasrc/view/v2ray/import_outbound.htm:36
+#: luasrc/view/v2ray/import_outbound.htm:81
 msgid "Import"
 msgstr ""
 
-#: luasrc/view/v2ray/import_outbound.htm:48
+#: luasrc/view/v2ray/import_outbound.htm:92
 msgid "Import failed"
 msgstr ""
 
-#: luasrc/view/v2ray/import_outbound.htm:30
+#: luasrc/view/v2ray/import_outbound.htm:42
+msgid "Import multiple vmess:// links at once. One link per line."
+msgstr ""
+
+#: luasrc/view/v2ray/import_outbound.htm:74
 msgid "Importing..."
 msgstr ""
 
@@ -571,7 +579,7 @@ msgstr ""
 msgid "Invalid V2Ray file"
 msgstr ""
 
-#: luasrc/controller/v2ray.lua:166
+#: luasrc/controller/v2ray.lua:166 luasrc/controller/v2ray.lua:178
 msgid "Invalid link"
 msgstr ""
 
@@ -602,7 +610,7 @@ msgstr ""
 msgid "Levels"
 msgstr ""
 
-#: luasrc/view/v2ray/import_outbound.htm:43
+#: luasrc/view/v2ray/import_outbound.htm:87
 msgid "Link imported"
 msgstr ""
 
@@ -995,6 +1003,10 @@ msgstr ""
 msgid "Stream settings"
 msgstr ""
 
+#: luasrc/view/v2ray/import_outbound.htm:47
+msgid "Submit"
+msgstr ""
+
 #: luasrc/model/cbi/v2ray/policy.lua:35 luasrc/model/cbi/v2ray/policy.lua:37
 msgid "System"
 msgstr ""
@@ -1068,11 +1080,11 @@ msgstr ""
 msgid "UDP"
 msgstr ""
 
-#: luasrc/view/v2ray/import_outbound.htm:25
+#: luasrc/view/v2ray/import_outbound.htm:69
 msgid "Unsupported Link"
 msgstr ""
 
-#: luasrc/controller/v2ray.lua:176
+#: luasrc/controller/v2ray.lua:188
 msgid "Unsupported link version"
 msgstr ""
 
@@ -1155,10 +1167,6 @@ msgstr ""
 
 #: luasrc/view/v2ray/status_header.htm:42
 msgid "Version: %s"
-msgstr ""
-
-#: luasrc/view/v2ray/import_outbound.htm:19
-msgid "Vmess link:"
 msgstr ""
 
 #: luasrc/model/cbi/v2ray/main.lua:75
