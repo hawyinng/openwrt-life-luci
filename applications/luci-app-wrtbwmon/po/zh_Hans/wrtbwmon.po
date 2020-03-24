@@ -13,7 +13,7 @@ msgstr "自动刷新间隔"
 msgid "Calculate per host totals"
 msgstr "合并计算客户端流量"
 
-msgid "Usage"
+msgid "Traffic monitoring"
 msgstr "流量监控"
 
 msgid "Details"
