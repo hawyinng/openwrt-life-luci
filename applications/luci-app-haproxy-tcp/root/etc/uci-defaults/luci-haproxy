@@ -3,5 +3,4 @@
 /etc/init.d/haproxy disable
 /etc/init.d/haproxy stop
 
-rm -f /tmp/luci-indexcache
 exit 0

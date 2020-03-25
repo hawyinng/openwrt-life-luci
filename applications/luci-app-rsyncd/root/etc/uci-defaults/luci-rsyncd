@@ -10,5 +10,4 @@ EOF
 chmod 600 /etc/rsyncd.secrets
 chmod 600 /etc/rsyncd.password
 
-rm -f /tmp/luci-indexcache
 exit 0
