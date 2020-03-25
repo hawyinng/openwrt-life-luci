@@ -520,6 +520,12 @@ msgstr "手动订阅"
 msgid "Delete All Subscribe Node"
 msgstr "删除所有订阅节点"
 
+msgid "Filter keyword"
+msgstr "过滤关键字"
+
+msgid "When subscribing, the keywords in the list are discarded."
+msgstr "订阅时，将丢弃包含列表里的关键字的节点。"
+
 msgid "ACLs"
 msgstr "访问控制"
 
@@ -738,3 +744,6 @@ msgstr "客户端文件不适合当前设备。"
 
 msgid "Can't move new file to path: %s"
 msgstr "无法移动新文件到：%s"
+
+msgid "When OTA is enabled, V2Ray will reject connections that are not OTA enabled. This option is invalid when using AEAD encryption."
+msgstr "启用OTA后，V2Ray将拒绝未启用OTA的连接。使用AEAD加密时，此选项无效。"

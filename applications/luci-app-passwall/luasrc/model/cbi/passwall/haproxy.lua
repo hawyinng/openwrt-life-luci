@@ -44,7 +44,7 @@ o:depends("balancing_enable", 1)
 
 ---- Console Port
 o = s:option(Value, "console_port", translate("Console Port"), translate(
-                 "In the browser input routing IP plus port access, such as:192.168.1.1:1188"))
+                 "In the browser input routing IP plus port access, such as:192.168.9.1:1188"))
 o.default = "1188"
 o:depends("balancing_enable", 1)
 
@@ -76,6 +76,7 @@ o.rmempty = false
 
 ---- Haproxy Port
 o = s:option(Value, "haproxy_port", translate("Haproxy Port"))
+o.default = "1181"
 o.rmempty = false
 
 ---- Node Weight
