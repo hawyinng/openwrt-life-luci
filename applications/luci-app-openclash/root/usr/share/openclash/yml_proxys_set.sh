@@ -97,6 +97,16 @@ EOF
 
 }
 
+set_alpn()
+{
+   if [ -z "$1" ]; then
+      return
+   fi
+cat >> "$SERVER_FILE" <<-EOF
+    - $1
+EOF
+}
+
 #写入服务器节点到配置文件
 yml_servers_set()
 {
@@ -126,6 +136,8 @@ yml_servers_set()
    config_get "auth_pass" "$section" "auth_pass" ""
    config_get "psk" "$section" "psk" ""
    config_get "obfs_snell" "$section" "obfs_snell" ""
+   config_get "sni" "$section" "sni" ""
+   config_get "alpn" "$section" "alpn" ""
    
    if [ ! -z "$if_game_proxy" ] && [ "$if_game_proxy" != "$name" ] && [ "$if_game_proxy_type" = "proxy" ]; then
       return
@@ -155,8 +167,10 @@ yml_servers_set()
       return
    fi
    
-   if [ -z "$password" ] && [ "$type" = "ss" ]; then
-      return
+   if [ -z "$password" ]; then
+   	 if [ "$type" = "ss" ] || [ "$type" = "trojan" ]; then
+        return
+     fi
    fi
    
    echo "正在写入【$type】-【$name】节点到配置文件【$CONFIG_NAME】..." >$START_LOG
@@ -169,51 +183,24 @@ yml_servers_set()
       fi
    fi
    
-   if [ ! -z "$udp" ] && [ "$obfs" = "none" ]; then
-      udp=", udp: $udp"
-   fi
-   
-   if [ "$obfs_snell" = "none" ]; then
-      obfs_snell=""
-   fi
-   
    if [ "$obfs_vmess" != "none" ]; then
-      obfs_vmess=", network: ws"
-   else
-      obfs_vmess=""
-   fi
-   
-   if [ ! -z "$host" ]; then
-      host="host: $host"
+      obfs_vmess="network: ws"
    fi
    
    if [ ! -z "$custom" ] && [ "$type" = "vmess" ]; then
-      custom=", ws-headers: { Host: $custom }"
-   fi
-   
-   if [ ! -z "$tls" ] && [ "$type" != "ss" ]; then
-      tls=", tls: $tls"
-   elif [ ! -z "$tls" ]; then
-      tls="tls: $tls"
+      custom="Host: $custom"
    fi
    
    if [ ! -z "$path" ]; then
       if [ "$type" != "vmess" ]; then
          path="path: '$path'"
       else
-         path=", ws-path: $path"
+         path="ws-path: $path"
       fi
    fi
-   
-   if [ ! -z "$skip_cert_verify" ] && [ "$type" != "ss" ]; then
-      skip_cert_verify=", skip-cert-verify: $skip_cert_verify"
-   elif [ ! -z "$skip_cert_verify" ]; then
-      skip_cert_verify="skip-cert-verify: $skip_cert_verify"
-   fi
 
-   if [ "$type" = "ss" ] && [ "$obfs" = "none" ]; then
-      echo "- { name: \"$name\", type: $type, server: $server, port: $port, cipher: $cipher, password: \"$password\"$udp }" >>$SERVER_FILE
-   elif [ "$type" = "ss" ] && [ "$obfs" != "none" ]; then
+#ss
+   if [ "$type" = "ss" ]; then
 cat >> "$SERVER_FILE" <<-EOF
 - name: "$name"
   type: $type
@@ -222,55 +209,191 @@ cat >> "$SERVER_FILE" <<-EOF
   cipher: $cipher
   password: "$password"
 EOF
-  if [ ! -z "$udp" ]; then
+      if [ ! -z "$udp" ]; then
 cat >> "$SERVER_FILE" <<-EOF
   udp: $udp
 EOF
-  fi
-if [ ! -z "$obfss" ] && [ ! -z "$host" ]; then
+     fi
+     if [ ! -z "$obfss" ] && [ ! -z "$host" ]; then
 cat >> "$SERVER_FILE" <<-EOF
   $obfss
   plugin-opts:
     mode: $obfs
-    $host
+    host: $host
 EOF
-  fi
-  if [ ! -z "$tls" ]; then
+        if [  "$obfss" = "plugin: v2ray-plugin" ]; then
+           if [ ! -z "$tls" ]; then
 cat >> "$SERVER_FILE" <<-EOF
-    $tls
+    tls: $tls
 EOF
-  fi
-  if [ ! -z "$skip_cert_verify" ]; then
+           fi
+           if [ ! -z "$skip_cert_verify" ]; then
 cat >> "$SERVER_FILE" <<-EOF
-    $skip_cert_verify
+    skip-cert-verify: $skip_cert_verify
 EOF
-  fi
-  if [ ! -z "$path" ]; then
+           fi
+           if [ ! -z "$path" ]; then
 cat >> "$SERVER_FILE" <<-EOF
     $path
 EOF
-  fi
-  if [ ! -z "$mux" ]; then
+           fi
+           if [ ! -z "$mux" ]; then
 cat >> "$SERVER_FILE" <<-EOF
     mux: $mux
 EOF
-  fi
-  if [ ! -z "$custom" ]; then
+           fi
+           if [ ! -z "$custom" ]; then
 cat >> "$SERVER_FILE" <<-EOF
     headers:
       custom: $custom
 EOF
-  fi
+           fi
+        fi
+     fi
    fi
-   
+
+#vmess
    if [ "$type" = "vmess" ]; then
-      echo "- { name: \"$name\", type: $type, server: $server, port: $port, uuid: $uuid, alterId: $alterId, cipher: $securitys$skip_cert_verify$obfs_vmess$path$custom$tls }" >>$SERVER_FILE
+cat >> "$SERVER_FILE" <<-EOF
+- name: "$name"
+  type: $type
+  server: $server
+  port: $port
+  uuid: $uuid
+  alterId: $alterId
+  cipher: $securitys
+EOF
+      if [ ! -z "$udp" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  udp: $udp
+EOF
+      fi
+      if [ ! -z "$tls" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  tls: $tls
+EOF
+      fi
+      if [ ! -z "$skip_cert_verify" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  skip-cert-verify: $skip_cert_verify
+EOF
+      fi
+      if [ "$obfs_vmess" != "none" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  $obfs_vmess
+EOF
+         if [ ! -z "$path" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  $path
+EOF
+         fi
+         if [ ! -z "$custom" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  ws-headers:
+    $custom
+EOF
+         fi
+      fi
    fi
-   
-   if [ "$type" = "socks5" ] || [ "$type" = "http" ]; then
-      echo "- { name: \"$name\", type: $type, server: $server, port: $port, username: $auth_name, password: $auth_pass$skip_cert_verify$tls }" >>$SERVER_FILE
+
+#socks5
+   if [ "$type" = "socks5" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+- name: "$name"
+  type: $type
+  server: $server
+  port: $port
+EOF
+      if [ ! -z "$auth_name" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  username: $auth_name
+EOF
+      fi
+      if [ ! -z "$auth_pass" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  password: $auth_pass
+EOF
+      fi
+      if [ ! -z "$udp" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  udp: $udp
+EOF
+      fi
+      if [ ! -z "$skip_cert_verify" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  skip-cert-verify: $skip_cert_verify
+EOF
+      fi
+      if [ ! -z "$tls" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  tls: $tls
+EOF
+      fi
    fi
-   
+
+#http
+   if [ "$type" = "http" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+- name: "$name"
+  type: $type
+  server: $server
+  port: $port
+EOF
+      if [ ! -z "$auth_name" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  username: $auth_name
+EOF
+      fi
+      if [ ! -z "$auth_pass" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  password: $auth_pass
+EOF
+      fi
+      if [ ! -z "$skip_cert_verify" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  skip-cert-verify: $skip_cert_verify
+EOF
+      fi
+      if [ ! -z "$tls" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  tls: $tls
+EOF
+      fi
+   fi
+
+#trojan
+   if [ "$type" = "trojan" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+- name: "$name"
+  type: $type
+  server: $server
+  port: $port
+  password: "$password"
+EOF
+   if [ ! -z "$udp" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  udp: $udp
+EOF
+   fi
+   if [ ! -z "$sni" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  sni: $sni
+EOF
+   fi
+   if [ ! -z "$alpn" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  alpn:
+EOF
+      config_list_foreach "$section" "alpn" set_alpn
+   fi
+   if [ ! -z "$skip_cert_verify" ]; then
+cat >> "$SERVER_FILE" <<-EOF
+  skip-cert-verify: $skip_cert_verify
+EOF
+   fi
+   fi
+
+#snell
    if [ "$type" = "snell" ]; then
 cat >> "$SERVER_FILE" <<-EOF
 - name: "$name"
@@ -283,7 +406,7 @@ EOF
 cat >> "$SERVER_FILE" <<-EOF
   obfs-opts:
     mode: $obfs_snell
-    $host
+    host: $host
 EOF
    fi
    fi

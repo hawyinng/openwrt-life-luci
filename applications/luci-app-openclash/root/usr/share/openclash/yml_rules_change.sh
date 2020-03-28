@@ -5,6 +5,9 @@ if [ "$2" != 0 ]; then
    if [ ! -f /etc/openclash/"$2".yaml ]; then
       echo "${1} /etc/openclash/"$2".yaml Not Exist, Will Use Self Rules, Please Update and Try Again" >>/tmp/openclash.log
       exit 0
+   elif [ "$(uci get openclash.config.Proxy)" = "读取错误，配置文件异常！" ]; then
+      echo "${1} Warning: Can not Get The Porxy-Group's Name, Stop Setting The Other Rules!" >>/tmp/openclash.log
+      exit 0
    else
     rulesource=$(grep '##source:' "$4" |awk -F ':' '{print $2}')
     [ "$rulesource" != "$2" ] && {
@@ -144,7 +147,7 @@ fi
       sed -i '/^##Custom Rules 2 End##/d' "$4" 2>/dev/null
       sed -i '/- DOMAIN-KEYWORD,tracker,DIRECT/d' "$4" 2>/dev/null
       sed -i '/- DOMAIN-KEYWORD,announce,DIRECT/d' "$4" 2>/dev/null
-      sed -i '/- DOMAIN-KEYWORD,tracker,tracker/d' "$4" 2>/dev/null
+      sed -i '/- DOMAIN-KEYWORD,torrent,DIRECT/d' "$4" 2>/dev/null
       
       if [ "$3" = 1 ]; then
          sed -i '/^Rule:/a\##Custom Rules End##' "$4" 2>/dev/null
