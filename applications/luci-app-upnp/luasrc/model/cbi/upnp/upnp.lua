@@ -15,10 +15,6 @@ s:tab("advanced", translate("Advanced Settings"))
 e = s:taboption("general", Flag, "enabled", translate("Start UPnP and NAT-PMP service"))
 e.rmempty  = false
 
---function e.cfgvalue(self, section)
---	return luci.sys.init.enabled("miniupnpd") and self.enabled or self.disabled
---end
-
 function e.write(self, section, value)
 	if value == "1" then
 		luci.sys.call("/etc/init.d/miniupnpd start >/dev/null")
@@ -71,7 +67,7 @@ ci.datatype    = "uinteger"
 ci.placeholder = 600
 
 pu = s:taboption("advanced", Value, "presentation_url", translate("Presentation URL"))
-pu.placeholder = "http://192.168.1.1/"
+pu.placeholder = "http://192.168.9.1/"
 
 lf = s:taboption("advanced", Value, "upnp_lease_file", translate("UPnP lease file"))
 lf.placeholder = "/var/run/miniupnpd.leases"
