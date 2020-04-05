@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 LUCI_TITLE:=Docker Manager interface for LuCI
 LUCI_DEPENDS:=+luci-compat +luci-lib-docker +docker-ce +e2fsprogs +fdisk +ttyd
 LUCI_PKGARCH:=all
-PKG_VERSION:=0.5.5
+PKG_VERSION:=0.5.7
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=lisaac <https://github.com/lisaac/luci-app-dockerman>
