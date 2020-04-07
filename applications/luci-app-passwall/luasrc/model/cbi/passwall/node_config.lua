@@ -221,7 +221,7 @@ obfs_param:depends("type", "SSR")
 
 timeout = s:option(Value, "timeout", translate("Connection Timeout"))
 timeout.datatype = "uinteger"
-timeout.default = 86400
+timeout.default = 300
 timeout:depends("type", "SS")
 timeout:depends("type", "SSR")
 
