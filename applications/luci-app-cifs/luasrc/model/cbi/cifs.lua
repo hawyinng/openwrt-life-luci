@@ -14,7 +14,6 @@ m = Map("cifs", translate("Mounting NAT drives") .. state_msg)
 s = m:section(TypedSection, "cifs", "Cifs Mount")
 s.anonymous = true
 
-
 s:tab("general", translate("General Settings"))
 
 switch = s:taboption("general", Flag, "enabled", translate("Enable"))
@@ -79,10 +78,10 @@ agm.rmempty = true
 agm.size = 8
 
 vers = s:option(Value, "vers", translate("SMB protocol version"))
-vers:value("vers=3.1.1", translate("SMB V3"))
-vers:value("vers=2.1", translate("SMB V2"))
-vers:value("vers=1.0", translate("SMB V1"))
-vers.default = "vers=2.1"
+vers:value("3.1.1", translate("SMB V3"))
+vers:value("2.1", translate("SMB V2"))
+vers:value("1.0", translate("SMB V1"))
+vers.default = "2.1"
 vers.rmempty = false
 
 guest = s:option(Flag, "guest", translate("Guest"))

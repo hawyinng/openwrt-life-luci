@@ -85,7 +85,7 @@ mount_natshare() {
 	
 	if [ $vers ]
 	then
-		VERS=",$vers"
+		VERS=",vers=$vers"
 	else
 		VERS=""
 	fi
