@@ -83,16 +83,16 @@ for i = 1, udp_node_num, 1 do
     for _, key in pairs(key_table) do o:value(key, n[key]) end
 end
 
----- Socks5 Node
-local socks5_node_num = tonumber(api.uci_get_type("global_other", "socks5_node_num", 1))
-for i = 1, socks5_node_num, 1 do
+---- Socks Node
+local socks_node_num = tonumber(api.uci_get_type("global_other", "socks_node_num", 1))
+for i = 1, socks_node_num, 1 do
     if i == 1 then
-        o = s:option(ListValue, "socks5_node" .. i, translate("Socks5 Node"))
+        o = s:option(ListValue, "socks_node" .. i, translate("Socks Node"))
         o:value("nil", translate("Close"))
         o:value("tcp", translate("Same as the tcp node"))
     else
-        o = s:option(ListValue, "socks5_node" .. i,
-                     translate("Socks5 Node") .. " " .. i)
+        o = s:option(ListValue, "socks_node" .. i,
+                     translate("Socks Node") .. " " .. i)
         o:value("nil", translate("Close"))
     end
     for _, key in pairs(key_table) do o:value(key, n[key]) end
