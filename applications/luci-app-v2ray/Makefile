@@ -19,7 +19,7 @@ LUCI_PKGARCH:=all
 
 define Package/$(PKG_NAME)/conffiles
 /etc/config/v2ray
-/etc/v2ray/*
+/etc/v2ray/
 endef
 
 include $(TOPDIR)/feeds/luci/luci.mk

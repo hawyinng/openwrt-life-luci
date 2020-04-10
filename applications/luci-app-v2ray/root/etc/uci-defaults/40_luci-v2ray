@@ -15,4 +15,6 @@ uci -q batch <<-EOF >/dev/null
 	commit firewall
 EOF
 
+mkdir -p ${IPKG_INSTROOT}/etc/v2ray/upload
+
 exit 0
