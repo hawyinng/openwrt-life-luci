@@ -7,7 +7,7 @@ uci -q batch <<-EOF >/dev/null
 	commit ucitrack
 EOF
 
-mkdir -p ${IPKG_INSTROOT}/etc/amule/
+mkdir -p ${IPKG_INSTROOT}/etc/amule
 touch ${IPKG_INSTROOT}/etc/amule/addresses.dat
 touch ${IPKG_INSTROOT}/etc/amule/ipfilter_static.dat
 touch ${IPKG_INSTROOT}/etc/amule/shareddir.dat
