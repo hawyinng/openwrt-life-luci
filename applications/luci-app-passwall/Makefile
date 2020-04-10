@@ -113,7 +113,7 @@ endef
 
 define Package/$(PKG_NAME)/conffiles
 /etc/config/passwall
-/usr/share/passwall/rules/*
+/usr/share/passwall/
 endef
 
 define Package/$(PKG_NAME)/install
