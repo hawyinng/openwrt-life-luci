@@ -121,17 +121,30 @@ v2ray_balancing_node = s:option(DynamicList, "v2ray_balancing_node",
 for _, key in pairs(key_table) do v2ray_balancing_node:value(key, n[key]) end
 v2ray_balancing_node:depends("type", "V2ray_balancing")
 
-youtube_node = s:option(ListValue, "youtube_node", "Youtube " .. translate("Node"))
+youtube_node = s:option(ListValue, "youtube_node",
+                        "Youtube " .. translate("Node"))
 youtube_node:value("nil", translate("Close"))
 for _, key in pairs(key_table) do youtube_node:value(key, n[key]) end
 youtube_node:depends("type", "V2ray_shunt")
 
-netflix_node = s:option(ListValue, "netflix_node", "Netflix " .. translate("Node"))
+youtube_proxy = s:option(Flag, "youtube_proxy", "Youtube " .. translate("Node") .. translate("Preproxy"),
+                        "Youtube " .. translate("Node") .. translate("Use the default node for the transit."))
+youtube_proxy.default = 0
+youtube_proxy:depends("type", "V2ray_shunt")
+
+netflix_node = s:option(ListValue, "netflix_node",
+                        "Netflix " .. translate("Node"))
 netflix_node:value("nil", translate("Close"))
 for _, key in pairs(key_table) do netflix_node:value(key, n[key]) end
 netflix_node:depends("type", "V2ray_shunt")
 
-default_node = s:option(ListValue, "default_node", translate("Default") .. " " .. translate("Node"))
+netflix_proxy = s:option(Flag, "netflix_proxy", "Netflix " .. translate("Node") .. translate("Preproxy"),
+                        "Netflix " .. translate("Node") .. translate("Use the default node for the transit."))
+netflix_proxy.default = 0
+netflix_proxy:depends("type", "V2ray_shunt")
+
+default_node = s:option(ListValue, "default_node",
+                        translate("Default") .. " " .. translate("Node"))
 default_node:value("nil", translate("Close"))
 for _, key in pairs(key_table) do default_node:value(key, n[key]) end
 default_node:depends("type", "V2ray_shunt")
