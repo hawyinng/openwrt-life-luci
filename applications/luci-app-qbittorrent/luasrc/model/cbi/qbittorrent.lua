@@ -50,7 +50,7 @@ o.default = "true"
 o = s:taboption("connection", Flag, "UseRandomPort", translate("Use Random Port"), translate("An incoming connection port will be randomly generated when the program starts."))
 o.enabled = "true"
 o.disabled = "false"
-o.default = "false"
+o.default = "true"
 
 o = s:taboption("connection", Value, "PortRangeMin", translate("Port used for incoming connections"), translate("Generate Randomly"))
 o:depends("UseRandomPort", false)
@@ -115,7 +115,7 @@ o.placeholder = "/mnt/sda/qBittorrent"
 o = s:taboption("downloads", Flag, "TempPathEnabled", translate("Enable Temp Path"))
 o.enabled = "true"
 o.disabled = "false"
-o.default = "false"
+o.default = "true"
 
 o = s:taboption("downloads", Value, "TempPath", translate("Temp Path"))
 o:depends("TempPathEnabled", "true")
@@ -170,7 +170,7 @@ o.default = "true"
 o = s:taboption("bittorrent", Flag, "LSD", translate("Enable LSD"), translate("Enable Local Peer Discovery to find more peers"))
 o.enabled = "true"
 o.disabled = "false"
-o.default = "true"
+o.default = "false"
 
 o = s:taboption("bittorrent", Flag, "uTP_rate_limited", translate("μTP Rate Limit"))
 o.enabled = "true"
@@ -303,7 +303,7 @@ s:tab("advanced", translate("Advance Settings"))
 o = s:taboption("advanced", Flag, "AnonymousMode", translate("Anonymous Mode"), translate("Generally used to prevent p2p blocking."))
 o.enabled = "true"
 o.disabled = "false"
-o.default = "false"
+o.default = "true"
 
 o = s:taboption("advanced", Flag, "SuperSeeding", translate("Super Seeding"), translate("Generally used by Torrent publishers."))
 o.enabled = "true"
@@ -340,7 +340,7 @@ o.default = "AntiLeech"
 o = s:taboption("advanced", Flag, "AnnounceToAllTrackers", translate("Announce To All Trackers"))
 o.enabled = "true"
 o.disabled = "false"
-o.default = "true"
+o.default = "false"
 
 o = s:taboption("advanced", Flag, "AnnounceToAllTiers", translate("Announce To All Tiers"))
 o.enabled = "true"
