@@ -201,7 +201,7 @@ return L.view.extend({
 			_("Attempts to serve old responses from cache with a TTL of 0 in the response without waiting for the actual resolution to finish."));
 		o.rmempty = false;
 		o.default = o.disabled;
-	
+
 		// Redirect;
 		o = s.taboption("settings", form.ListValue, "redirect", _("Redirect"), _("SmartDNS redirect mode"));
 		o.placeholder = "none";
@@ -253,7 +253,7 @@ return L.view.extend({
 
 		// dns server group;
 		o = s.taboption("seconddns", form.Value, "seconddns_server_group", _("Server Group"),
-		_("Query DNS through specific dns server group, such as office, home."));
+			_("Query DNS through specific dns server group, such as office, home."));
 		o.rmempty = true;
 		o.placeholder = "default";
 		o.datatype = "hostname";
@@ -384,6 +384,15 @@ return L.view.extend({
 		o.depends("type", "tls")
 		o.depends("type", "https")
 
+		// certificate verify
+		o = s.taboption("advanced", form.Flag, "no_check_certificate", _("No check certificate"),
+			_("Do not check certificate."))
+		o.rmempty = false
+		o.default = o.disabled
+		o.modalonly = true;
+		o.depends("type", "tls")
+		o.depends("type", "https")
+
 		// SNI host name
 		o = s.taboption("advanced", form.Value, "host_name", _("TLS SNI name"),
 			_("Sets the server name indication for query."))
@@ -476,4 +485,3 @@ return L.view.extend({
 		return m.render();
 	}
 });
-
