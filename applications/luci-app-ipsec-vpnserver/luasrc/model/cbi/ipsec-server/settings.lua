@@ -34,6 +34,11 @@ clientip.description = translate(
 clientip.optional = false
 clientip.rmempty = false
 
+clientdns = s:option(Value, "clientdns", translate("VPN Client DNS"))
+clientdns.datatype = "ip4addr"
+clientdns.description = translate("DNS using in VPN tunnel.")
+clientdns.optional = false
+clientdns.rmempty = false
 
 secret = s:option(Value, "secret", translate("Secret Pre-Shared Key"))
 secret.password = true

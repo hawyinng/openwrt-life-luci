@@ -20,13 +20,7 @@ msgid "DNS using in VPN tunnel."
 msgstr "指定VPN客户端的DNS地址。"
 
 msgid "Secret Pre-Shared Key"
-msgstr "PSK密钥"
-
-msgid "is_nat"
-msgstr "NAT转发"
+msgstr "预共享密钥"
 
 msgid "Users Manager"
 msgstr "用户管理"
-
-msgid "Specify interface forwarding traffic."
-msgstr "指定接口转发流量。"
