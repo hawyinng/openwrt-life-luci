@@ -16,6 +16,9 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.11\n"
 
+msgid "Service Control"
+msgstr "服务控制"
+
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/com.adguard.dns-family.lua:3
 msgid "AdGuard (Family Protection)"
 msgstr "AdGuard（家庭保护）"
