@@ -36,11 +36,11 @@ e = t:option(Value, "macaddr", "MAC")
 e.rmempty = true
 sys.net.mac_hints(function(t, a) e:value(t, "%s (%s)" % {t, a}) end)
 
-e = t:option(Value, "timeon", translate("No Internet start time"))
+e = t:option(Value, "timeon", translate("Disconnect start"))
 e.default = "00:00"
 e.optional = false
 
-e = t:option(Value, "timeoff", translate("No Internet end time"))
+e = t:option(Value, "timeoff", translate("Disconnect end"))
 e.default = "23:59"
 e.optional = false
 

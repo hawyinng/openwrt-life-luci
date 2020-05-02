@@ -11,8 +11,8 @@ function index()
 end
 
 function status()
-  local e={}
-	e.status = luci.sys.call("iptables -L FORWARD | grep TIMECONTROL >/dev/null") == 0
-  luci.http.prepare_content("application/json")
-  luci.http.write_json(e)
+    local e={}
+    e.status = luci.sys.call("iptables -L FORWARD | grep TIMECONTROL >/dev/null") == 0
+    luci.http.prepare_content("application/json")
+    luci.http.write_json(e)
 end
