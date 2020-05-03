@@ -184,10 +184,9 @@ msgstr "路径"
 
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:165
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:173
-msgid ""
-"Please check the <a href=\"%s\" target=\"_blank\">README</a> before changing "
-"this option."
-msgstr "请在更改此选项之前检查<a href=\"%s\" target=\"_blank\">README</a>。"
+msgid "Please check the %sREADME%s before changing this option."
+msgstr ""
+msgstr "请在更改此选项之前检查 %sREADME%s。"
 
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:258
 msgid "Policies"
@@ -204,14 +203,13 @@ msgstr "远程端口"
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:359
 msgid ""
 "Run the following user files after setting up but before restarting DNSMASQ. "
-"See the <a href=\"%s\" target=\"_blank\">README</a> for details."
+"See the %sREADME%s for details."
 msgstr ""
-"设置后但在重新启动 DNSMASQ 之前运行以下用户文件。有关详细信息，请参阅<a href="
-"\"%s\" target=\"_blank\">README</a>。"
+"设置后但在重新启动 DNSMASQ 之前运行以下用户文件。有关详细信息，请参阅 %sREADME%s。"
 
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:159
-msgid "See the <a href=\"%s\" target=\"_blank\">README</a> for details."
-msgstr "有关详细信息，请参阅<a href=\"%s\" target=\"_blank\">README</a>。"
+msgid "See the %sREADME%s for details."
+msgstr "有关详细信息，请参阅 %sREADME%s。"
 
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:195
 msgid "Select Append for -A and Insert for -I."
@@ -245,10 +243,9 @@ msgstr "服务警告"
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:347
 msgid ""
 "Set DSCP tags (in range between 1 and 63) for specific interfaces. See the "
-"<a href=\"%s\" target=\"_blank\">README</a> for details."
+"%sREADME%s for details."
 msgstr ""
-"为特定接口设置 DSCP 标记（范围介于 1 和 63 之间）。有关详细信息，请参阅<a "
-"href=\"%s\" target=\"_blank\">README</a>。"
+"为特定接口设置 DSCP 标记（范围介于 1 和 63 之间）。有关详细信息，请参阅 %sREADME%s"
 
 #: applications/luci-app-vpn-policy-routing/luasrc/model/cbi/vpn-policy-routing.lua:247
 msgid "Show Chain Column"
@@ -357,7 +354,7 @@ msgstr "使用 DNSMASQ ipset"
 msgid "Use ipset command"
 msgstr "使用 ipset 命令"
 
-#: applications/luci-app-vpn-policy-routing/luasrc/controller/vpn-policy-routing.lua:5
+#: applications/luci-app-vpn-policy-routing/luasrc/controller/vpn-policy-routing.lua:8
 msgid "VPN Policy Routing"
 msgstr "VPN 策略路由"
 
