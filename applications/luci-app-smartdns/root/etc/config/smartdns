@@ -16,7 +16,7 @@ config smartdns
 	option seconddns_no_cache '0'
 	option force_aaaa_soa '0'
 	option coredump '0'
-	option port '5355'
+	option port '5356'
 	option seconddns_port '5354'
 	option seconddns_server_group 'public'
 	option seconddns_enabled '1'

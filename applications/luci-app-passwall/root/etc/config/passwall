@@ -5,7 +5,7 @@ config global
 	option udp_node1 'tcp'
 	option socks_node1 'nil'
 	option dns_mode 'chinadns-ng'
-	option up_china_dns '127.0.0.1#5355'
+	option up_china_dns '127.0.0.1#5356'
 	option up_trust_chinadns_ng_dns '127.0.0.1#5354'
 	option tcp_proxy_mode 'gfwlist'
 	option udp_proxy_mode 'gfwlist'
