@@ -11,6 +11,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.10-dev\n"
 
+msgid "Use System Log"
+msgstr "使用系统日志"
+
+msgid "Output log to system log"
+msgstr "输出日志到系统日志"
+
 #: applications/luci-app-shadowsocks-libev/htdocs/luci-static/resources/view/shadowsocks-libev/instances.js:43
 msgid "-- instance type --"
 msgstr "-- 实例类型 --"

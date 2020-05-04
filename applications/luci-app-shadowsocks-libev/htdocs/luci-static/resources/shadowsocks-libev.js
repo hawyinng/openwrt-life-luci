@@ -20,6 +20,7 @@ var names_options_client = [
 ];
 
 var names_options_common = [
+	'use_syslog',
 	'verbose',
 	'ipv6_first',
 	'fast_open',
@@ -174,6 +175,7 @@ return L.Class.extend({
 		o.datatype = 'uinteger';
 		s.taboption(tab, form.Value, 'user', _('Run as'));
 
+		s.taboption(tab, form.Flag, 'use_syslog', _('Use System Log'), _('Output log to system log'));
 		s.taboption(tab, form.Flag, 'verbose', _('Verbose'));
 		s.taboption(tab, form.Flag, 'ipv6_first', _('IPv6 First'), _('Prefer IPv6 addresses when resolving names'));
 		s.taboption(tab, form.Flag, 'fast_open', _('Enable TCP Fast Open'));
