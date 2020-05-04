@@ -1,7 +1,6 @@
 -- Copyright (C) 2020 KGHX <openwrt.ikghx.com>
 -- Licensed to the public under the GNU General Public License v3.
-local sys = require "luci.sys"
-local state = (sys.call("pidof chinadns-ng > /dev/null") == 0)
+local state = (luci.sys.call("pidof chinadns-ng > /dev/null") == 0)
 
 if state then
 	state_msg = "<b><font color=\"green\">" .. translate("Running") .. "</font></b>"
@@ -16,18 +15,6 @@ s.anonymous = true
 
 o = s:option(Flag, "enable", translate("Enable"))
 o.rmempty = false
-
-function o.write(self, section, value)
-	if value == "1" then
-		sys.exec("/etc/init.d/chinadns-ng enable")
-		sys.exec("/etc/init.d/chinadns-ng start")
-	else
-		sys.exec("/etc/init.d/chinadns-ng stop")
-		sys.exec("/etc/init.d/chinadns-ng disable")
-	end
-
-	Flag.write(self, section, value)
-end
 
 o = s:option(Value, "bind_addr", translate("Listen Address"))
 o.datatype    = "ipaddr"
@@ -90,5 +77,9 @@ o = s:option(Value, "repeat_times", translate("Number of DNS queries"),
 o.placeholder = "1"
 o.rmempty     = false
 
+local apply = luci.http.formvalue("cbi.apply")
+if apply then
+	luci.util.exec("/etc/init.d/chinadns-ng restart >/dev/null 2>&1")
+end
 
 return m
