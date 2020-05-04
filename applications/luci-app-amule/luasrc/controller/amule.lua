@@ -19,7 +19,7 @@ function index()
 		return
 	end
         
-	entry({"admin", "services", "amule"}, cbi("amule"), _("aMule Settings")).dependent = true
+	entry({"admin", "services", "amule"}, cbi("amule"), _("aMule")).dependent = true
 	entry( {"admin", "services", "amule", "logview"}, call("logread") ).leaf = true
 	entry( {"admin", "services", "amule", "status"}, call("get_pid") ).leaf = true
 	entry( {"admin", "services", "amule", "amulecmd"}, call("amulecmd") ).leaf = true

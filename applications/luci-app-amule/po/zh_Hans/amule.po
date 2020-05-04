@@ -25,9 +25,6 @@ msgstr "编辑配置模版"
 msgid "Log File Viewer"
 msgstr "日志查看"
 
-msgid "aMule Settings"
-msgstr "aMule设置"
-
 msgid "Run daemon as user"
 msgstr "以此用户权限运行"
 
