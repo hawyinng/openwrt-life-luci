@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-02-19 13:29+0000\n"
+"PO-Revision-Date: 2020-03-10 07:43+0000\n"
 "Last-Translator: xiazhang <xz@xia.plus>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationstravelmate/zh_Hans/>\n"
@@ -14,14 +14,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.11\n"
+"X-Generator: Weblate 4.0-dev\n"
 
 #: applications/luci-app-travelmate/luasrc/view/travelmate/runtime.htm:206
 msgid "AP on"
 msgstr "AP 开启"
 
 #: applications/luci-app-travelmate/luasrc/view/travelmate/stations.htm:113
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:38
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:45
 msgid "Action"
 msgstr "动作"
 
@@ -29,7 +29,7 @@ msgstr "动作"
 msgid "Add Open Uplinks"
 msgstr "添加开放的上行链路"
 
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:68
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:75
 msgid "Add Uplink"
 msgstr "添加"
 
@@ -65,7 +65,7 @@ msgstr "n分钟后自动重置“故障接入点”列表。默认值为“0”�
 
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/wifi_add.lua:15
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/wifi_edit.lua:12
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:77
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:84
 msgid "Back to overview"
 msgstr "返回概述"
 
@@ -156,7 +156,7 @@ msgstr "查找并加入网络"
 
 #: applications/luci-app-travelmate/luasrc/view/travelmate/runtime.htm:217
 msgid "For QR-Code support please install package 'qrencode'!"
-msgstr "如需 QR 码支持，请安装“qrencode”软件包！"
+msgstr "如需二维码支持，请安装“qrencode”软件包！"
 
 #: applications/luci-app-travelmate/luasrc/model/cbi/travelmate/overview_tab.lua:15
 msgid ""
@@ -262,7 +262,7 @@ msgstr "无线 选择/顺序"
 msgid "Remove this Uplink"
 msgstr "删除此上行链路"
 
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:82
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:89
 msgid "Repeat scan"
 msgstr "重新扫描"
 
@@ -303,7 +303,7 @@ msgstr "显示/隐藏 二维码"
 msgid "Signal Quality Threshold"
 msgstr "信号质量阈值"
 
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:37
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:44
 msgid "Signal strength"
 msgstr "信号强度"
 
@@ -384,17 +384,17 @@ msgstr "触发延迟"
 msgid "Uplink / Trigger interface"
 msgstr "上行 / 触发接口"
 
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:35
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:42
 msgid "Uplink BSSID"
 msgstr "上行 BSSID"
 
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:34
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:41
 msgid "Uplink SSID"
 msgstr "上行 SSID"
 
 #: applications/luci-app-travelmate/luasrc/view/travelmate/runtime.htm:154
 msgid "View AP QR-Codes"
-msgstr "查看 AP QR 码"
+msgstr "查看热点二维码"
 
 #: applications/luci-app-travelmate/luasrc/controller/travelmate.lua:20
 msgid "View Logfile"
@@ -412,7 +412,7 @@ msgstr "WPA功能"
 msgid "WPA-Passphrase"
 msgstr "WPA-密码"
 
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:30
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:37
 msgid "Wireless Scan"
 msgstr "无线扫描"
 
@@ -424,7 +424,7 @@ msgstr "无线站点"
 msgid "add it to the wan zone of the firewall."
 msgstr "将其添加到防火墙的 wan 区域。"
 
-#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:43
+#: applications/luci-app-travelmate/luasrc/view/travelmate/wifi_scan.htm:50
 msgid "hidden"
 msgstr "隐藏"
 
