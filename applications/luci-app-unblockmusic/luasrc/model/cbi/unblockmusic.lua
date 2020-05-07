@@ -94,7 +94,7 @@ t.sortable=true
 t.anonymous=true
 t.addremove=true
 
-e=t:option(Value,"ipaddr",translate("IP Address"))
+e=t:option(Value,"ipaddr",translate("IP address"))
 e.width="40%"
 e.datatype="ip4addr"
 e.placeholder="0.0.0.0/0"
