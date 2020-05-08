@@ -87,7 +87,7 @@ msgstr "DNS 服务器"
 
 #: luci-app-frpc/luasrc/model/cbi/frpc/common.lua:97
 msgid "Disable log color"
-msgstr "禁用日志颜色""
+msgstr "禁用日志颜色"
 
 #: luci-app-frpc/luasrc/model/cbi/frpc/server-detail.lua:10
 msgid "Edit Frps Server"

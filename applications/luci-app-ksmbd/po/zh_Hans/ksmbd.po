@@ -16,70 +16,70 @@ msgstr ""
 msgid "Allow legacy protocols"
 msgstr "允许旧协议"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:85
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:86
 msgid "Allow guests"
 msgstr "允许匿名用户"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:82
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:83
 msgid "Allowed users"
 msgstr "允许用户"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:69
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:70
 msgid "Browse-able"
 msgstr "可浏览"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:101
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:102
 msgid "Create mask"
 msgstr "创建权限掩码"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:107
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:108
 msgid "Directory mask"
 msgstr "目录权限掩码"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:31
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:32
 msgid "Edit Template"
 msgstr "编辑模板"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:80
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:81
 msgid "Force Root"
 msgstr "强制 Root"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:96
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:97
 msgid "Hide dot files"
 msgstr "隐藏‘.’开头文件"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:91
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:92
 msgid "Inherit owner"
 msgstr "继承所有者"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:34
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:35
 msgid "Listen only on the given interface or, if unspecified, on lan"
 msgstr "仅监听指定的接口，未指定则监听 lan"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:19
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:20
 #: applications/luci-app-ksmbd/luasrc/controller/ksmbd.lua:10
 msgid "Network Shares-ksmbd"
 msgstr "网络共享-ksmbd"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:64
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:65
 msgid "Path"
 msgstr "路径"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:59
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:60
 msgid ""
 "Please add directories to share. Each directory refers to a folder on a "
 "mounted device."
 msgstr "请添加要共享的目录。每个目录指到已挂载设备上的文件夹。"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:74
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:75
 msgid "Read-only"
 msgstr "只读"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:58
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:59
 msgid "Shared Directories"
 msgstr "共享目录"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:47
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:48
 msgid ""
 "This is the content of the file '/etc/ksmbd/smb.conf.template' from which "
 "your ksmbd configuration will be generated. Values enclosed by pipe symbols "
@@ -89,6 +89,6 @@ msgstr ""
 "这是将从其上生成 ksmbd 配置的文件“/etc/ksmbd/smb.conf.template”的内容。由管道"
 "符（“|”）包围的值不应更改。它们将从“常规设置”标签中获取其值。"
 
-#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:36
+#: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:37
 msgid "Workgroup"
 msgstr "工作组"
