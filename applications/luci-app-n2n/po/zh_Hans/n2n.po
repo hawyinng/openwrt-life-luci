@@ -13,11 +13,11 @@ msgstr "超级节点"
 msgid "Edge configuration"
 msgstr "节点配置"
 
-msgid "This is the content of the file '/etc/config/n2n-edge.conf'. Make changes as needed, Take effect immediately after saving & Apply."
-msgstr "这是'/etc/config/n2n-edge.conf'文件的内容。根据需要进行更改，保存并应用后立即生效。"
+msgid "This is the content of the file '/etc/n2n/edge.conf'. Make changes as needed, Take effect immediately after saving & Apply."
+msgstr "这是'/etc/n2n/edge.conf'文件的内容。根据需要进行更改，保存并应用后立即生效。"
 
 msgid "Supernode configuration"
 msgstr "超级节点配置"
 
-msgid "This is the content of the file '/etc/config/n2n-supernode.conf'. Make changes as needed, Take effect immediately after saving & Apply."
-msgstr "这是'/etc/config/n2n-supernode.conf'文件的内容。根据需要进行更改，保存并应用后立即生效。"
+msgid "This is the content of the file '/etc/n2n/supernode.conf'. Make changes as needed, Take effect immediately after saving & Apply."
+msgstr "这是'/etc/n2n/supernode.conf'文件的内容。根据需要进行更改，保存并应用后立即生效。"

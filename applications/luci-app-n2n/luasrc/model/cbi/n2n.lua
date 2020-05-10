@@ -30,9 +30,9 @@ o.rmempty=false
 
 s:tab("conf1", translate("Edge configuration"))
 
-local file1 = "/etc/config/n2n-edge.conf"
+local file1 = "/etc/n2n/edge.conf"
 cf1 = s:taboption("conf1", Value, "_tmp1")
-cf1.description = translate("This is the content of the file '/etc/config/n2n-edge.conf'. Make changes as needed, Take effect immediately after saving & Apply.")
+cf1.description = translate("This is the content of the file '/etc/n2n/edge.conf'. Make changes as needed, Take effect immediately after saving & Apply.")
 cf1.template = "cbi/tvalue"
 cf1.rows = 20
 cf1.wrap = "off"
@@ -46,9 +46,9 @@ end
 
 s:tab("conf2", translate("Supernode configuration"))
 
-local file2 = "/etc/config/n2n-supernode.conf"
+local file2 = "/etc/n2n/supernode.conf"
 cf2 = s:taboption("conf2", Value, "_tmp2")
-cf2.description = translate("This is the content of the file '/etc/config/n2n-supernode.conf'. Make changes as needed, Take effect immediately after saving & Apply.")
+cf2.description = translate("This is the content of the file '/etc/n2n/supernode.conf'. Make changes as needed, Take effect immediately after saving & Apply.")
 cf2.template = "cbi/tvalue"
 cf2.rows = 20
 cf2.wrap = "off"
