@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=Control the ACME Letsencrypt certificate interface
-LUCI_DEPENDS:=+acme-dnsapi
+LUCI_DEPENDS:=+luci-compat +luci-mod-admin-full +acme-dnsapi
 
 include ../../luci.mk
 

@@ -76,11 +76,16 @@ dom = cs:option(DynamicList, "domains", translate("Domain names"),
 dom.datatype = "list(string)"
 
 dns = cs:option(Value, "dns", translate("DNS API"),
-                translate("See https://github.com/Neilpang/acme.sh/tree/master/dnsapi for the list of available APIs."))
-dns.optional = true
+                translate("See https://github.com/acmesh-official/acme.sh/wiki/dnsapi for the list of available APIs."))
 
 cred = cs:option(DynamicList, "credentials", translate("DNS API credentials"),
                  translate("Add multiple entries here in KEY=VAL shell variable format to supply multiple credential variables."))
 cred.datatype = "list(string)"
+
+calias = cs:option(Value, "calias", translate("Challenge Alias"),
+                translate("The challenge alias to use for ALL domains."))
+
+dalias = cs:option(Value, "dalias", translate("Domain Alias"),
+                translate("The domain alias to use for ALL domains."))
 
 return m
