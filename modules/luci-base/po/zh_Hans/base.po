@@ -3584,6 +3584,10 @@ msgstr "可选，为此 Peer 创建允许 IP 的路由。"
 msgid "Optional. Description of peer."
 msgstr "可选，Peer 的描述。"
 
+#: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:64
+msgid "Optional. Do not create host routes to peers."
+msgstr "可选的。不要创建到对等方的主机路由。"
+
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:129
 msgid ""
 "Optional. Host of peer. Names are resolved prior to bringing up the "
