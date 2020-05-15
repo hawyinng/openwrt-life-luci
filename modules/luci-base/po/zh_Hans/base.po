@@ -5653,6 +5653,10 @@ msgstr ""
 "用于两种不同的用途：RADIUS NAS ID 和 802.11r R0KH-ID。通常的 WPA(2)-PSK 不需"
 "要。"
 
+#: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:105
+msgid "User Group"
+msgstr "用户组"
+
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:113
 msgid "User certificate (PEM encoded)"
 msgstr "用户证书（PEM）"
