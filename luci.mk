@@ -26,11 +26,11 @@ LUCI_LANG.hu=Magyar (Hungarian)
 LUCI_LANG.it=Italiano (Italian)
 LUCI_LANG.ja=日本語 (Japanese)
 LUCI_LANG.ko=한국어 (Korean)
-LUCI_LANG.mr=मराठी (Marathi)
+LUCI_LANG.mr=Marāṭhī (Marathi)
 LUCI_LANG.ms=Bahasa Melayu (Malay)
 LUCI_LANG.nb_NO=Norsk (Norwegian)
 LUCI_LANG.pl=Polski (Polish)
-LUCI_LANG.pt_BR=Português do Brasil (Brazialian Portuguese)
+LUCI_LANG.pt_BR=Português do Brasil (Brazilian Portuguese)
 LUCI_LANG.pt=Português (Portuguese)
 LUCI_LANG.ro=Română (Romanian)
 LUCI_LANG.ru=Русский (Russian)
@@ -39,8 +39,8 @@ LUCI_LANG.sv=Svenska (Swedish)
 LUCI_LANG.tr=Türkçe (Turkish)
 LUCI_LANG.uk=Українська (Ukrainian)
 LUCI_LANG.vi=Tiếng Việt (Vietnamese)
-LUCI_LANG.zh_Hans=简体中文 (Chinese)
-LUCI_LANG.zh_Hant=繁體中文 (Taiwanese)
+LUCI_LANG.zh_Hans=简体中文 (Chinese Simplified)
+LUCI_LANG.zh_Hant=繁體中文 (Chinese Traditional)
 
 # Submenu titles
 LUCI_MENU.col=1. Collections
@@ -225,6 +225,9 @@ ifneq ($(LUCI_DEFAULTS),)
 define Package/$(PKG_NAME)/postinst
 [ -n "$${IPKG_INSTROOT}" ] || {$(foreach script,$(LUCI_DEFAULTS),
 	(. /etc/uci-defaults/$(script)) && rm -f /etc/uci-defaults/$(script))
+	rm -f /tmp/luci-indexcache
+	rm -rf /tmp/luci-modulecache/
+	killall -HUP rpcd 2>/dev/null
 	exit 0
 }
 endef
