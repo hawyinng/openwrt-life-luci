@@ -1,0 +1,16 @@
+
+config serverchan 'serverchan'
+	option serverchan_enable '0'
+	option sleeptime '60'
+	option serverchan_ipv6 '0'
+	option serverchan_up '1'
+	option serverchan_down '1'
+	option cpuload_enable '1'
+	option cpuload '2'
+	option temperature_enable '0'
+	option up_timeout '2'
+	option down_timeout '20'
+	option timeout_retry_count '2'
+	option thread_num '3'
+	option err_enable '0'
+
