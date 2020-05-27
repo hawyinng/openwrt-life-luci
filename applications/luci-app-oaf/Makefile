@@ -10,6 +10,8 @@ LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+kmod-oaf
 PKG_NAME:=luci-app-oaf
 PKG_VERSION:=3.0
-PKG_RELEASE:=1
-include $(TOPDIR)/feeds/luci/luci.mk
+PKG_RELEASE:=2
+
+include ../../luci.mk
+
 # call BuildPackage - OpenWrt buildroot signature
