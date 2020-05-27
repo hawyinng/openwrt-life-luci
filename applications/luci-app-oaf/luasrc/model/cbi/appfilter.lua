@@ -79,5 +79,9 @@ if class_fd then
 end
 m:section(SimpleSection).template = "admin_network/user_status"
 
+local apply = luci.http.formvalue("cbi.apply")
+if apply then
+	luci.util.exec("/etc/init.d/appfilter restart >/dev/null 2>&1")
+end
 
 return m
