@@ -10,8 +10,6 @@ PKG_VERSION:=3.6
 PKG_RELEASE:=40
 PKG_DATE:=20200411
 
-PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
-
 include $(INCLUDE_DIR)/package.mk
 
 define Package/$(PKG_NAME)/config
@@ -80,12 +78,9 @@ config PACKAGE_$(PKG_NAME)_INCLUDE_simple-obfs
 endmenu
 endef
 
-define Package/$(PKG_NAME)
-  CATEGORY:=LuCI
-  SUBMENU:=3. Applications
-  TITLE:=LuCI support for PassWall
-  PKGARCH:=all
-  DEPENDS:=+luci-compat +luci-lib-ipkg +libmbedtls +iptables-mod-tproxy +ip +ipset +coreutils-base64 +coreutils-nohup +luci-lib-jsonc \
+LUCI_TITLE:=LuCI support for PassWall
+LUCI_PKGARCH:=all
+LUCI_DEPENDS:=+luci-compat +luci-lib-ipkg +libmbedtls +iptables-mod-tproxy +ip +ipset +coreutils-base64 +coreutils-nohup +luci-lib-jsonc \
   +wget +resolveip +unzip +dnsmasq-full +tcping +libuci-lua \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ipt2socks:ipt2socks \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks:shadowsocks-libev-ss-redir \
@@ -103,26 +98,7 @@ define Package/$(PKG_NAME)
   +PACKAGE_$(PKG_NAME)_INCLUDE_dns2socks:dns2socks \
   +PACKAGE_$(PKG_NAME)_INCLUDE_v2ray-plugin:v2ray-plugin \
   +PACKAGE_$(PKG_NAME)_INCLUDE_simple-obfs:simple-obfs
-endef
 
-define Build/Prepare
-endef
+include ../../luci.mk
 
-define Build/Compile
-endef
-
-define Package/$(PKG_NAME)/conffiles
-/etc/config/passwall
-/usr/share/passwall/
-endef
-
-define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci
-	cp -pR ./luasrc/* $(1)/usr/lib/lua/luci
-	$(INSTALL_DIR) $(1)/
-	cp -pR ./root/* $(1)/
-	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	po2lmo ./po/zh_Hans/passwall.po $(1)/usr/lib/lua/luci/i18n/passwall.zh-cn.lmo
-endef
-
-$(eval $(call BuildPackage,$(PKG_NAME)))
+# call BuildPackage - OpenWrt buildroot signature
