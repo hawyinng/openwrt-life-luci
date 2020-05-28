@@ -2,8 +2,14 @@
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 
-msgid "OpenClash"
-msgstr "OpenClash"
+msgid "Select Stack Type"
+msgstr "网络栈类型"
+
+msgid "Select Stack Type For Tun Mode, According To The Running Speed on Your Machine"
+msgstr "请自行根据运行速度为Tun模式选择合适的网络栈"
+
+msgid "Script Proxy Mode (Tun Core Only)"
+msgstr "Script【脚本模式-仅Tun内核】"
 
 msgid "A Clash Client For OpenWrt"
 msgstr "一个运行在OpenWrt上的Clash客户端，兼容Shadowsocks、Vmess、Trojan、Snell等协议，根据灵活的规则配置实现策略代理"
@@ -224,7 +230,7 @@ msgstr "(通讯协议)"
 msgid "Enable ipv6 Resolve"
 msgstr "IPV6类型DNS解析"
 
-msgid "Force Enable to Resolve ipv6 DNS Requests"
+msgid "Enable Clash to Resolve ipv6 DNS Requests"
 msgstr ""
 "固件须配置好IPV6的NAT，如你不使用IPV6请关闭固件的相关服务，避免客户端连接出现异常"
 

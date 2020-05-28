@@ -16,6 +16,7 @@ EOF
 
 mkdir -p ${IPKG_INSTROOT}/etc/openclash/config
 mkdir -p ${IPKG_INSTROOT}/etc/openclash/proxy_provider
+mkdir -p ${IPKG_INSTROOT}/etc/openclash/rule_provider
 mkdir -p ${IPKG_INSTROOT}/etc/openclash/backup
 mkdir -p ${IPKG_INSTROOT}/etc/openclash/core
 mkdir -p ${IPKG_INSTROOT}/usr/share/openclash/backup
