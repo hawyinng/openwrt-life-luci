@@ -87,7 +87,7 @@ LUCI_DEPENDS:=+luci-compat +luci-lib-ipkg +libmbedtls +iptables-mod-tproxy +ip +
   +PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR:shadowsocksr-libev-alt \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks_socks:shadowsocks-libev-ss-local \
   +PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR_socks:shadowsocksr-libev-ssr-local \
-  +PACKAGE_$(PKG_NAME)_INCLUDE_V2ray:v2ray-core \
+  +PACKAGE_$(PKG_NAME)_INCLUDE_V2ray:v2ray-core-mini \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Trojan:trojan \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Trojan:ipt2socks \
   +PACKAGE_$(PKG_NAME)_INCLUDE_Brook:brook \
