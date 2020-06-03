@@ -2,6 +2,12 @@
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 
+msgid "TLS Custom Host"
+msgstr "TLS自定义Host"
+
+msgid "Rule Provider File List"
+msgstr "规则集文件列表"
+
 msgid "Select Stack Type"
 msgstr "网络栈类型"
 
