@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BTlist=`wget -qO- --no-check-certificate https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt|awk NF|sed ":a;N;s/\n/,/g;ta"`
+BTlist=`wget -qO- --no-check-certificate https://ngosang.github.io/trackerslist/trackers_all.txt|awk NF|sed ":a;N;s/\n/,/g;ta"`
 
 if [ -z "`grep "list bt_tracker " /etc/config/aria2`" ]; then
 
