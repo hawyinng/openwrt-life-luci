@@ -183,6 +183,10 @@ msgstr ""
 "Impõem o uso do DNS do Roteador em dispositivos locais, também é conhecido "
 "como DNS Hijacking."
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI access for luci-app-simple-adblock"
+msgstr "Conceda acesso UCI ao luci-app-simple-adblock"
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:232
 msgid "IPv6 Support"
 msgstr "Suporte ao IPv6"
@@ -280,6 +284,7 @@ msgid "Service Status [%s]"
 msgstr "Condição Geral do Serviço [%s]"
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "AdBlock Simples"
 
@@ -446,3 +451,125 @@ msgstr "houve uma falha ao tentar descompactar a cache"
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:196
 msgid "none"
 msgstr "nenhum"
+
+#~ msgid "Cache file containing"
+#~ msgstr "Arquivo cache que contenha"
+
+#~ msgid "Compressed cache file found"
+#~ msgstr "Um arquivo cache compactado foi encontrado"
+
+#~ msgid ""
+#~ "Pick the DNS resolution option to create the adblock list for, see the"
+#~ msgstr ""
+#~ "Escolha a opção de resolução DNS para criar uma lista de bloqueio de "
+#~ "anúncios (adblock), veja o"
+
+#~ msgid "Pick the LED not already used in"
+#~ msgstr "Escolha um LED não usando em"
+
+#~ msgid "Please note that"
+#~ msgstr "Por favor, note que"
+
+#~ msgid "README"
+#~ msgstr "LEIA-ME"
+
+#~ msgid "System LED Configuration"
+#~ msgstr "Configuração do LED"
+
+#~ msgid "domains"
+#~ msgstr "domínios"
+
+#~ msgid "domains found"
+#~ msgstr "domínios foram encontrados"
+
+#~ msgid "failed to create"
+#~ msgstr "houve uma falha ao criar"
+
+#~ msgid "failed to move"
+#~ msgstr "não foi possível mover"
+
+#~ msgid "failed to move temporary data file to"
+#~ msgstr "houve uma falha ao tentar mover o arquivo de dados temporário para"
+
+#~ msgid "failed to stop"
+#~ msgstr "houve uma falha ao parar"
+
+#~ msgid "file"
+#~ msgstr "arquivo"
+
+#~ msgid "for details."
+#~ msgstr "para mais detalhes."
+
+#~ msgid "is blocking"
+#~ msgstr "está bloqueando"
+
+#~ msgid "is not installed or not found"
+#~ msgstr "não está instalado ou não foi encontrado"
+
+#~ msgid "is not supported on this system."
+#~ msgstr "não é compatível com este sistema."
+
+#~ msgid "to"
+#~ msgstr "para"
+
+#~ msgid "with"
+#~ msgstr "com"
+
+#~ msgid "Enable/Start"
+#~ msgstr "Habilitar/Iniciar"
+
+#~ msgid "Reload"
+#~ msgstr "Recarregar"
+
+#~ msgid "Service is disabled/stopped"
+#~ msgstr "O serviço está desabilitado/parado"
+
+#~ msgid "Service is enabled/started"
+#~ msgstr "O serviço está habilitado/rodando"
+
+#~ msgid "Service started with error"
+#~ msgstr "O serviço iniciou com erro"
+
+#~ msgid "Stop/Disable"
+#~ msgstr "Parar/Desabilitar"
+
+#~ msgid "Controls system log and console output verbosity"
+#~ msgstr ""
+#~ "Controla o sistema de registro e o detalhamento das mensagens de saída do "
+#~ "console"
+
+#~ msgid "Forces Router DNS use on local devices, also known as DNS Hijacking"
+#~ msgstr ""
+#~ "Forçar o uso do DNS do Roteador nos dispositivos locais, também conhecido "
+#~ "como redirecionamento de DNS"
+
+#~ msgid "Individual domains to be blacklisted"
+#~ msgstr "Domínios individuais para serem incluídos na Lista Negra"
+
+#~ msgid "Individual domains to be whitelisted"
+#~ msgstr "Domínios individuais para serem incluídos na Lista Branca"
+
+#~ msgid "Start Simple Adblock service"
+#~ msgstr "Inicie o serviço Simple Adblock"
+
+#~ msgid "URLs to lists of domains to be blacklisted"
+#~ msgstr "Endereço da lista dos domínios para a Lista Negra"
+
+#~ msgid "URLs to lists of domains to be whitelisted"
+#~ msgstr "Endereço da lista dos domínios para a Lista Branca"
+
+#~ msgid "URLs to lists of hosts to be blacklisted"
+#~ msgstr "Endereço da lista dos hosts para a Lista Negra"
+
+#~ msgid "Enables debug output to /tmp/simple-adblock.log"
+#~ msgstr "Habilitar a saída da depuração para /tmp/simple-adblock.log"
+
+#~ msgid "Run service after set delay on boot"
+#~ msgstr "Rodar o serviço depois de um atraso quando o equipamento é ligado"
+
+#~ msgid "Stop the download if it is stalled for set number of seconds"
+#~ msgstr ""
+#~ "Para de baixar se estiver trancado por um determinado número de segundos"
+
+#~ msgid "Enable/start service"
+#~ msgstr "Habilitar/Iniciar o serviço"

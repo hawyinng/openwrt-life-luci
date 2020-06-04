@@ -181,6 +181,10 @@ msgstr ""
 "Kényszeríti az útválasztó DNS-ének használatát a helyi eszközökön. Ismert "
 "még DNS-eltérítésként is."
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI access for luci-app-simple-adblock"
+msgstr ""
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:232
 msgid "IPv6 Support"
 msgstr "IPv6 támogatás"
@@ -274,6 +278,7 @@ msgid "Service Status [%s]"
 msgstr ""
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "Egyszerű reklámblokkoló"
 
@@ -440,3 +445,45 @@ msgstr ""
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:196
 msgid "none"
 msgstr "nincs"
+
+#~ msgid ""
+#~ "Pick the DNS resolution option to create the adblock list for, see the"
+#~ msgstr ""
+#~ "A DNS-feloldási beállítás választása, amelyhez a reklámblokkoló-lista "
+#~ "létre lesz hozva. Nézze meg a"
+
+#~ msgid "Pick the LED not already used in"
+#~ msgstr "A LED kiválasztása, amely még nincs használva itt:"
+
+#~ msgid "Please note that"
+#~ msgstr "Ne feledje, hogy a"
+
+#~ msgid "README"
+#~ msgstr "README"
+
+#~ msgid "System LED Configuration"
+#~ msgstr "Rendszer LED beállításai"
+
+#~ msgid "for details."
+#~ msgstr "fájlt a részletekért."
+
+#~ msgid "is not supported on this system."
+#~ msgstr "nem támogatott ezen a rendszeren."
+
+#~ msgid "Enable/Start"
+#~ msgstr "Engedélyezés vagy indítás"
+
+#~ msgid "Reload"
+#~ msgstr "Újratöltés"
+
+#~ msgid "Service is disabled/stopped"
+#~ msgstr "A szolgáltatás letiltva vagy leállítva"
+
+#~ msgid "Service is enabled/started"
+#~ msgstr "A szolgáltatás engedélyezve vagy elindítva"
+
+#~ msgid "Service started with error"
+#~ msgstr "A szolgáltatás hibával indult"
+
+#~ msgid "Stop/Disable"
+#~ msgstr "Leállítás vagy letiltás"

@@ -184,6 +184,10 @@ msgstr ""
 "Fuerza el uso de DNS del enrutador en dispositivos locales, también conocido "
 "como secuestro de DNS."
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI access for luci-app-simple-adblock"
+msgstr "Conceder acceso UCI para luci-app-simple-adblock"
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:232
 msgid "IPv6 Support"
 msgstr "Soporte IPv6"
@@ -281,6 +285,7 @@ msgid "Service Status [%s]"
 msgstr "Estado del servicio [%s]"
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "Simple AdBlock"
 
@@ -449,3 +454,151 @@ msgstr "no se pudo descomprimir el caché comprimido"
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:196
 msgid "none"
 msgstr "ninguno"
+
+#~ msgid "Cache file containing"
+#~ msgstr "Archivo de caché que contiene"
+
+#~ msgid "Compressed cache file found"
+#~ msgstr "Archivo de caché comprimido encontrado"
+
+#~ msgid ""
+#~ "Pick the DNS resolution option to create the adblock list for, see the"
+#~ msgstr ""
+#~ "Elija la opción de resolución DNS para crear la lista de bloqueos de "
+#~ "anuncios, consulte el"
+
+#~ msgid "Pick the LED not already used in"
+#~ msgstr "Elija el LED que aún no se utiliza en"
+
+#~ msgid "Please note that"
+#~ msgstr "Tenga en cuenta que"
+
+#~ msgid "README"
+#~ msgstr "LÉEME"
+
+#~ msgid "System LED Configuration"
+#~ msgstr "Configuración del sistema LED"
+
+#~ msgid "domains"
+#~ msgstr "dominios"
+
+#~ msgid "domains found"
+#~ msgstr "dominios encontrados"
+
+#~ msgid "failed to create"
+#~ msgstr "fallo al crear"
+
+#~ msgid "failed to move"
+#~ msgstr "error al mover"
+
+#~ msgid "failed to move temporary data file to"
+#~ msgstr "no se pudo mover el archivo de datos temporal a"
+
+#~ msgid "failed to stop"
+#~ msgstr "error al detener"
+
+#~ msgid "file"
+#~ msgstr "archivo"
+
+#~ msgid "for details."
+#~ msgstr "para detalles."
+
+#~ msgid "is blocking"
+#~ msgstr "está bloqueando"
+
+#~ msgid "is not installed or not found"
+#~ msgstr "no está instalado o no se encuentra"
+
+#~ msgid "is not supported on this system."
+#~ msgstr "no es compatible con este sistema."
+
+#~ msgid "to"
+#~ msgstr "a"
+
+#~ msgid "with"
+#~ msgstr "con"
+
+#~ msgid "Enable/Start"
+#~ msgstr "Activar/Iniciar"
+
+#~ msgid "Reload"
+#~ msgstr "Recargar"
+
+#~ msgid "Service is disabled/stopped"
+#~ msgstr "El servicio está desactivado/detenido"
+
+#~ msgid "Service is enabled/started"
+#~ msgstr "El servicio está activado/iniciado"
+
+#~ msgid "Service started with error"
+#~ msgstr "Servicio iniciado con error"
+
+#~ msgid "Stop/Disable"
+#~ msgstr "Detener/Desactivar"
+
+#~ msgid "Allow Non-ASCII"
+#~ msgstr "Permitir no ASCII"
+
+#~ msgid "Allow Non-ASCII characters in DNSMASQ file"
+#~ msgstr "Permitir caracteres no ASCII en el archivo DNSMASQ"
+
+#~ msgid "Do not allow Non-ASCII"
+#~ msgstr "No permitir no ASCII"
+
+#~ msgid ""
+#~ "Only enable if your version of DNSMASQ supports the use of Non-ASCII "
+#~ "characters, otherwise DNSMASQ will fail to start."
+#~ msgstr ""
+#~ "Solo habilítelo si su versión de DNSMASQ admite el uso de caracteres no "
+#~ "ASCII; de lo contrario, DNSMASQ no se iniciará."
+
+#~ msgid "Controls system log and console output verbosity"
+#~ msgstr "Controla el registro del sistema y la salida de consola."
+
+#~ msgid "Forces Router DNS use on local devices, also known as DNS Hijacking"
+#~ msgstr ""
+#~ "Forza el uso del DNS del enrutador en dispositivos locales, también "
+#~ "conocido como Secuestro de DNS"
+
+#~ msgid "Individual domains to be blacklisted"
+#~ msgstr "Dominios individuales para ser incluidos en la lista negra"
+
+#~ msgid "Individual domains to be whitelisted"
+#~ msgstr "Dominios individuales para ser incluidos en la lista blanca"
+
+#~ msgid "Start Simple Adblock service"
+#~ msgstr "Iniciar el servicio Simple Adblock"
+
+#~ msgid "URLs to lists of domains to be blacklisted"
+#~ msgstr "URL a listas de dominios que se incluirán en la lista negra"
+
+#~ msgid "URLs to lists of domains to be whitelisted"
+#~ msgstr "URL a listas de dominios que se incluirán en la lista blanca"
+
+#~ msgid "URLs to lists of hosts to be blacklisted"
+#~ msgstr "URL a listas de hosts para ser incluidos en la lista negra"
+
+#~ msgid ""
+#~ "Attempt to create a compressed cache of final block-list on the router."
+#~ msgstr ""
+#~ "Intente crear un caché comprimido de la lista de bloqueo final en el "
+#~ "enrutador."
+
+#~ msgid "Enables debug output to /tmp/simple-adblock.log"
+#~ msgstr "Habilitar la salida de depuración a /tmp/simple-adblock.log"
+
+#~ msgid ""
+#~ "Launch all lists downloads and processing simultaneously, reducing "
+#~ "service start time"
+#~ msgstr ""
+#~ "Inicie todas las descargas y el procesamiento de listas simultáneamente, "
+#~ "reduciendo el tiempo de inicio del servicio"
+
+#~ msgid "Run service after set delay on boot"
+#~ msgstr ""
+#~ "Ejecutar el servicio después de establecer el retraso en el arranque"
+
+#~ msgid "Stop the download if it is stalled for set number of seconds"
+#~ msgstr ""
+#~ "Detenga la descarga si se detiene durante un número de segundos "
+#~ "establecido"

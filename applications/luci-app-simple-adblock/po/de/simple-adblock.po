@@ -181,6 +181,10 @@ msgstr ""
 "Erzwingt die Verwendung des Router-DNS auf lokalen Geräten, auch als DNS "
 "Hijacking bekannt."
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI access for luci-app-simple-adblock"
+msgstr ""
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:232
 msgid "IPv6 Support"
 msgstr "IPv6 Ünterstützung"
@@ -248,8 +252,8 @@ msgstr ""
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:194
 msgid "Pick the LED not already used in %sSystem LED Configuration%s."
 msgstr ""
-"Wähle eine frei nutzbare LED aus, die noch nicht in der %sSystem-LED-"
-"Konfiguration%s verwendet wird."
+"Wähle eine frei nutzbare LED aus, die noch nicht in der %s"
+"System-LED-Konfiguration%s verwendet wird."
 
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:207
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:208
@@ -279,6 +283,7 @@ msgid "Service Status [%s]"
 msgstr "Servicestatus [%s]"
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "Simple AdBlock"
 
@@ -447,3 +452,66 @@ msgstr "Komprimierter Cache konnte nicht entpackt werden"
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:196
 msgid "none"
 msgstr "keine"
+
+#~ msgid "Cache file containing"
+#~ msgstr "Cache-Datei enthält"
+
+#~ msgid "Compressed cache file found"
+#~ msgstr "Komprimierte Cache-Datei gefunden"
+
+#~ msgid ""
+#~ "Pick the DNS resolution option to create the adblock list for, see the"
+#~ msgstr ""
+#~ "Wählen Sie die Option DNS-Auflösung aus, um die Adblockliste zu "
+#~ "erstellen, siehe"
+
+#~ msgid "Pick the LED not already used in"
+#~ msgstr "Treffen Sie eine Auswahl einer noch freien LED in"
+
+#~ msgid "Please note that"
+#~ msgstr "Bitte beachte daß"
+
+#~ msgid "README"
+#~ msgstr "README"
+
+#~ msgid "System LED Configuration"
+#~ msgstr "System LED Konfiguration"
+
+#~ msgid "domains"
+#~ msgstr "Domänen"
+
+#~ msgid "domains found"
+#~ msgstr "Domänen gefunden"
+
+#~ msgid "failed to create"
+#~ msgstr "Datei konnte nicht erstellt werden:"
+
+#~ msgid "failed to move temporary data file to"
+#~ msgstr "Temporäre Datei konnte nicht ans Ziel verschoben werden:"
+
+#~ msgid "for details."
+#~ msgstr "für Einzelheiten."
+
+#~ msgid "is not supported on this system."
+#~ msgstr "wird auf diesem System nicht unterstützt."
+
+#~ msgid "to"
+#~ msgstr "zu"
+
+#~ msgid "Enable/Start"
+#~ msgstr "Aktivieren/Starten"
+
+#~ msgid "Reload"
+#~ msgstr "Neu laden"
+
+#~ msgid "Service is disabled/stopped"
+#~ msgstr "Dienst ist deaktiviert/beendet"
+
+#~ msgid "Service is enabled/started"
+#~ msgstr "Dienst ist aktiviert/gestartet"
+
+#~ msgid "Service started with error"
+#~ msgstr "Dienst mit Fehler gestartet"
+
+#~ msgid "Stop/Disable"
+#~ msgstr "Stopp/Deaktivieren"

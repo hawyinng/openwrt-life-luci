@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: INAGAKI Hiroshi <musashino.open@gmail.com>\n"
 "Language-Team: \n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.1\n"
+"Last-Translator: INAGAKI Hiroshi <musashino.open@gmail.com>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
 
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:161
 msgid "%s Error: %s"
@@ -178,6 +178,10 @@ msgstr "全ローカル デバイスにルーター DNSサーバーの使用を�
 msgid "Forces Router DNS use on local devices, also known as DNS Hijacking."
 msgstr ""
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI access for luci-app-simple-adblock"
+msgstr ""
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:232
 msgid "IPv6 Support"
 msgstr ""
@@ -265,6 +269,7 @@ msgid "Service Status [%s]"
 msgstr ""
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "Simple AdBlock"
 
@@ -431,3 +436,64 @@ msgstr ""
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:196
 msgid "none"
 msgstr "なし"
+
+#~ msgid "Pick the LED not already used in"
+#~ msgstr "右の設定で既に使用されていないLEDを選択します"
+
+#~ msgid "System LED Configuration"
+#~ msgstr "LED 設定"
+
+#~ msgid "Enable/Start"
+#~ msgstr "有効化/開始"
+
+#~ msgid "Reload"
+#~ msgstr "リロード"
+
+#~ msgid "Service is disabled/stopped"
+#~ msgstr "サービスは無効/停止中"
+
+#~ msgid "Service is enabled/started"
+#~ msgstr "サービスは有効/実行中"
+
+#~ msgid "Service started with error"
+#~ msgstr "サービス開始時にエラーが発生"
+
+#~ msgid "Stop/Disable"
+#~ msgstr "停止/無効化"
+
+#~ msgid "Controls system log and console output verbosity"
+#~ msgstr "システム ログとコンソール出力の冗長性を設定します。"
+
+#~ msgid "Forces Router DNS use on local devices, also known as DNS Hijacking"
+#~ msgstr ""
+#~ "ローカル デバイスに対し、ルーター上のDNSサーバーの使用を強制します。これ"
+#~ "は、DNS ハイジャックとしても知られています。"
+
+#~ msgid "Individual domains to be blacklisted"
+#~ msgstr "ブラックリストに登録する、個々のドメインです。"
+
+#~ msgid "Individual domains to be whitelisted"
+#~ msgstr "ホワイトリストに登録する、個々のドメインです。"
+
+#~ msgid "Start Simple Adblock service"
+#~ msgstr "Simple Adblock サービスを開始"
+
+#~ msgid "URLs to lists of domains to be blacklisted"
+#~ msgstr "ブラックリストに登録するドメインのリストのURLです。"
+
+#~ msgid "URLs to lists of domains to be whitelisted"
+#~ msgstr "ホワイトリストに登録するドメインのリストのURLです。"
+
+#~ msgid "URLs to lists of hosts to be blacklisted"
+#~ msgstr ""
+#~ "ブラックリストに登録するドメインが列挙された、hostsファイルのURLです。"
+
+#~ msgid "Enables debug output to /tmp/simple-adblock.log"
+#~ msgstr "/tmp/simple-adblock.log へのデバッグ出力を有効にします。"
+
+#~ msgid "Run service after set delay on boot"
+#~ msgstr "システムのブート時に、設定された遅延でサービスを開始します。"
+
+#~ msgid "Stop the download if it is stalled for set number of seconds"
+#~ msgstr ""
+#~ "問題等が発生して指定された秒数を超過した場合、ダウンロードを停止します。"
