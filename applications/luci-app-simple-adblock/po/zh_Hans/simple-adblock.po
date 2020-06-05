@@ -404,3 +404,7 @@ msgstr "无法停止 %s"
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:96
 msgid "failed to unpack compressed cache"
 msgstr "无法解压缩压缩缓存"
+
+#: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:158
+msgid "no HTTPS/SSL support on device"
+msgstr "设备不支持 HTTPS/SSL"
