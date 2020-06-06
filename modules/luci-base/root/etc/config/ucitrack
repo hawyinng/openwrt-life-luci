@@ -1,56 +1,44 @@
+
 config network
-	option init network
-	list affects dhcp
-	list affects radvd
+	option init 'network'
+	list affects 'dhcp'
 
 config wireless
-	list affects network
+	list affects 'network'
 
 config firewall
-	option init firewall
-	list affects luci-splash
-	list affects qos
-	list affects miniupnpd
-
-config olsr
-	option init olsrd
+	option init 'firewall'
 
 config dhcp
-	option init dnsmasq
-	list affects odhcpd
+	option init 'dnsmasq'
+	list affects 'odhcpd'
 
 config odhcpd
-	option init odhcpd
+	option init 'odhcpd'
 
 config dropbear
-	option init dropbear
+	option init 'dropbear'
 
 config httpd
-	option init httpd
+	option init 'httpd'
 
 config fstab
 	option exec '/sbin/block mount'
 
-config qos
-	option init qos
-
 config system
-	option init led
+	option init 'led'
 	option exec '/etc/init.d/log reload'
-	list affects luci_statistics
-	list affects dhcp
+	list affects 'dhcp'
 
-config luci_splash
-	option init luci_splash
+config hd-idle
+	option init 'hd-idle'
 
-config upnpd
-	option init miniupnpd
+config arpbind
+	option init 'arpbind'
 
-config ntpclient
-	option init ntpclient
+config arpfirewall
+	option init 'arpfirewall'
 
-config samba
-	option init samba
+config vsftpd
+	option init 'vsftpd'
 
-config tinyproxy
-	option init tinyproxy
