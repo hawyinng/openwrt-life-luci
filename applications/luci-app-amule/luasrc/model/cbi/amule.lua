@@ -25,7 +25,7 @@ function titlesplit(Value)
     return "<p style=\"font-size:20px;font-weight:bold;color: DodgerBlue\">" .. translate(Value) .. "</p>"
 end
 
-m = Map("amule", translate("aMule"), translate("aMule is a ED2K/KAD client for all platforms.") .. "<br/><a href=\"https://github.com/maz-1\">luci interface by maz-1</a>")
+m = Map("amule", translate("aMule"), translate("aMule is a ED2K/KAD client for all platforms."))
 
 m:section(SimpleSection).template  = "amule/overview_status"
 
