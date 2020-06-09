@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/etc/init.d/wrtbwmon restart >/dev/null 2>&1

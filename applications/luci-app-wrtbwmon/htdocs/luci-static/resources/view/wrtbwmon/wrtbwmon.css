@@ -1,0 +1,56 @@
+.hide {
+	display: none !important;
+}
+#control_button {
+	width: 100%;
+	border: 0;
+	padding: 0;
+	text-align: center;
+}
+#thClient {
+	width: 17%;
+}
+#thMAC {
+	width: 10%;
+}
+#thDownload, #thUpload {
+	width: 8%;
+}
+#thTotalDown, #thTotalUp, #thTotal {
+	width: 9%;
+}
+#thFirstSeen, #thLastSeen {
+	width: 15%;
+}
+#progressbar_panel > .tr> .td:nth-child(1) {
+	width: 10%;
+}
+.tr
+.table-totals {
+	background: #eee !important;
+}
+.cbi-progressbar {
+	position: relative;
+	height: 18px;
+	margin: 3px 0;
+	border: thin solid #999;
+	background: #fff;
+}
+.cbi-progressbar > div {
+	width: 0;
+	height: 100%;
+	transition: width .1s ease-in;
+}
+.cbi-progressbar::after {
+	line-height: normal;
+	position: absolute;
+	bottom 0;
+	left 0;
+	right 0;
+	top 0;
+	overflow: hidden;
+	content: attr(title);
+	text-align: center;
+	white-space: pre;
+	text-overflow: ellipsis;
+}

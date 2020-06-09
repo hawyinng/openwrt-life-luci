@@ -5,10 +5,10 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=LuCI support for Wrtbwmon
+LUCI_TITLE:=A Luci module that uses wrtbwmon to track bandwidth usage
 LUCI_PKGARCH:=all
-PKG_VERSION:=1.0
-PKG_RELEASE:=8
+PKG_VERSION:=2.0.2
+PKG_RELEASE:=1
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
