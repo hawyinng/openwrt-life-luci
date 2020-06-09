@@ -2,6 +2,9 @@
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 
+msgid "UDP Support"
+msgstr "UDP支持"
+
 msgid "TLS Custom Host"
 msgstr "TLS自定义Host"
 
