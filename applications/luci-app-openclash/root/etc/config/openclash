@@ -58,7 +58,7 @@ config servers
 	option port '443'
 	option udp 'true'
 	option tls 'true'
-	option skip_cert_verify 'false'
+	option skip_cert_verify 'true'
 	option securitys 'auto'
 	option alterId '4'
 	option uuid 'b831381d-6324-4d53-ad4f-8cda48b30811'

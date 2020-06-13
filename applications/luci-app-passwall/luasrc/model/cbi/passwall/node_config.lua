@@ -314,7 +314,7 @@ tls_serverName:depends("trojan_verify_cert", "1")
 tls_allowInsecure = s:option(Flag, "tls_allowInsecure",
                              translate("allowInsecure"), translate(
                                  "Whether unsafe connections are allowed. When checked, V2Ray does not check the validity of the TLS certificate provided by the remote host."))
-tls_allowInsecure.default = "0"
+tls_allowInsecure.default = "1"
 tls_allowInsecure.rmempty = false
 tls_allowInsecure:depends("v2ray_stream_security", "tls")
 

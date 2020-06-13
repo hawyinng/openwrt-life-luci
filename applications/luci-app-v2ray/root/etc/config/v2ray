@@ -46,6 +46,7 @@ config outbound 'proxy'
 	option ss_network 'ws'
 	option ss_security 'tls'
 	option ss_tls_server_name 'www.baidu.com'
+	option ss_tls_allow_insecure '1'
 	option ss_websocket_path 'ray'
 
 config outbound 'block'
