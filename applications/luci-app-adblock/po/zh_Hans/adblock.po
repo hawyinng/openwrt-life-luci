@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-05-10 12:47+0000\n"
-"Last-Translator: gw826943555 <gw826943555@qq.com>\n"
+"PO-Revision-Date: 2020-05-21 10:13+0000\n"
+"Last-Translator: Luis Liou <liouluis@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationsadblock/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -136,7 +136,15 @@ msgstr ""
 "构建一个附加的DNS阻止列表，以阻止对除白名单中列出的所有域之外的所有域的访问。"
 "请注意：您可以使用此限制性阻止列表，例如用于访客wifi或kidsafe配置。"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:126
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:271
+msgid ""
+"Changes on this tab needs a full adblock service restart to take effect.<br /"
+"><p>&#xa0;</p>"
+msgstr ""
+"要更改此标签，需要重新启动完整的adblock服务才能生效。<br /"
+"><p>&#xa0;</p>"
+
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:128
 msgid ""
 "Configuration of the adblock package to block ad/abuse domains by using DNS. "
 "For further information <a href=\"https://github.com/openwrt/packages/blob/"
@@ -297,8 +305,7 @@ msgstr "现有的工作(s)"
 msgid "External DNS Lookup Domain"
 msgstr "外部DNS查找域"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:388
-#, fuzzy
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:399
 msgid ""
 "External domain to check for a successful DNS backend restart. Please note: "
 "To disable this check set this option to 'false'."
@@ -306,25 +313,23 @@ msgstr ""
 "外部域，用于检查DNS后端是否成功重启。请注意：要禁用此检查，请将此选项设置为“ "
 "false”。"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:155
-#, fuzzy
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:156
 msgid "Filter criteria like date, domain or client (optional)"
 msgstr "过滤条件，例如日期，域或客户（可选）"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:397
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:408
 msgid "Flush DNS Cache"
 msgstr "清空 DNS 缓存"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:397
-#, fuzzy
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:408
 msgid "Flush the DNS Cache before adblock processing as well."
 msgstr "还要在处理adblock之前刷新DNS缓存。"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:291
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:293
 msgid "Force Local DNS"
 msgstr "强制本地 DNS"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:306
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:317
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
 "demand. Please note: this needs additional 'tcpdump-mini' package "
@@ -345,7 +350,15 @@ msgstr "最后运行"
 msgid "Latest DNS Requests"
 msgstr "最新的DNS请求"
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:419
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:304
+msgid "Limit SafeSearch"
+msgstr "限制安全搜索"
+
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:304
+msgid "Limit SafeSearch to certain providers."
+msgstr "将“安全搜索”限制为某些提供商。"
+
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:430
 msgid "List of available network devices used by tcpdump."
 msgstr "tcpdump使用的可用网络设备列表."
 
@@ -472,7 +485,11 @@ msgstr "刷新计时器..."
 msgid "Refresh..."
 msgstr "刷新..."
 
-#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:429
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:313
+msgid "Relax SafeSearch"
+msgstr "放宽安全搜寻"
+
+#: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:440
 msgid "Report Chunk Count"
 msgstr "报告区块计数"
 
