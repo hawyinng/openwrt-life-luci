@@ -24,8 +24,8 @@ if running  then
 	button = "<br/><br/><input class=\"cbi-button cbi-button-apply\" type=\"submit\" value=\" "..translate("Open web interface").." \" onclick=\"window.open('http://'+window.location.hostname+':"..cport.."')\"/>"
 end
 
-m = Map("cupsd", translate("CUPS print server"))
-m.description = translate("CUPS is a standards-based, open source printing system developed by Apple Inc. for macOS® and other UNIX®-like operating systems.".. button  .. "<br/><br/>" .. translate("Operating status").. " : "  .. state_msg .. "<br />")
+m = Map("cupsd", translate("CUPS print server") .. state_msg)
+m.description = translate("CUPS is a standards-based, open source printing system developed by Apple Inc. for macOS® and other UNIX®-like operating systems.").. button
 
 s = m:section(TypedSection, "cupsd")
 s.anonymous = true
