@@ -2,6 +2,72 @@
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 
+msgid "Other Rule Provider Manage"
+msgstr "管理第三方规则集"
+
+msgid "all"
+msgstr "所有"
+
+msgid "Custom Rule Providers and Groups"
+msgstr "自定义规则集与策略组管理"
+
+msgid "Rule Provider's Name"
+msgstr "选择规则集（请勿重复添加）"
+
+msgid "Other Rule Providers and Groups"
+msgstr "第三方规则集与策略组管理"
+
+msgid "Rule Author"
+msgstr "规则作者"
+
+msgid "Rule Type"
+msgstr "规则类型"
+
+msgid "Other Rule Providers List"
+msgstr "其他规则集列表"
+
+msgid "The Added Proxy Groups Must Exist Except 'DIRECT' & 'REJECT'"
+msgstr "注意：除'DIRECT'和'REJECT'外，修改配置文件前添加的其他策略组必须已创建"
+
+msgid "Set Proxy Group"
+msgstr "指定策略组"
+
+msgid "Rule Providers Interval(s)"
+msgstr "规则集更新时间（秒）"
+
+msgid "Rule Providers URL"
+msgstr "规则集地址"
+
+msgid "Update Your Rule Providers File From Config Luci Page"
+msgstr "请先在配置文件管理页面上传您的规则集文件"
+
+msgid "Rule Providers Path"
+msgstr "规则集路径"
+
+msgid "Choose The Rule Behavior"
+msgstr "选择规则类型"
+
+msgid "Rule Behavior"
+msgstr "规则类型"
+
+msgid "Choose The Rule Providers Type"
+msgstr "选择规则集类型"
+
+msgid "Rule Providers Type"
+msgstr "规则集类型"
+
+msgid "Rule Providers Name"
+msgstr "别名（请勿重名）"
+
+msgid "Edit Rule Providers"
+msgstr "编辑规则集"
+
+msgid "Refresh Page"
+msgstr "刷新页面"
+
+msgid "ConnersHua(Provider-type) Rules"
+msgstr "ConnersHua（规则集类型）规则"
+
 msgid "UDP Support"
 msgstr "UDP支持"
 
@@ -31,6 +97,9 @@ msgstr "技术支持"
 
 msgid "Overviews"
 msgstr "运行状态"
+
+msgid "Rules and Groups"
+msgstr "规则与策略组管理"
 
 msgid "Game Rules and Groups"
 msgstr "游戏规则与策略组管理"
