@@ -74,6 +74,9 @@ msgstr "UDP支持"
 msgid "TLS Custom Host"
 msgstr "TLS自定义Host"
 
+msgid "Rule Provider File"
+msgstr "规则集文件"
+
 msgid "Rule Provider File List"
 msgstr "规则集文件列表"
 
