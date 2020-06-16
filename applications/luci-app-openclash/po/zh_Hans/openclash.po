@@ -77,7 +77,7 @@ msgstr "TLS自定义Host"
 msgid "Rule Provider File"
 msgstr "规则集文件"
 
-msgid "Rule Provider File List"
+msgid "Rule Providers File List"
 msgstr "规则集文件列表"
 
 msgid "Select Stack Type"
