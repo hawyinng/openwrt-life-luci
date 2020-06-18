@@ -4,3 +4,5 @@ config global 'global'
 
 config appfilter 'appfilter'
 
+config appfilter 'user'
+
