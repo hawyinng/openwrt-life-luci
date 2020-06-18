@@ -101,7 +101,7 @@ msgstr "技术支持"
 msgid "Overviews"
 msgstr "运行状态"
 
-msgid "Rules and Groups"
+msgid "Rule Providers and Groups"
 msgstr "规则与策略组管理"
 
 msgid "Game Rules and Groups"
