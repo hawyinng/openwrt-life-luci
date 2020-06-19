@@ -6,18 +6,20 @@
 				"/tmp/usage.db": [ "read" ],
 				"/etc/wrtbwmon.user": [ "read" ],
 				"/usr/sbin/wrtbwmon": [ "exec" ],
-				"/bin/cp": [ "exec" ]
+				"/bin/cp": [ "exec" ],
+				"/etc/luci-wrtbwmon.conf": [ "read" ]
 			},
-			"uci": [ "wrtbwmon" ]
+			"uci": [ "wrtbwmon", "luci-app-wrtbwmon" ]
 		},
 		"write": {
 			"file": {
 				"/bin/cat": [ "exec" ],
 				"/bin/rm": [ "exec" ],
 				"/bin/cp": [ "exec" ],
+				"/etc/luci-wrtbwmon.conf": [ "write" ],
 				"/etc/wrtbwmon.user": [ "write" ]
 			},
-			"uci": [ "wrtbwmon" ]
+			"uci": [ "wrtbwmon", "luci-app-wrtbwmon" ]
 		}
 	}
 }

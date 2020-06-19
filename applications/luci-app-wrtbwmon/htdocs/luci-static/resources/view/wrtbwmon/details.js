@@ -3,8 +3,11 @@
 'require rpc';
 'require validation';
 'require uci';
+'require ui';
 
 var cachedData = [], sortedId = 'thTotal', sortedBy = 'desc';
+var settings = {};
+var luciConfig = '/etc/luci-wrtbwmon.conf';
 
 var callLuciDHCPLeases = rpc.declare({
 	object: 'luci-rpc',
@@ -12,8 +15,67 @@ var callLuciDHCPLeases = rpc.declare({
 	expect: { '': {} }
 });
 
+var callLuciDSLStatus = rpc.declare({
+	object: 'luci-rpc',
+	method: 'getDSLStatus',
+	expect: { '': {} }
+});
+
 function $(tid) {
 	return document.getElementById(tid);
+}
+
+function createOption(title, value, desc) {
+	return E('div', {'class': 'cbi-value'}, [
+		E('label', {'class': 'cbi-value-title'}, title),
+		E('div', {'class': 'cbi-value-field'}, [
+			E('div', {}, value),
+			desc ? E('div', { 'class': 'cbi-value-description' }, desc) : ''
+		])
+	])
+}
+
+function displayTable(elmID) {
+	var tb = $('traffic');
+	var col = setSortedColumn(elmID), flag = sortedBy =='desc' ? 1 : -1;
+	var IPVer = col == 9 ? $('selectProtocol').value : null;
+
+	cachedData[0].sort(sortTable.bind(this, col, IPVer, flag));
+
+	//console.time('show');
+	updateTable(tb, cachedData, '<em><%:Loading...%></em>');
+	//console.timeEnd('show');
+	progressbar('downstream', cachedData[1][0], settings.downstream);
+	progressbar('upstream', cachedData[1][1], settings.upstream);
+}
+
+function formatBandWidth(bdw) {
+	return bdw * 1000 ** 2 / (settings.useBits ? 1 : 8);
+}
+
+function formatSize(size) {
+	var res = String.format('%' + settings.useMultiple + '.2m' + (settings.useBits ? 'bit' : 'B'), settings.useBits ? size * 8 : size);
+	return settings.useMultiple == '1024' ? res.replace(/([KMGTPEZ])/, '$&i') : res;
+}
+
+function formatSpeed(speed) {
+	return formatSize(speed) + '/s';
+}
+
+function formatDate(date) {
+	var d = new Date((/\W/g).test(date) ? date : date * 1000);
+	var Y = d.getFullYear(), M = d.getMonth() + 1, D = d.getDate();
+	var hh = d.getHours(), mm = d.getMinutes(), ss = d.getSeconds();
+	return Y + '/' + padStr(M) + '/' + padStr(D) + ' ' + padStr(hh) + ':' + padStr(mm) + ':' + padStr(ss);
+}
+
+function getDSLBandwidth() {
+	callLuciDSLStatus().then(function(res) {
+		if (Object.keys(res).length) {
+			settings.upstream = res.max_data_rate_up;
+			settings.downstream = res.max_data_rate_down;
+		}
+	})
 }
 
 function getPath() {
@@ -25,25 +87,105 @@ function getPath() {
 	});
 }
 
-function formatDate(date) {
-	var d = new Date((/\W/g).test(date) ? date : date * 1000);
-	var Y = d.getFullYear(), M = d.getMonth() + 1, D = d.getDate();
-	var hh = d.getHours(), mm = d.getMinutes(), ss = d.getSeconds();
-	return Y + '/' + padStr(M) + '/' + padStr(D) + ' ' + padStr(hh) + ':' + padStr(mm) + ':' + padStr(ss);
+function handleConfig(ev) {
+	ui.showModal(_('Configuration'), [
+			E('p', { 'class': 'spinning' }, _('Loading configuration data...'))
+	]);
+
+	var body = [
+		E('p', {}, _('Configure the default values for luci-app-wrtbwmon.')),
+		E('div', {}, [
+			createOption(_('Default Protocol'), E('select', {'class': 'cbi-input-select', 'name': 'protocol'}, [
+				E('option', { 'value': 'ipv4', 'selected': 'selected' }, _('ipv4')),
+				E('option', { 'value': 'ipv6' }, _('ipv6'))
+			])),
+			createOption(_('Default Refresh Interval'), E('select', {'class': 'cbi-input-select', 'name': 'interval'}, [
+				E('option', { 'value': '-1' }, _('Disabled')),
+				E('option', { 'value': '1', 'selected': 'selected' }, _('1 seconds')),
+				E('option', { 'value': '5' }, _('5 seconds')),
+				E('option', { 'value': '10' }, _('10 seconds')),
+				E('option', { 'value': '30' }, _('30 seconds'))
+			])),
+			createOption(_('Default More Columns'), E('input', { 'type': 'checkbox', 'name': 'showMore' })),
+			createOption(_('Show Zeros'), E('input', { 'type': 'checkbox', 'name': 'showZero' })),
+			createOption(_('Transfer Speed in Bits'), E('input', { 'type': 'checkbox', 'name': 'useBits' })),
+			createOption(_('Multiple of Unit'), E('select', { 'class': 'cbi-input-select', 'name': 'useMultiple' }, [
+				E('option', { 'value': '1000', 'selected': 'selected' }, _('SI - 1000')),
+				E('option', { 'value': '1024' }, _('IEC - 1024'))
+			])),
+			createOption(_('Use DSL Bandwidth'), E('input', { 'type': 'checkbox', 'name': 'useDSL' })),
+			createOption(_('Upstream Bandwidth'), E('input', { 'type': 'text', 'name': 'upstream', 'class': 'cbi-input-text', 'value': '100' }), 'Mbps'),
+			createOption(_('Downstream Bandwidth'), E('input', { 'type': 'text', 'name': 'downstream', 'class': 'cbi-input-text', 'value': '100' }), 'Mbps')
+		])
+	];
+
+	Promise.all([
+		body[1].querySelectorAll('select')
+			.forEach(function(select) {
+				select.value = settings[select.name] ? settings[select.name] : select.value;
+		}),
+		body[1].querySelectorAll('input[type=checkbox]')
+			.forEach(function(input) {
+				input.checked = settings[input.name] ? 1 : 0;
+		}),
+		body[1].querySelectorAll('input[type=text]')
+			.forEach(function(input) {
+				input.value = settings[input.name] ? settings[input.name] : input.value;
+		})
+	])
+	.then(function() {
+		body.push(E('div', { 'class': 'right' }, [
+			E('div', {
+				'class': 'btn cbi-button-neutral',
+				'click': ui.hideModal
+			}, _('Cancel')),
+			' ',
+			E('div', {
+				'class': 'btn cbi-button-positive',
+				'click': function(ev) {
+					var data = {};
+
+					findParent(ev.target, '.modal').querySelectorAll('select')
+						.forEach(function(select) {
+							data[select.name] = select.value;
+					});
+
+					findParent(ev.target, '.modal').querySelectorAll('input[type=checkbox]')
+						.forEach(function(input) {
+							data[input.name] = input.checked;
+					});
+
+					findParent(ev.target, '.modal').querySelectorAll('input[type=text]')
+						.forEach(function(input) {
+							data[input.name] = input.value;
+					});
+
+					ui.showModal(_('Configuration'), [
+						E('p', { 'class': 'spinning' }, _('Saving configuration data...'))
+					]);
+
+					return fs.write(luciConfig, JSON.stringify(data, undefined, '\t')).catch(function(err) {
+						ui.addNotification(null, E('p', {}, [ _('Unable to save %s: %s').format(luciConfig, err) ]));
+					})
+					.then(ui.hideModal)
+					.then(function() {document.location.reload();});
+				},
+				'disabled': !L.hasViewPermission() || null
+			}, _('Save'))
+		]));
+		ui.showModal(_('Configuration'), body);
+	})
 }
 
-function displayTable(elmID) {
-	var tb = $('traffic'), bdw = parseSize($('setBD').value);
-	var col = setSortedColumn(elmID), flag = sortedBy =='desc' ? 1 : -1;
-	var IPVer = col == 9 ? $('Select46').value : null;
+function loadCss(path) {
+	var head = document.head || document.getElementsByTagName('head')[0];
+	var link = E('link', {
+		'rel': 'stylesheet',
+		'href': path,
+		'type': 'text/css'
+	});
 
-	cachedData[0].sort(sortTable.bind(this, col, IPVer, flag));
-
-	//console.time('show');
-	updateTable(tb, cachedData, '<em><%:Loading...%></em>');
-	//console.timeEnd('show');
-	progressbar('downflow', cachedData[1][0], bdw, true);
-	progressbar('upflow', cachedData[1][1], bdw, true);
+	head.appendChild(link);
 }
 
 function padStr(str) {
@@ -51,60 +193,63 @@ function padStr(str) {
 }
 
 function parseDatabase(values, hosts) {
-	var valArr = [], totals = [0, 0, 0, 0, 0], valToRows, rowToArr, row;
+	var valArr = [], totals = [0, 0, 0, 0, 0], valToRows, row;
 
 	valToRows = values.replace(/(^\s*)|(\s*$)/g, '').split(/\r?\n|\r/g);
 	valToRows.shift();
 
 	for (var i = 0; i < valToRows.length; i++) {
-		var rowToArr = valToRows[i].split(',');
-		if (!($('isShow').checked) && rowToArr[7] == 0) continue;
+		row = valToRows[i].split(',');
+		if (!(settings.showZero) && row[7] == 0) continue;
 
 		for (var j = 0; j < totals.length; j++) {
-			totals[j] += parseInt(rowToArr[3 + j]);
+			totals[j] += parseInt(row[3 + j]);
 		}
 
-		row = Array.prototype.concat([rowToArr[0], rowToArr[0]], rowToArr.slice(3), [rowToArr[1]]);
-		if (row[1] in hosts) {
-			if (hosts[row[1]] != '-') {
-				row[0] = hosts[row[1]];
-			}
+		row.copyWithin(9, 1, 2).copyWithin(1, 0, 1).copyWithin(2, 3, 8);
+		if (row[1] in hosts && hosts[row[1]] != '-') {
+			row[0] = hosts[row[1]];
 		}
 		valArr.push(row);
 	}
+
 	cachedData = [valArr, totals]
 	return cachedData;
 }
 
-function parseSize(size){
-	var unit = ['' , 'K', 'M', 'G', 'T', 'P', 'E', 'Z'];
-	var num = parseFloat(size);
-	var base = (size).match(/[KMGTPEZ]/i);
-	var ex = unit.indexOf(base ? (base).toString().toUpperCase() : '');
-
-	return Math.round((num || 1) * (ex != -1 ? 1024 ** ex : 1));
+function parseDefaultSettings(file) {
+	return fs.trimmed(file).then(function(json) {
+		try {
+			settings = JSON.parse(json);
+		}
+		catch {
+			settings = {};
+		};
+		return settings;
+	});
 }
 
-function progressbar(query, v, m, byte) {
+function progressbar(query, v, m) {
 	var pg = $(query),
-	    vn = parseInt(v) || 0,
-	    mn = parseInt(m) || 100,
-	    fv = byte ? String.format('%1024.2mB', v) : v,
-	    pc = ((100 / mn) * vn).toFixed(2),
+	    vn = v || 0,
+	    mn = formatBandWidth(m) || 100,
+	    fv = formatSpeed(v),
+	    pc = '%.2f'.format((100 / mn) * vn),
 	    wt = Math.floor(pc > 100 ? 100 : pc),
-	    bgc = (pc >= 95 ? 'red' : (pc >= 80 ? 'magenta' : (pc >= 60 ? 'yellow' : 'lime')));
-
+	    bgc = (pc >= 95 ? 'red' : (pc >= 80 ? 'darkorange' : (pc >= 60 ? 'yellow' : 'lime'))),
+	    tc = (pc >= 80 ? 'white' : '#404040');
 	if (pg) {
 		pg.firstElementChild.style.width = wt + '%';
 		pg.firstElementChild.style.background = bgc;
-		pg.setAttribute('title', '%s/s (%d%%)'.format(fv, pc));
+		pg.style.color = tc;
+		pg.setAttribute('title', '%s (%f%%)'.format(fv, pc));
 	}
 }
 
 function registerTableEventHandlers() {
 	var indicators = $('xhr_poll_status') || $('indicators').getElementsByTagName('span')[0];
 	indicators.addEventListener('click', function() {
-		$('intervalSelect').value = L.Request.poll.active() ? L.Poll.queue[0].i : -1;
+		$('selectInterval').value = L.Request.poll.active() ? L.Poll.queue[0].i : -1;
 	});
 
 	$('traffic').querySelectorAll('.th').forEach( function(e) {
@@ -115,7 +260,7 @@ function registerTableEventHandlers() {
 		}
 	});
 
-	$('intervalSelect').addEventListener('change', function () {
+	$('selectInterval').addEventListener('change', function () {
 		if (this.value > 0) {
 			L.Poll.queue[0].i = parseInt(this.value);
 			if (!L.Request.poll.active()) L.Request.poll.start();
@@ -129,7 +274,7 @@ function registerTableEventHandlers() {
 	$('resetDatabase').addEventListener('click', function () {
 		if (confirm(_('This will delete the database file. Are you sure?'))) {
 			getPath().then(function(res) {
-				var db = $('Select46').value == 'ipv4' ? res : renameFile(res, '6');
+				var db = $('selectProtocol').value == 'ipv4' ? res : renameFile(res, '6');
 				fs.exec('/bin/rm', [db]).then(function() {
 					document.location.reload();
 				})
@@ -137,31 +282,14 @@ function registerTableEventHandlers() {
 		}
 	});
 
-	$('setBD').addEventListener('input', function () {
-		var strTest = (/^[0-9]+\.?[0-9]*[\s]*[KMGTP]?B?(\/s)?$/ig).test(this.value);
-		$('checkBD').innerHTML = strTest ? '\u2714' : '\u2716';
-	});
-
-	$('setBD').addEventListener('focusout', function () {
-		if ($('checkBD').innerHTML == '\u2716') {
-			alert(_('Error! Bandwidth reset!!!'));
-			this.value = '100M';
-		}
-		else {
-			this.value = this.value.toUpperCase();
-		}
-		$('checkBD').innerHTML = '';
-	});
-
 	$('showMore').addEventListener('click', function () {
 		var t = document.querySelector('.tr.table-totals').firstElementChild;
 		var showMore = this.checked;
 		t.firstChild.nodeValue = _('TOTAL') + ':' + (showMore ? '' : ' ' + $('traffic').childElementCount - 2);
 		t.nextElementSibling.firstChild.nodeValue = showMore ? $('traffic').childElementCount - 2 + ' ' + _('Clients') : '';
-		document.querySelectorAll('.showMore').forEach(function(e) {
-			if(e) {
+		document.querySelectorAll('.showMore')
+			.forEach(function(e) {
 				showMore ? e.classList.remove('hide') :e.classList.add('hide');
-			}
 		});
 
 		if (!showMore && ['thMAC', 'thFirstSeen', 'thLastSeen'].indexOf(sortedId)!= -1) displayTable('thTotal');
@@ -173,6 +301,23 @@ function renameFile(str, tag) {
 	var n = fn.lastIndexOf('.'), bn = n > -1 ? fn.slice(0, n) : fn;
 	var n = fn.lastIndexOf('.'), en = n > -1 ? fn.slice(n + 1) : '';
 	return dir + bn + '.' + tag + (en ? '.' + en : '');
+}
+
+function renderTable(content, obj) {
+	var i, j, node, tr;
+
+	obj['class'] = obj['class'] ? obj['class'] + ' ' + 'table' : 'table';
+	node = E('div', obj);
+
+	for (i = 0; i < content.length; i++) {
+		tr = E('div', {'class': 'tr'}, '');
+		for (j = 0; j < content[i].length; j++) {
+			tr.appendChild(E('div', {'class': 'td'}, content[i][j]));
+		}
+		node.appendChild(tr);
+	}
+
+	return node;
 }
 
 function resolveCustomizedHostName() {
@@ -194,15 +339,17 @@ function resolveHostNameByMACAddr() {
 		L.resolveDefault(callLuciDHCPLeases(), {})
 	]).then(function(res) {
 		var hostNames = {},
+		    macaddr,
 		    leaseNames = [
 			res[0],
 			Array.isArray(res[1].dhcp_leases) ? res[1].dhcp_leases : [],
 			Array.isArray(res[1].dhcp6_leases) ? res[1].dhcp6_leases : []
 		    ];
-		for(var i = 0; i < leaseNames.length; i++) {
+		for (var i = 0; i < leaseNames.length; i++) {
 			for (var j = 0; j < leaseNames[i].length; j++) {
-				if (!(leaseNames[i][j].macaddr in hostNames) || hostNames[leaseNames[i][j].macaddr] == '-') {
-					hostNames[leaseNames[i][j].macaddr] = leaseNames[i][j].hostname || '-';
+				macaddr = leaseNames[i][j].macaddr.toLowerCase();
+				if (!(macaddr in hostNames) || hostNames[macaddr] == '-') {
+					hostNames[macaddr] = leaseNames[i][j].hostname || '-';
 				}
 			}
 		}
@@ -258,11 +405,26 @@ function sortTable(col, IPVer, flag, x, y) {
 	return (a < b ? 1 : -1) * flag;
 }
 
+function toggleHide() {
+	var e = document.getElementById('control_panel');
+	var b = document.getElementById('control_button');
+	if(e.classList.contains('hide')) {
+		e.classList.remove('hide');
+		b.innerHTML = _('Hide the control panel') + ' ' + '\u2bc5';
+		b.title = _('Hide the control panel');
+	}
+	else {
+		e.classList.add('hide');
+		b.innerHTML = _('Show the control panel') + ' ' + '\u2bc6';
+		b.title = _('Show the control panel');
+	}
+}
+
 function updateData() {
 	//console.time('start');
 	getPath().then(function(res) {
 		var params, data;
-		if ($('Select46').value == 'ipv4'){
+		if ($('selectProtocol').value == 'ipv4'){
 			params = '-4';
 			data = res;
 		}
@@ -311,7 +473,7 @@ function updateTable(tb, values, placeholder) {
 			childTD = doc.createElement('div');
 			childTD.appendChild(doc.createTextNode(''));
 			for (var j = 0; j < tabTitle.children.length; j++) {
-				childTD.className = 'td' + (!showMore && '178'.indexOf(j) != -1 ? ' hide showMore' : '');
+				childTD.className = 'td' + ('178'.indexOf(j) != -1 ? ' showMore' + (showMore ? '' : ' hide') : '');
 				childTD.setAttribute('data-title', tabTitle.children[j].innerHTML);
 				shadowNode.appendChild(childTD.cloneNode(true));
 			}
@@ -334,9 +496,23 @@ function updateTable(tb, values, placeholder) {
 		childTD.title = tbData[i][1];
 		childTD.lastChild.nodeValue = tbData[i].slice(-1);
 		for (var j = 0; j < tabTitle.childElementCount; j++, childTD = childTD.nextElementSibling){
-			childTD.firstChild.nodeValue = ('23456'.indexOf(j) != -1 ?
-			'%1024.2mB' + ('23'.indexOf(j) != -1 ? '/s' : '') : '%s')
-			.format('78'.indexOf(j) != -1 ? formatDate(tbData[i][j]) : tbData[i][j]);
+			switch (j) {
+				case 2:
+				case 3:
+					childTD.firstChild.nodeValue = formatSpeed(tbData[i][j]);
+					break;
+				case 4:
+				case 5:
+				case 6:
+					childTD.firstChild.nodeValue = formatSize(tbData[i][j]);
+					break;
+				case 7:
+				case 8:
+					childTD.firstChild.nodeValue = formatDate(tbData[i][j]);
+					break;
+				default:
+					childTD.firstChild.nodeValue = tbData[i][j];
+			}
 		}
 		dom.appendChild(newNode);
 	}
@@ -377,7 +553,7 @@ function updateTable(tb, values, placeholder) {
 		newNode.firstElementChild.nextSibling.firstChild.nodeValue = !showMore ? '' : tbData.length + ' ' + _('Clients');
 
 		for (var j = 0; j < values[1].length; j++) {
-			newNode.children[j + 2].firstChild.nodeValue = '%1024.2mB'.format(values[1][j]) + (j < 2 ? '/s' : '');
+			newNode.children[j + 2].firstChild.nodeValue = j < 2 ? formatSpeed(values[1][j]) : formatSize(values[1][j]);
 		}
 	}
 
@@ -385,51 +561,14 @@ function updateTable(tb, values, placeholder) {
 }
 
 return L.view.extend({
-	renderTable: function(content, obj) {
-		var i, j, node, tr;
-
-		obj['class'] = obj['class'] ? obj['class'] + ' ' + 'table' : 'table';
-		node = E('div', obj);
-
-		for (i = 0; i < content.length; i++) {
-			tr = E('div', {'class': 'tr'}, '');
-			for (j = 0; j < content[i].length; j++) {
-				tr.appendChild(E('div', {'class': 'td'}, content[i][j]));
-			}
-			node.appendChild(tr);
-		}
-
-		return node;
-	},
-
-	loadCss: function(path){
-		var head = document.head || document.getElementsByTagName('head')[0];
-		var link = E('link', {
-			'rel': 'stylesheet',
-			'href': path,
-			'type': 'text/css'
-		});
-
-		head.appendChild(link);
-	},
-
-	toggleHide: function() {
-		var e = document.getElementById('control_panel');
-		var b = document.getElementById('control_button');
-		if(e.classList.contains('hide')) {
-			e.classList.remove('hide');
-			b.innerHTML = _('Hide the control panel') + ' ' + '\u2bc5';
-			b.title = _('Hide the control panel');
-		}
-		else {
-			e.classList.add('hide');
-			b.innerHTML = _('Show the control panel') + ' ' + '\u2bc6';
-			b.title = _('Show the control panel');
-		}
+	load: function() {
+		return Promise.all([
+			parseDefaultSettings(luciConfig),
+			loadCss(L.resource('view/wrtbwmon/wrtbwmon.css'))
+		]);
 	},
 
 	render: function() {
-		this.loadCss(L.resource('view/wrtbwmon/wrtbwmon.css'));
 		var node = E('div', { 'class': 'cbi-map' });
 
 		node.appendChild(E('h2', {}, _('Usage - Details')));
@@ -438,56 +577,49 @@ return L.view.extend({
 			E('div', {
 				'id': 'control_button',
 				'class': 'cbi-button',
-				'click': L.ui.createHandlerFn(this, 'toggleHide'),
+				'click': toggleHide,
 				'title': _('Show the control panel')
 				},
-			_('Show the control panel') + ' ' + '\u2bc6'));
-
-		node.appendChild(this.renderTable([
-			[
-				E('label', {}, _('protocol:')),
-				E('select', { 'id': 'Select46', 'style': 'width:auto' }, [
-					E('option', { 'value': 'ipv4', 'selected': 'selected' }, 'ipv4'),
-					E('option', { 'value': 'ipv6' }, 'ipv6')
-				]),
-				E('label', { 'for': 'isShow' }, _('Show Zeros:')),
-				E('input', { 'id': 'isShow', 'type': 'checkbox' }),
-				E('div', {
-					'class': 'cbi-button',
-					'id': 'resetDatabase',
-					'style': 'float:right'
-					},
-				_('Reset Database'))
-			],
-			[
-				E('label', {}, _('bandwidth:')),
-				E('div', {}, [
-					E('input', {
-						'id': 'setBD',
-						'style': 'width:auto',
-						'type': 'text',
-						'value': '1000M'
-						}),
-					E('label', { 'id': 'checkBD' })
-				]),
-				E('label', { 'for': 'showMore' }, _('Show More:')),
-				E('input', { 'id': 'showMore', 'type': 'checkbox' }),
-				E('div')
-			]
-
-		], {'class': 'hide', 'id': 'control_panel'}));
+			_('Show the control panel') + ' ' + '\u2bc6')
+		);
 
 		node.appendChild(
-			E('div', {'style': 'display:flex;margin-bottom:0.5rem'}, [
-				E('div', { 'style': 'flex: 1 1 auto' }, [
-					E('div', { 'id': 'updated', 'style': 'display:inline' }, ''),
-					E('div', { 'id': 'updating', 'style': 'display:inline' }, '')
+			E('div', { 'class': 'hide', 'id': 'control_panel' }, [
+				E('div', {}, [
+					E('label', {}, _('Protocol:')),
+					E('select', { 'id': 'selectProtocol' }, [
+						E('option', { 'value': 'ipv4' }, 'ipv4'),
+						E('option', { 'value': 'ipv6' }, 'ipv6')
+					])
 				]),
 				E('div', {}, [
-					E('label', { 'for': 'intervalSelect' }, _('Auto update every:')),
-					E('select', { 'id': 'intervalSelect', 'style': 'width:auto' }, [
+					E('label', { 'for': 'showMore' }, _('Show More Columns:')),
+					E('input', { 'id': 'showMore', 'type': 'checkbox' }),
+				]),
+				E('div', {}, [
+					E('button', {
+						'class': 'cbi-button cbi-button-reset',
+						'id': 'resetDatabase'
+					}, _('Reset Database')),
+					E('button', {
+						'class': 'cbi-button cbi-button-neutral',
+						'click': handleConfig
+					}, _('Configure Options'))
+				])
+			])
+		);
+
+		node.appendChild(
+			E('div', {}, [
+				E('div', {}, [
+					E('div', { 'id': 'updated' }, ''),
+					E('div', { 'id': 'updating' }, '')
+				]),
+				E('div', {}, [
+					E('label', { 'for': 'selectInterval' }, _('Auto update every:')),
+					E('select', { 'id': 'selectInterval' }, [
 						E('option', { 'value': '-1' }, _('Disabled')),
-						E('option', { 'value': '1', 'selected': 'selected' }, _('1 seconds')),
+						E('option', { 'value': '1' }, _('1 seconds')),
 						E('option', { 'value': '5' }, _('5 seconds')),
 						E('option', { 'value': '10' }, _('10 seconds')),
 						E('option', { 'value': '30' }, _('30 seconds'))
@@ -496,20 +628,20 @@ return L.view.extend({
 			])
 		);
 
-		node.appendChild(this.renderTable([
+		node.appendChild(renderTable([
 			[
-				E('div', {}, _('downflow:')),
+				E('div', {}, _('Downstream:')),
 				E('div', {
-					'id': 'downflow',
+					'id': 'downstream',
 					'class': 'cbi-progressbar',
 					'title': '-'
 					}, E('div')
 				)
 			],
 			[
-				E('div', {}, _('upflow:')),
+				E('div', {}, _('Upstream:')),
 				E('div', {
-					'id': 'upflow',
+					'id': 'upstream',
 					'class': 'cbi-progressbar',
 					'title': '-'
 					}, E('div')
@@ -543,8 +675,19 @@ return L.view.extend({
 	handleReset: null,
 
 	addFooter: function() {
-		L.Poll.add(updateData, $('intervalSelect').value);
-		L.Poll.add(updatePerSec, 1);
-		registerTableEventHandlers();
+		Promise.all([
+			settings.useDSL ? getDSLBandwidth() : true,
+			$('selectInterval').value = settings.interval,
+			$('selectProtocol').value = settings.protocol,
+			$('showMore').checked = settings.showMore ? 1 : 0,
+			document.querySelectorAll('.showMore')
+				.forEach(function(e) {
+					settings.showMore ? e.classList.remove('hide') :e.classList.add('hide');
+			})
+		]).then(function() {
+			L.Poll.add(updateData, settings.interval);
+			L.Poll.add(updatePerSec, 1);
+			registerTableEventHandlers();
+		})
 	}
 });
