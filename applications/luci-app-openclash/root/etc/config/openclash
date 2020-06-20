@@ -39,14 +39,14 @@ config dns_servers
 	option group 'nameserver'
 	option type 'udp'
 	option ip '127.0.0.1'
-	option port '5355'
+	option port '5335'
 
 config dns_servers
 	option enabled '1'
 	option type 'udp'
 	option group 'fallback'
 	option ip '127.0.0.1'
-	option port '5354'
+	option port '5334'
 
 config servers
 	option enabled '1'

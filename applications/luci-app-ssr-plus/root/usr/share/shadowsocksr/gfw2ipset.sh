@@ -18,14 +18,14 @@ if [ "$NETFLIX_SERVER" != "nil" ]; then
 	if [ "$NETFLIX_SERVER" != "$GLOBAL_SERVER" ]; then
 		netflix 5555
 	else
-		netflix 5355
+		netflix 5335
 	fi
 else
 	rm -f /tmp/dnsmasq.ssr/netflix_forward.conf
 fi
 if [ "$1" == "" ]; then
 	awk '!/^$/&&!/^#/{printf("ipset=/.%s/'"blacklist"'\n",$0)}' /etc/ssr/black.list >/tmp/dnsmasq.ssr/blacklist_forward.conf
-	awk '!/^$/&&!/^#/{printf("server=/.%s/'"127.0.0.1#5355"'\n",$0)}' /etc/ssr/black.list >>/tmp/dnsmasq.ssr/blacklist_forward.conf
+	awk '!/^$/&&!/^#/{printf("server=/.%s/'"127.0.0.1#5335"'\n",$0)}' /etc/ssr/black.list >>/tmp/dnsmasq.ssr/blacklist_forward.conf
 	awk '!/^$/&&!/^#/{printf("ipset=/.%s/'"whitelist"'\n",$0)}' /etc/ssr/white.list >/tmp/dnsmasq.ssr/whitelist_forward.conf
 fi
 /etc/init.d/dnsmasq restart >/dev/null 2>&1

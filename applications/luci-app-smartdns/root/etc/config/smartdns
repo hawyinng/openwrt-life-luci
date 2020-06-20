@@ -16,15 +16,15 @@ config smartdns
 	option seconddns_no_cache '0'
 	option force_aaaa_soa '0'
 	option coredump '0'
-	option port '5356'
-	option seconddns_port '5354'
+	option port '5336'
+	option seconddns_port '5334'
 	option seconddns_server_group 'public'
 	option seconddns_enabled '1'
 	option redirect 'none'
 	option cache_size '512'
 	option serve_expired '0'
 	list old_redirect 'none'
-	list old_port '5355'
+	list old_port '5336'
 	list old_enabled '0'
 
 config server
