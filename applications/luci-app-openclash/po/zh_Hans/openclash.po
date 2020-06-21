@@ -2,6 +2,15 @@
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 
+msgid "Append Position"
+msgstr "规则集匹配顺序"
+
+msgid "Priority Match"
+msgstr "优先（覆盖）"
+
+msgid "Extended Match"
+msgstr "扩展（补充）"
+
 msgid "Other Rule Provider Manage"
 msgstr "管理第三方规则集"
 
