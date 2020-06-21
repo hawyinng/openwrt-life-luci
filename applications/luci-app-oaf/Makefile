@@ -10,7 +10,7 @@ LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+kmod-oaf
 PKG_NAME:=luci-app-oaf
 PKG_VERSION:=3.0
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 include ../../luci.mk
 
