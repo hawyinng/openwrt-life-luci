@@ -10,38 +10,38 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.10\n"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:171
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:187
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:207
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:176
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:192
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:212
 msgid "%d hour"
 msgstr "%d óra"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:166
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:182
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:202
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:171
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:187
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:207
 msgid "%d minute"
 msgstr "%d perc"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:167
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:168
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:169
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:170
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:183
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:184
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:185
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:186
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:203
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:204
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:205
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:206
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:172
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:173
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:174
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:175
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:188
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:189
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:190
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:191
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:208
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:209
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:210
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:211
 msgid "%d minutes"
 msgstr "%d perc"
 
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/globalsconfig.lua:48
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:147
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:160
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:176
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:196
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:152
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:165
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:181
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:201
 msgid "%d second"
 msgstr "%d másodperc"
 
@@ -49,30 +49,30 @@ msgstr "%d másodperc"
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/globalsconfig.lua:50
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/globalsconfig.lua:51
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/globalsconfig.lua:52
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:148
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:149
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:150
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:151
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:152
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:153
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:154
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:155
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:156
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:157
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:158
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:159
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:160
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:161
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:162
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:163
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:164
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:165
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:177
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:178
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:179
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:180
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:181
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:197
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:198
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:199
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:200
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:201
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:166
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:167
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:168
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:169
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:170
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:182
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:183
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:184
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:185
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:186
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:202
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:203
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:204
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:205
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:206
 msgid "%d seconds"
 msgstr "%d másodperc"
 
@@ -80,7 +80,7 @@ msgstr "%d másodperc"
 msgid "-- Please choose --"
 msgstr "-- Kérem válasszon --"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:59
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:66
 msgid ""
 "Acceptable values: 1-100. This many Tracking IP addresses must respond for "
 "the link to be deemed up"
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Check IP rules"
 msgstr "IP-szabályok ellenőrzése"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:99
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:104
 msgid "Check link quality"
 msgstr "Kapcsolatminőség ellenőrzése"
 
@@ -163,7 +163,7 @@ msgstr "Diagnosztika"
 msgid "Disabled"
 msgstr "Letiltva"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:224
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:229
 msgid ""
 "Downed interface will be deemed up after this many successful ping tests"
 msgstr ""
@@ -174,8 +174,12 @@ msgstr ""
 msgid "Emergency"
 msgstr "Vészhelyzet"
 
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:59
+msgid "Enable ssl tracking"
+msgstr "SSL követés engedélyezése"
+
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interface.lua:160
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:22
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:23
 msgid "Enabled"
 msgstr "Engedélyezve"
 
@@ -190,6 +194,10 @@ msgstr ""
 msgid "Enables global firewall logging"
 msgstr "Engedélyezi a globális tűzfalnaplózást"
 
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:60
+msgid "Enables https tracking on ssl port 443"
+msgstr "Engedélyezi a HTTPS követést a 443-as SSL porton"
+
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/globalsconfig.lua:16
 msgid "Enter value in hex, starting with <code>0x</code>"
 msgstr "Érték megadása hexadecimálisan, <code>0x</code>-szel kezdve"
@@ -202,11 +210,11 @@ msgstr "Hiba"
 msgid "Execute"
 msgstr "Végrehajtás"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:26
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:27
 msgid "Expect interface state on up event"
 msgstr "Elvárt csatolóállapot a felkapcsolás eseménynél"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:173
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:178
 msgid "Failure interval"
 msgstr "Sikertelenség időköze"
 
@@ -218,11 +226,11 @@ msgstr "Tűzfal naplószintje"
 msgid "Firewall mask"
 msgstr "Tűzfal maszkja"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:237
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:242
 msgid "Flush conntrack table"
 msgstr "Kapcsolatkövető táblázat kiürítése"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:238
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:243
 msgid "Flush global firewall conntrack table on interface events"
 msgstr ""
 "Globális tűzfal kapcsolatkövető táblázat kiürítése a csatolóeseményeknél"
@@ -230,6 +238,10 @@ msgstr ""
 #: applications/luci-app-mwan3/luasrc/controller/mwan3.lua:45
 msgid "Globals"
 msgstr "Globálisak"
+
+#: applications/luci-app-mwan3/root/usr/share/rpcd/acl.d/luci-app-mwan3.json:3
+msgid "Grant UCI access for luci-app-mwan3"
+msgstr ""
 
 #: applications/luci-app-mwan3/luasrc/view/mwan/status_diagnostics.htm:76
 msgid "Hotplug ifdown"
@@ -255,11 +267,11 @@ msgstr "INFORMÁCIÓ: az MWAN nem fut"
 msgid "IPset"
 msgstr "IPset"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:33
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:34
 msgid "IPv4"
 msgstr "IPv4"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:34
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:35
 msgid "IPv6"
 msgstr "IPv6"
 
@@ -267,7 +279,7 @@ msgstr "IPv6"
 msgid "Info"
 msgstr "Információ"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:25
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:26
 msgid "Initial state"
 msgstr "Kezdeti állapot"
 
@@ -283,16 +295,16 @@ msgid "Interface"
 msgstr "Csatoló"
 
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interface.lua:208
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:209
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:214
 msgid "Interface down"
 msgstr "Csatoló lekapcsolása"
 
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interface.lua:219
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:223
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:228
 msgid "Interface up"
 msgstr "Csatoló felkapcsolása"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:210
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:215
 msgid "Interface will be deemed down after this many failed ping tests"
 msgstr ""
 "A csatoló lekapcsoltnak lesz tekintve ennyi sikertelen pingelési teszt után"
@@ -301,15 +313,15 @@ msgstr ""
 msgid "Interfaces"
 msgstr "Csatolók"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:31
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:32
 msgid "Internet Protocol"
 msgstr "Internetprotokoll"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:189
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:194
 msgid "Keep failure interval"
 msgstr "Sikertelenség időközének megtartása"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:190
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:195
 msgid "Keep ping failure interval during failure state"
 msgstr ""
 "Pingelés sikertelenségi időközének megtartása a sikertelen állapot közben"
@@ -364,7 +376,7 @@ msgstr "MWAN – házirendek"
 msgid "MWAN - Rules"
 msgstr "MWAN – szabályok"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:15
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:16
 msgid "MWAN Interface Configuration - %s"
 msgstr "MWAN csatolóbeállítás – %s"
 
@@ -412,15 +424,15 @@ msgstr ""
 "karaktereket tartalmazhatnak, szóközt nem<br />A csatolók nem oszthatják meg "
 "ugyanazt a nevet mint a beállított tagok, házirendek vagy szabályok"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:87
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:92
 msgid "Max TTL"
 msgstr "Legnagyobb élettartam"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:103
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:108
 msgid "Max packet latency [ms]"
 msgstr "Legnagyobb csomagkésleltetés [ms]"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:115
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:120
 msgid "Max packet loss [%]"
 msgstr "Legnagyobb csomagvesztés [%]"
 
@@ -461,17 +473,17 @@ msgid "Members assigned"
 msgstr "Hozzárendelt tagok"
 
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interface.lua:230
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:244
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:249
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/member.lua:33
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/memberconfig.lua:25
 msgid "Metric"
 msgstr "Mérőszám"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:124
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:129
 msgid "Min packet latency [ms]"
 msgstr "Legkisebb csomagkésleltetés [ms]"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:136
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:141
 msgid "Min packet loss [%]"
 msgstr "Legkisebb csomagvesztés [%]"
 
@@ -512,12 +524,12 @@ msgstr "Figyelmeztetés"
 msgid "Notification"
 msgstr "Értesítés"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:29
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:30
 #: applications/luci-app-mwan3/luasrc/view/mwan/overview_status_interface.htm:42
 msgid "Offline"
 msgstr "Nem érhető el"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:28
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:29
 #: applications/luci-app-mwan3/luasrc/view/mwan/overview_status_interface.htm:34
 msgid "Online"
 msgstr "Elérhető"
@@ -527,7 +539,7 @@ msgstr "Elérhető"
 msgid "Only one IP rules for interface %s found"
 msgstr "Csak egy IP-szabály található a(z) %s csatolónál"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:63
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:70
 msgid "Ping count"
 msgstr "Pingelés darabszáma"
 
@@ -536,23 +548,23 @@ msgid "Ping default gateway"
 msgstr "Alapértelmezett átjáró pingelése"
 
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interface.lua:192
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:158
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:163
 msgid "Ping interval"
 msgstr "Pingelés időköze"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:174
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:179
 msgid "Ping interval during failure detection"
 msgstr "Pingelés időköze a sikertelen állapot közben"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:194
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:199
 msgid "Ping interval during failure recovering"
 msgstr "Pingelés időköze a sikertelen visszaállítás közben"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:71
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:78
 msgid "Ping size"
 msgstr "Pingelés mérete"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:145
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:150
 msgid "Ping timeout"
 msgstr "Pingelés időkorlátja"
 
@@ -598,7 +610,7 @@ msgstr "Hozzárendelt házirend"
 msgid "Protocol"
 msgstr "Protokoll"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:193
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:198
 msgid "Recovery interval"
 msgstr "Visszaállítás időköze"
 
@@ -690,14 +702,14 @@ msgstr "Feladat"
 msgid "There are currently %d of %d supported interfaces configured"
 msgstr "Jelenleg %d / %d támogatott csatoló van beállítva"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:245
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:250
 msgid ""
 "This displays the metric assigned to this interface in /etc/config/network"
 msgstr ""
 "Ez jeleníti meg az ehhez a csatolóhoz hozzárendelt mérőszámot az /etc/config/"
 "network helyen"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:37
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:38
 msgid ""
 "This hostname or IP address will be pinged to determine if the link is up or "
 "down. Leave blank to assume interface is always online"
@@ -742,17 +754,17 @@ msgstr ""
 "$DEVICE: annak a fizikai eszköznek a neve, amely csatoló felkapcsolódott "
 "vagy lekapcsolódott (például „eth0” vagy „wwan0”)<br /><br />"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:36
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:37
 msgid "Tracking hostname or IP address"
 msgstr "Követési gépnév vagy IP-cím"
 
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interface.lua:170
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:40
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:41
 msgid "Tracking method"
 msgstr "Követési módszer"
 
 #: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interface.lua:181
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:58
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:65
 msgid "Tracking reliability"
 msgstr "Követési megbízhatóság"
 
@@ -853,7 +865,7 @@ msgstr "Igen"
 msgid "blackhole (drop)"
 msgstr "fekete lyuk (eldobás)"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:241
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:246
 msgid "connected (mwan3)"
 msgstr "kapcsolódva (mwan3)"
 
@@ -863,15 +875,15 @@ msgstr "kapcsolódva (mwan3)"
 msgid "default (use main routing table)"
 msgstr "alapértelmezett (fő útválasztási táblázat használata)"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:242
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:247
 msgid "disconnected (mwan3)"
 msgstr "lecsatlakozva (mwan3)"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:240
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:245
 msgid "ifdown (netifd)"
 msgstr "csatolólekapcsolás (netifd)"
 
-#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:239
+#: applications/luci-app-mwan3/luasrc/model/cbi/mwan/interfaceconfig.lua:244
 msgid "ifup (netifd)"
 msgstr "csatolófelkapcsolás (netifd)"
 
