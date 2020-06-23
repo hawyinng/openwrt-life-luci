@@ -14,6 +14,9 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.1-dev\n"
 
+msgid "List of domains to force to an IP address"
+msgstr "强制解析为静态IP地址的域名列表"
+
 msgid "Enables The 802.11k standard provides information to discover the best available access point"
 msgstr "启用 802.11k 标准可提供信息以发现最佳的可用接入点"
 

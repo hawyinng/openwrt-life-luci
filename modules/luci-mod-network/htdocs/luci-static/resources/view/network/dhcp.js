@@ -284,6 +284,13 @@ return view.extend({
 		o.validate = validateServerSpec;
 
 
+		o = s.taboption('general', form.DynamicList, 'address', _('Static address'),
+			_('List of domains to force to an IP address'));
+
+		o.optional = true;
+		o.placeholder = '/openwrt.lan/192.168.9.1';
+
+
 		o = s.taboption('general', form.Flag, 'rebind_protection',
 			_('Rebind protection'),
 			_('Discard upstream RFC1918 responses'));
