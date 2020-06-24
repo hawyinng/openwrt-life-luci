@@ -149,9 +149,5 @@ function o.write(self, section, value)
 	Value.write(self, section, table.concat(rv, "/"))
 end
 
-local apply = luci.http.formvalue("cbi.apply")
-if apply then
-	luci.util.exec("/etc/init.d/minidlna restart >/dev/null 2>&1")
-end
 
 return m
