@@ -3,3 +3,4 @@
 /etc/openclash/config/
 /etc/openclash/game_rules/
 /etc/openclash/proxy_provider/
+/etc/openclash/rule_provider/
