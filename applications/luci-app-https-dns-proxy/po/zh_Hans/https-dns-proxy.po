@@ -63,10 +63,6 @@ msgstr "通过 HTTPS 代理的 DNS 设置"
 msgid "Digitale Gesellschaft"
 msgstr ""
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:163
-msgid "EDNS client subnet"
-msgstr "EDNS 客户端子网"
-
 #: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:13
 msgid "For more information on different options check"
 msgstr "有关不同选项的更多信息，请检查"
