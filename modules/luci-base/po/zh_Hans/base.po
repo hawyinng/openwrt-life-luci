@@ -4,15 +4,15 @@
 #
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-18 18:41+0000\n"
-"Last-Translator: Shijia Zhang <codgician@outlook.com>\n"
+"PO-Revision-Date: 2020-06-16 16:09+0000\n"
+"Last-Translator: SunSpring <yearnsun@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luci/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.1.1-dev\n"
 
 msgid "List of domains to force to an IP address"
 msgstr "强制解析为静态IP地址的域名列表"
@@ -43,9 +43,6 @@ msgstr "TSF计时器为0的UTC时间"
 
 msgid "Local time zone as specified in 8.3 of IEEE Std 1003.1-2004"
 msgstr "本地时区采用 IEEE Std 1003.1-2004 的 8.3 格式（例如 UTC8）"
-
-msgid "Full Cone"
-msgstr "完全锥型"
 
 msgid "CPU Model"
 msgstr "CPU 型号"
@@ -370,7 +367,7 @@ msgstr ""
 msgid "A directory with the same name already exists."
 msgstr "已存在同名的目录。"
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2636
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2645
 msgid "A new login is required since the authentication session expired."
 msgstr "由于身份验证会话已过期，需要重新登录。"
 
@@ -2207,7 +2204,7 @@ msgstr "跳转到密码配置页..."
 #: modules/luci-compat/luasrc/view/cbi/full_valueheader.htm:4
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:58
 msgid "Go to relevant configuration page"
-msgstr "跳转到相关的配置页面"
+msgstr "进入相关配置页面"
 
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:66
 msgid "Group Password"
@@ -2522,7 +2519,7 @@ msgstr "忽略解析文件"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:411
 msgid "Image"
-msgstr "固件文件"
+msgstr "镜像"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:67
 msgid "In"
